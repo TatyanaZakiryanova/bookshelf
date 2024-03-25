@@ -2,8 +2,21 @@ import { useState } from "react"
 import Card from "./Card"
 import axios from "axios"
 
-export type Book = {
-    [key: string]: any;
+export interface Book {
+    
+    volumeInfo: {
+        title: string;
+        authors: [string];
+        imageLinks: {
+            smallThumbnail: string;
+            thumbnail: string;
+        }
+    }
+    saleInfo: {
+        listPrice: {
+            amount: string;
+        }
+    }
 }
 
 const Main = () => {
