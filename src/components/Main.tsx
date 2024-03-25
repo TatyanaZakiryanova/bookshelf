@@ -2,21 +2,27 @@ import { useState } from "react"
 import Card from "./Card"
 import axios from "axios"
 
+export type Book = {
+    [key: string]: any;
+}
+
 const Main = () => {
 
     const [search, setSearch] = useState<string>("")
 
-    const [bookData, setBookData] = useState([])
+    const [bookData, setBookData] = useState<[]>([])
+
+    const fetchBooks = () => {
+
+    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=30')
+    .then(res=>setBookData(res.data.items))
+    .catch(err=>console.log(err))
+
+    }
 
     const searchBook = (event: KeyboardEvent) => {
         if(event.key==="Enter") {
-            {
-
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=30')
-            .then(res=>setBookData(res.data.items))
-            .catch(err=>console.log(err))
-
-            }
+            fetchBooks()
         }
     }
 
@@ -31,12 +37,11 @@ const Main = () => {
                 <input type="text" placeholder="Enter book name..."
                 value={search} onChange={e => setSearch(e.target.value)}
                 onKeyPress={searchBook} />
-                <button>Search</button>
+                <button onClick={fetchBooks}>Search</button>
             </div>
         </div>
 
         <div className="container"> {
-
             <Card book={bookData}/>
         }
         </div>
