@@ -12,7 +12,7 @@ const Main = () => {
         if(event.key==="Enter") {
             {
 
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI')
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=30')
             .then(res=>setBookData(res.data.items))
             .catch(err=>console.log(err))
 
