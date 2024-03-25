@@ -9,7 +9,11 @@ const Main = () => {
     const searchBook = (event: KeyboardEvent) => {
         if(event.key==="Enter") {
             {
-                console.log("Search")
+
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI')
+            .then(res=>console.log(res))
+            .catch(err=>console.log(err))
+
             }
         }
     }
