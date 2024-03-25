@@ -6,12 +6,14 @@ const Main = () => {
 
     const [search, setSearch] = useState<string>("")
 
+    const [bookData, setBookData] = useState([])
+
     const searchBook = (event: KeyboardEvent) => {
         if(event.key==="Enter") {
             {
 
             axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI')
-            .then(res=>console.log(res))
+            .then(res=>setBookData(res.data.items))
             .catch(err=>console.log(err))
 
             }
@@ -33,12 +35,10 @@ const Main = () => {
             </div>
         </div>
 
-        <div className="container">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+        <div className="container"> {
+
+            <Card book={bookData}/>
+        }
         </div>
         </>
     )
