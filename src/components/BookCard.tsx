@@ -14,13 +14,13 @@ const BookCard = ({show, item, onClose}: {show:Boolean, item:Book, onClose:Mouse
                 <div className="inform-box">
                     <img src={thumbnail}/>
                     <div className="info">
-                        <h1>Title</h1>
-                        <h3>Authors</h3>
-                        <h4>Publisher<span>PublishedDate</span></h4><br/>
-                        <a href="#"><button>More</button></a>
+                        <h1>{item.volumeInfo.title}</h1>
+                        <h3>{item.volumeInfo.authors}</h3>
+                        <h4>{item.volumeInfo.publisher} <span>{item.volumeInfo.publishedDate}</span></h4>
+                        <br/>
                     </div>
                 </div>
-                <h4 className="description">Description</h4>
+                <h4 className="description">{item.volumeInfo.description}</h4>
             </div>
         </div>
         </>

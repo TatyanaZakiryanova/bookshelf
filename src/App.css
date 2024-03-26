@@ -19,7 +19,7 @@
     padding: 1.5rem;
     position: relative;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: auto;
     font-size: 1rem;
 }
 

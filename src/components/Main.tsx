@@ -11,6 +11,9 @@ export interface Book {
             smallThumbnail: string;
             thumbnail: string;
         }
+        publisher: string;
+        publishedDate: string;
+        description: string;
     }
     saleInfo: {
         listPrice: {
