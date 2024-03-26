@@ -14,6 +14,7 @@ export interface Book {
         publisher: string;
         publishedDate: string;
         description: string;
+        previewLink: string;
     }
     saleInfo: {
         listPrice: {

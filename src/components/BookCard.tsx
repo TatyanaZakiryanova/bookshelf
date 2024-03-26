@@ -17,6 +17,7 @@ const BookCard = ({show, item, onClose}: {show:Boolean, item:Book, onClose:Mouse
                         <h1>{item.volumeInfo.title}</h1>
                         <h3>{item.volumeInfo.authors}</h3>
                         <h4>{item.volumeInfo.publisher} <span>{item.volumeInfo.publishedDate}</span></h4>
+                        <a href={item.volumeInfo.previewLink} target="_blank"><button className="linkToPage">Go to book page</button></a>
                         <br/>
                     </div>
                 </div>

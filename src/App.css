@@ -62,6 +62,18 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
+.card .inform .title {
+    font-size: 20px;
+}
+
+.card .inform .author {
+    font-size: 15px;
+}
+
+.card .inform .amount {
+    font-size: 17px;
+}
+
 .overlay{
     min-height: 100vh;
     width: 100%;
@@ -86,6 +98,26 @@
     box-sizing: border-box;
     overflow: auto;
     font-size: 1rem;
+}
+
+.overlay-inner .inform-box {
+    display: flex;
+}
+
+.overlay-inner .inform-box .info {
+    justify-content: center;
+}
+
+.overlay-inner .inform-box img {
+    width: 150px;
+    height: 200px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+.overlay-inner button {
+    padding: 0.2rem;
+    margin: 0.2rem;
 }
 
 @keyframes zoomIn {
