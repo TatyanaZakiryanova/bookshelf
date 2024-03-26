@@ -1,6 +1,8 @@
 import { useState } from "react"
 import Card from "./Card"
 import axios from "axios"
+import { FaBook } from "react-icons/fa";
+import { GrSearch } from "react-icons/gr";
 
 export interface Book {
 
@@ -46,15 +48,16 @@ const Main = () => {
     return (
         <>
         <div className="header">
+            <FaBook className="logo" size={60}/>
             <div className="titleRow">
-                <h1>BOOKSHELF</h1>
-                <h2>Search book</h2>
+            <h1>BOOKSHELF</h1>
+            <h4>Book search</h4>
             </div>
             <div className="search">
                 <input type="text" placeholder="Enter book name..."
                 value={search} onChange={e => setSearch(e.target.value)}
                 onKeyPress={searchBook} />
-                <button onClick={fetchBooks}>Search</button>
+                <button onClick={fetchBooks}><GrSearch className="buttonSearch" size={20}/> Search</button>
             </div>
         </div>
 
