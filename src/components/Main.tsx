@@ -3,10 +3,10 @@ import Card from "./Card"
 import axios from "axios"
 
 export interface Book {
-    
+
     volumeInfo: {
         title: string;
-        authors: [string];
+        authors: string[];
         imageLinks: {
             smallThumbnail: string;
             thumbnail: string;

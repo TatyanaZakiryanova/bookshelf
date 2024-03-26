@@ -1,7 +1,12 @@
+import { useState } from "react";
+import BookCard from "./BookCard";
 import { Book } from "./Main";
 
 const Card = ({ book }: { book: Book[] }) => {
-  console.log(book);
+
+  const [show, setShow] = useState<boolean>(false)
+  const [bookItem, setBookItem] = useState<Book>(Object)
+
   return (
     <>
       {book.map((item: Book) => {
@@ -12,7 +17,7 @@ const Card = ({ book }: { book: Book[] }) => {
             
         return (
         <>
-          <div className="card">
+          <div className="card" onClick={()=>{setShow(true); setBookItem(item)}}>
             <img src={thumbnail} />
             <div className="inform">
               <h3 className="title">{item.volumeInfo.title}</h3>
@@ -20,6 +25,7 @@ const Card = ({ book }: { book: Book[] }) => {
               <h4 className="amount">{amount} &#8381;</h4>
             </div>
           </div>
+          <BookCard show={show} item={bookItem} onClose={()=>setShow(false)} />
           </>
         );
         }
