@@ -27,7 +27,7 @@ body {
 
 .titleRow {
     margin: 50px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .search {
@@ -54,7 +54,12 @@ body {
     margin-right: 50px;
     border: none;
     font-size: 20px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.search button:active {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    border: 1px white solid;
 }
 
 .container {
@@ -75,6 +80,7 @@ body {
     margin-bottom: 10px;
     text-align: center;
     transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.9s forwards;
 }
 
 .card:hover {
@@ -106,7 +112,7 @@ body {
     top: 0;
     bottom: 0;
     right: 0;
-    background: black;
+    background: linear-gradient(150deg, rgba(1, 1, 1, 0.1), rgba(138, 113, 113, 0.1));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,7 +120,7 @@ body {
 }
 
 .overlay-inner{
-    background: white;
+    background-color: rgb(216, 199, 188);
     width: 700px;
     height: 500px;
     padding: 1.5rem;
@@ -141,8 +147,19 @@ body {
 }
 
 .overlay-inner button {
-    padding: 0.2rem;
-    margin: 0.2rem;
+    height: 40px;
+    padding: 0.5rem;
+    margin-right: 50px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: none;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.overlay-inner button:active {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    border: 1px white solid;
 }
 
 @keyframes zoomIn {
@@ -155,3 +172,11 @@ body {
     }
     }
 
+    @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+      }
+      }
