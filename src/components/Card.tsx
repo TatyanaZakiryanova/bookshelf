@@ -8,6 +8,7 @@ const Card = ({ book }: { book: Book[] }) => {
   const [bookItem, setBookItem] = useState<Book>(Object)
 
   return (
+    
     <>
       {book.map((item: Book) => {
         let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
