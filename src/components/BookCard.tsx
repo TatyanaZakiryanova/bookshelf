@@ -8,7 +8,7 @@ const BookCard = ({show, item, onClose}: {show:Boolean, item:Book, onClose:Mouse
     let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
     return (
         <>
-        <div className="overlay" onClick={onClose}>
+        <div className="overlay">
             <div className="overlay-inner">
                 <button className="close" onClick={onClose}>X</button>
                 <div className="inform-box">

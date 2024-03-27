@@ -5,7 +5,7 @@ import { FaBook } from "react-icons/fa";
 import { GrSearch } from "react-icons/gr";
 
 export interface Book {
-
+    id: string;
     volumeInfo: {
         title: string;
         authors: string[];
