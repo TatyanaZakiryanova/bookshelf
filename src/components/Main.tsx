@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Card from "./Card"
 import axios from "axios"
 import { FaBook } from "react-icons/fa";
@@ -30,13 +30,15 @@ const Main = () => {
     const [search, setSearch] = useState<string>("")
 
     const [bookData, setBookData] = useState<[]>([])
+    
+    useEffect(() => {
+        fetchBooks()
+    }, [bookData]);
 
     const fetchBooks = () => {
-
     axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=30')
     .then(res=>setBookData(res.data.items))
     .catch(err=>console.log(err))
-
     }
 
     const searchBook = (event: KeyboardEvent) => {
