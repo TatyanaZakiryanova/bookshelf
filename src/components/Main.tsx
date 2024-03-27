@@ -51,7 +51,7 @@ const Main = () => {
             <FaBook className="logo" size={60}/>
             <div className="titleRow">
             <h1>BOOKSHELF</h1>
-            <h4>Book search</h4>
+            <h4>book search service on google books</h4>
             </div>
             <div className="search">
                 <input type="text" placeholder="Enter book name..."

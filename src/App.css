@@ -7,6 +7,10 @@
     font-style: normal;
 }
 
+html {
+    font-size: 15px;
+}
+
 body {
     background-color: rgb(216, 199, 188);
 }
@@ -21,7 +25,7 @@ body {
     background-size: cover;
     flex-wrap: wrap;
     margin: 0;
-    overflow-x: hidden;
+    overflow: auto;
 }
 
 .logo {
@@ -54,15 +58,38 @@ body {
 .search button {
     height: 50px;
     padding: 0.5rem;
-    margin-right: 50px;
     border: none;
     font-size: 20px;
     background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content:center;
+    align-items: center;
 }
 
 .search button:active {
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
     border: 1px white solid;
+}
+
+ 
+@media screen and (min-device-width: 390px) and (max-device-height: 932px) {
+
+    .search input {
+        width: 250px;
+    }
+
+    .search button {
+        width: 40px;
+        font-size: 10px;
+    }
+
+    .overlay-inner .description {
+        width: 350px;
+    }
+
+    .overlay-inner .linkToPage {
+        font-size: 12px;
+    }
 }
 
 .container {
@@ -135,10 +162,11 @@ body {
 
 .overlay-inner .inform-box {
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .overlay-inner .inform-box .info {
-    justify-content: center;
     margin-bottom: 10px;
 }
 
