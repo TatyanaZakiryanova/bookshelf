@@ -72,7 +72,7 @@ body {
 }
 
  
-@media screen and (min-device-width: 390px) and (max-device-height: 932px) {
+@media screen and (min-device-width: 390px) and (max-device-width : 1024px) and (max-device-height: 932px) {
 
     .search input {
         width: 250px;
