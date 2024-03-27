@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BookCard from "./BookCard";
 import { Book } from "./Main";
+import React from "react";
 
 const Card = ({ book }: { book: Book[] }) => {
 
@@ -19,7 +20,7 @@ const Card = ({ book }: { book: Book[] }) => {
         if(thumbnail!= undefined && amount !=undefined) {
         
         return (
-        <>
+        <React.Fragment key={item.id}>
           <div className="card" onClick={()=>{setShow(true); setBookItem(item)}}>
             <img src={thumbnail} />
             <div className="inform">
@@ -29,7 +30,7 @@ const Card = ({ book }: { book: Book[] }) => {
             </div>
           </div>
           <BookCard show={show} item={bookItem} onClose={()=>setShow(false)} />
-          </>
+          </React.Fragment>
         );
         }
       })}

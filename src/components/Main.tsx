@@ -30,13 +30,9 @@ const Main = () => {
     const [search, setSearch] = useState<string>("")
 
     const [bookData, setBookData] = useState<[]>([])
-    
-    useEffect(() => {
-        fetchBooks()
-    }, []);
 
     const fetchBooks = () => {
-    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=30')
+    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=40')
     .then(res=>setBookData(res.data.items))
     .catch(err=>console.log(err))
     }
