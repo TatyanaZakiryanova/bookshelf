@@ -33,7 +33,7 @@ const Main = () => {
     
     useEffect(() => {
         fetchBooks()
-    }, [bookData]);
+    }, []);
 
     const fetchBooks = () => {
     axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=30')
