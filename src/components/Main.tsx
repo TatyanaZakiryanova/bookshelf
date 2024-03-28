@@ -41,12 +41,6 @@ const Main = () => {
     .catch(err=>console.log(err))
     }
 
-    const searchBook = (event: KeyboardEvent) => {
-        if(event.key==="Enter") {
-            fetchBooks()
-        }
-    }
-
     return (
         <>
         <div className="header">
@@ -57,12 +51,10 @@ const Main = () => {
             </div>
             <div className="search">
                 <input type="text" placeholder="Enter book name..."
-                value={search} onChange={e => setSearch(e.target.value)}
-                onKeyPress={searchBook} />
+                value={search} onChange={e => setSearch(e.target.value)} />
                 <button onClick={fetchBooks}><GrSearch className="buttonSearch" size={20}/> Search</button>
-            </div>
+           </div>
         </div>
-
         <div className="container"> {
             <Card book={bookData}/>
         }
