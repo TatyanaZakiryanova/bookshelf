@@ -31,8 +31,12 @@ const Main = () => {
 
     const [bookData, setBookData] = useState<[]>([])
 
+    useEffect(() => {
+        fetchBooks()
+    },[])
+
     const fetchBooks = () => {
-    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBizhpaUV-cAKj2BG2pZSJxEGViDGAYQFI'+'&maxResults=40')
+    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCeC6XVMuZOAY3TjODjgT7R5Joc4qHcjEE'+'&maxResults=40')
     .then(res=>setBookData(res.data.items))
     .catch(err=>console.log(err))
     }
