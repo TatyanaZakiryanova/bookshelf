@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useState } from 'react';
+import { KeyboardEvent, useState } from 'react';
 import Card from './Card';
 import axios from 'axios';
 import { FaBook } from 'react-icons/fa';
@@ -28,27 +28,25 @@ export interface Book {
 const Main = () => {
   const [search, setSearch] = useState<string>('');
 
-  const [bookData, setBookData] = useState<[]>([]);
+  const [bookData, setBookData] = useState<Book[]>([]);
 
-  useEffect(() => {
-    fetchBooks();
-  }, []);
-
-  const fetchBooks = () => {
-    axios
-      .get(
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
         'https://www.googleapis.com/books/v1/volumes?q=' +
           search +
           '&key=AIzaSyCeC6XVMuZOAY3TjODjgT7R5Joc4qHcjEE' +
           '&maxResults=40',
-      )
-      .then((res) => setBookData(res.data.items))
-      .catch((err) => console.log(err));
+      );
+      setBookData(response.data.items);
+    } catch (error) {
+      alert('Loading error');
+    }
   };
 
-  const handleKeyPress = (e: KeyboardEvent) => {
+  const searchKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      fetchBooks();
+      handleSearch();
     }
   };
 
@@ -56,7 +54,7 @@ const Main = () => {
     <>
       <div className="header">
         <FaBook className="logo" size={60} />
-        <div className="titleRow">
+        <div className="title-row">
           <h1>BOOKSHELF</h1>
           <h4>book search service on google books</h4>
         </div>
@@ -66,14 +64,16 @@ const Main = () => {
             placeholder="Enter book name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            onKeyUp={handleKeyPress}
+            onKeyUp={searchKey}
           />
-          <button onClick={fetchBooks}>
+          <button onClick={handleSearch}>
             <GrSearch className="buttonSearch" size={20} /> Search
           </button>
         </div>
       </div>
-      <div className="container"> {<Card book={bookData} />}</div>
+      <div className="container">
+        <Card book={bookData} />
+      </div>
     </>
   );
 };
