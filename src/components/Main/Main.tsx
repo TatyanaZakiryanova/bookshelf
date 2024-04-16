@@ -4,6 +4,7 @@ import axios from 'axios';
 import { FaBook } from 'react-icons/fa';
 import { GrSearch } from 'react-icons/gr';
 import styles from './Main.module.scss';
+import { Link } from 'react-router-dom';
 
 export interface Book {
   id: string;
@@ -40,6 +41,7 @@ const Main = () => {
           '&maxResults=40',
       );
       setBookData(response.data.items);
+      localStorage.setItem('data', JSON.stringify(response.data));
     } catch (error) {
       alert('Loading error');
     }
@@ -55,6 +57,7 @@ const Main = () => {
     <>
       <div className={styles.header}>
         <FaBook className={styles.logo} size={60} />
+        <Link to="favorites">Fav</Link>
         <div className={styles.title}>
           <h1>BOOKSHELF</h1>
           <h4>book search service on google books</h4>

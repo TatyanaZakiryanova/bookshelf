@@ -1,6 +1,8 @@
 import { MouseEventHandler } from 'react';
 import { Book } from '../Main/Main';
 import styles from './Overlay.module.scss';
+import { useAppDispatch } from '../../redux/store';
+import { FavItem, addItem } from '../../redux/favSlice';
 
 const BookCard = ({
   show,
@@ -14,6 +16,23 @@ const BookCard = ({
   if (!show) {
     return null;
   }
+
+  const dispatch = useAppDispatch();
+
+  const addToFavorites = () => {
+    const book: FavItem = {
+      id: item.id,
+      title: item.volumeInfo.title,
+      authors: item.volumeInfo.authors,
+      thumbnail: item.volumeInfo.imageLinks.thumbnail,
+      publisher: item.volumeInfo.publisher,
+      publishedDate: item.volumeInfo.publishedDate,
+      amount: item.saleInfo.listPrice.amount,
+      count: 0,
+    };
+    dispatch(addItem(book));
+  };
+
   let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
   return (
     <>
@@ -33,6 +52,8 @@ const BookCard = ({
               <a href={item.volumeInfo.previewLink} target="_blank">
                 <button>Go to book page</button>
               </a>
+              <br />
+              <button onClick={addToFavorites}>Add to fav</button>
               <br />
             </div>
           </div>
