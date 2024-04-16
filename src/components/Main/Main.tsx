@@ -1,8 +1,9 @@
 import { KeyboardEvent, useState } from 'react';
-import Card from './Card';
+import Card from '../Card/Card';
 import axios from 'axios';
 import { FaBook } from 'react-icons/fa';
 import { GrSearch } from 'react-icons/gr';
+import styles from './Main.module.scss';
 
 export interface Book {
   id: string;
@@ -52,13 +53,13 @@ const Main = () => {
 
   return (
     <>
-      <div className="header">
-        <FaBook className="logo" size={60} />
-        <div className="title-row">
+      <div className={styles.header}>
+        <FaBook className={styles.logo} size={60} />
+        <div className={styles.title}>
           <h1>BOOKSHELF</h1>
           <h4>book search service on google books</h4>
         </div>
-        <div className="search">
+        <div className={styles.search}>
           <input
             type="text"
             placeholder="Enter book name..."
@@ -67,11 +68,11 @@ const Main = () => {
             onKeyUp={searchKey}
           />
           <button onClick={handleSearch}>
-            <GrSearch className="buttonSearch" size={20} /> Search
+            <GrSearch className={styles.searchbutton} size={20} /> Search
           </button>
         </div>
       </div>
-      <div className="container">
+      <div className={styles.container}>
         <Card book={bookData} />
       </div>
     </>

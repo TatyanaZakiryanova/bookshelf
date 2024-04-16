@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import BookCard from './BookCard';
-import { Book } from './Main';
+import BookCard from '../BookCard/BookCard';
+import { Book } from '../Main/Main';
 import React from 'react';
+import styles from './Card.module.scss';
 
 const Card = ({ book }: { book: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
@@ -18,17 +19,17 @@ const Card = ({ book }: { book: Book[] }) => {
           return (
             <React.Fragment key={item.id}>
               <div
-                className="card"
+                className={styles.card}
                 onClick={() => {
                   setShow(true);
                   setBookItem(item);
                 }}
               >
                 <img src={thumbnail} />
-                <div className="inform">
-                  <h3 className="title">{item.volumeInfo.title}</h3>
-                  <h4 className="author">{author}</h4>
-                  <h4 className="amount">{amount} &#8381;</h4>
+                <div className={styles.inform}>
+                  <h3 className={styles.title}>{item.volumeInfo.title}</h3>
+                  <h4 className={styles.author}>{author}</h4>
+                  <h4 className={styles.amount}>{amount} &#8381;</h4>
                 </div>
               </div>
               <BookCard show={show} item={bookItem} onClose={() => setShow(false)} />

@@ -1,4 +1,4 @@
-.overlay{
+.overlay {
     min-height: 100vh;
     width: 100%;
     position: fixed;
@@ -11,7 +11,7 @@
     align-items: center;
     justify-content: center;
     animation: zoomIn 0.5s forwards;
-    &-inner {
+    .inner {
         background-color: rgb(216, 199, 188);
         width: 700px;
         height: 500px;
@@ -20,7 +20,7 @@
         box-sizing: border-box;
         overflow: auto;
         font-size: 1rem;
-        .inform-box {
+        .inform {
           display: flex;
           align-items: center;
           justify-content: space-evenly;
@@ -44,7 +44,18 @@
             background-color: rgba(255, 255, 255, 0.5);
             &:active {
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            border: 1px white solid;
         }        
     }
 }
 }
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+    }
