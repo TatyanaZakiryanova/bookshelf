@@ -7,6 +7,7 @@ export type FavItem = {
   thumbnail: string;
   publisher: string;
   publishedDate: string;
+  previewLink: string;
   amount: string;
   count: number;
 };

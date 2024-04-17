@@ -1,25 +1,27 @@
+import { Link } from 'react-router-dom';
 import { FavItem } from '../../redux/favSlice';
 import { useAppSelector } from '../../redux/store';
+import FavBook from './FavBook';
+import styles from './Favorites.module.scss';
 
 const Favorites = () => {
   const items = useAppSelector((state) => state.favReducer.items);
 
   return (
-    <div>
-      <div>
+    <>
+      <div className={styles.title}>
+        Favorites
+        <p>Books in favorites list: {items.length}</p>
+      </div>
+      <div className={styles.items}>
         {items.map((item: FavItem) => (
-          <li key={item.id}>
-            <img src={item.thumbnail} />
-            {item.title}
-            {item.authors}
-            {item.amount}
-            {item.publisher}
-            {item.publishedDate}
-            {item.count}
-          </li>
+          <FavBook key={item.id} {...item} />
         ))}
       </div>
-    </div>
+      <Link to="/">
+        <button className={styles.back}>← Back</button>
+      </Link>
+    </>
   );
 };
 

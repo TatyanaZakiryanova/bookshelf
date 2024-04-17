@@ -5,6 +5,8 @@ import { FaBook } from 'react-icons/fa';
 import { GrSearch } from 'react-icons/gr';
 import styles from './Main.module.scss';
 import { Link } from 'react-router-dom';
+import { MdFavorite } from 'react-icons/md';
+import { useAppSelector } from '../../redux/store';
 
 export interface Book {
   id: string;
@@ -41,10 +43,7 @@ const Main = () => {
           '&maxResults=40',
       );
       setBookData(response.data.items);
-      localStorage.setItem('data', JSON.stringify(response.data));
-    } catch (error) {
-      alert('Loading error');
-    }
+    } catch (error) {}
   };
 
   const searchKey = (e: KeyboardEvent) => {
@@ -53,11 +52,14 @@ const Main = () => {
     }
   };
 
+  const addedItems = useAppSelector((state) => state.favReducer.items.length);
+
   return (
     <>
       <div className={styles.header}>
-        <FaBook className={styles.logo} size={60} />
-        <Link to="favorites">Fav</Link>
+        <div className={styles.icon}>
+          <FaBook className={styles.logo} size={60} />
+        </div>
         <div className={styles.title}>
           <h1>BOOKSHELF</h1>
           <h4>book search service on google books</h4>
@@ -74,6 +76,10 @@ const Main = () => {
             <GrSearch className={styles.searchbutton} size={20} /> Search
           </button>
         </div>
+        <Link to="favorites" className={styles.favorites}>
+          <MdFavorite className={styles.icon} />
+          {addedItems}
+        </Link>
       </div>
       <div className={styles.container}>
         <Card book={bookData} />

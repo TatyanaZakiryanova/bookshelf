@@ -1,0 +1,29 @@
+.item {
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 270px;
+        .title {
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        .inform {
+            .amount {
+                font-weight: bold;
+            }
+            .previewLink {
+                margin-top: 10px;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+                .bookpage {
+                    text-decoration: none;
+                    color: black;
+                    transition: all 0.3s ease-in-out;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+

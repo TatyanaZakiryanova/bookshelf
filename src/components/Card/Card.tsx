@@ -18,14 +18,14 @@ const Card = ({ book }: { book: Book[] }) => {
         if (thumbnail != undefined && amount != undefined) {
           return (
             <React.Fragment key={item.id}>
-              <div
-                className={styles.card}
-                onClick={() => {
-                  setShow(true);
-                  setBookItem(item);
-                }}
-              >
-                <img src={thumbnail} />
+              <div className={styles.card}>
+                <img
+                  src={thumbnail}
+                  onClick={() => {
+                    setShow(true);
+                    setBookItem(item);
+                  }}
+                />
                 <div className={styles.inform}>
                   <h3 className={styles.title}>{item.volumeInfo.title}</h3>
                   <h4 className={styles.author}>{author}</h4>
