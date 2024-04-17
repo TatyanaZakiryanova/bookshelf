@@ -24,6 +24,28 @@
                     }
                 }
             }
+            .number {
+                display: flex;
+                button {
+                    border: none;
+                    background-color: rgba(255, 255, 255, 0.5);
+                    font-size: 1.2rem;
+                    padding: 5px;
+                    margin: 3px;
+                    width: 30px;
+                    height: 30px;
+                    cursor: pointer;
+                    &:active {
+                        color: white;
+                    }
+                    &:hover {
+                        background-color: white;
+                    }
+                }
+                .delete {
+                    margin-left: 20px;
+                }
+            }
         }
     }
 

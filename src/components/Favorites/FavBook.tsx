@@ -1,8 +1,10 @@
 import React from 'react';
-import { FavItem } from '../../redux/favSlice';
+import { FavItem, addItem, minusNumber, removeItem } from '../../redux/favSlice';
 import styles from './FavBook.module.scss';
+import { useAppDispatch } from '../../redux/store';
 
 const FavBook: React.FC<FavItem> = ({
+  id,
   thumbnail,
   title,
   authors,
@@ -12,6 +14,20 @@ const FavBook: React.FC<FavItem> = ({
   previewLink,
   count,
 }) => {
+  const dispatch = useAppDispatch();
+
+  const plusItem = () => {
+    dispatch(addItem({ id } as FavItem));
+  };
+
+  const minusItem = () => {
+    dispatch(minusNumber({ id } as FavItem));
+  };
+
+  const deleteItem = () => {
+    dispatch(removeItem({ id } as FavItem));
+  };
+
   return (
     <div className={styles.item}>
       <img src={thumbnail} />
@@ -27,6 +43,17 @@ const FavBook: React.FC<FavItem> = ({
           </a>
         </p>
         <p className={styles.count}>Number: {count}</p>
+        <div className={styles.number}>
+          <button onClick={plusItem} className={styles.plus}>
+            +
+          </button>
+          <button onClick={minusItem} disabled={count === 1} className={styles.minus}>
+            -
+          </button>
+          <div className={styles.delete}>
+            <button onClick={deleteItem}>X</button>
+          </div>
+        </div>
       </div>
     </div>
   );
