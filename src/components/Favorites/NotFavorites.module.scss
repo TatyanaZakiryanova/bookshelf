@@ -1,0 +1,22 @@
+.notfav {
+    padding: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    .icon {
+        font-size: 20rem;
+        color: white;
+    }
+    .back {
+        font-size: 2rem;
+        margin-top: 30px;
+        padding: 7px;
+        border: none;
+        background-color: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            color: white;
+        }
+    }
+
+}

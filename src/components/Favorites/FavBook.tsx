@@ -30,6 +30,9 @@ const FavBook: React.FC<FavItem> = ({
 
   return (
     <div className={styles.item}>
+      <div className={styles.delete}>
+        <button onClick={deleteItem}>X</button>
+      </div>
       <img src={thumbnail} />
       <p className={styles.title}>{title}</p>
       <div className={styles.inform}>
@@ -50,9 +53,6 @@ const FavBook: React.FC<FavItem> = ({
           <button onClick={minusItem} disabled={count === 1} className={styles.minus}>
             -
           </button>
-          <div className={styles.delete}>
-            <button onClick={deleteItem}>X</button>
-          </div>
         </div>
       </div>
     </div>

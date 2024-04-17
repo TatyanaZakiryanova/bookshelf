@@ -1,4 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { calcTotal } from '../components/utils/Sum';
 
 export type FavItem = {
   id: string;
@@ -14,12 +15,12 @@ export type FavItem = {
 
 export type FavSlice = {
   items: FavItem[];
-  Total: number;
+  total: number;
 };
 
 const initialState: FavSlice = {
   items: [],
-  Total: 0,
+  total: 0,
 };
 
 const favSlice = createSlice({
@@ -33,10 +34,12 @@ const favSlice = createSlice({
       } else {
         state.items.push({ ...action.payload, count: 1 });
       }
+      state.total = calcTotal(state.items);
     },
 
     removeItem: (state, action: PayloadAction<FavItem>) => {
       state.items = state.items.filter((item) => item.id !== action.payload.id);
+      state.total = calcTotal(state.items);
     },
 
     minusNumber: (state, action: PayloadAction<FavItem>) => {
@@ -44,6 +47,7 @@ const favSlice = createSlice({
       if (findItem) {
         findItem.count--;
       }
+      state.total = calcTotal(state.items);
     },
   },
 });
