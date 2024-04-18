@@ -1,3 +1,6 @@
+@import '../../styles/button.scss';
+@import '../../styles/variables.scss';
+
 .container {
     width: 70%;
     margin: 0 auto;
@@ -46,21 +49,15 @@
         }
     }
         button {
+            @include button;
             height: 50px;
             padding: 0.5rem;
-            border: none;
-            font-size: 20px;
-            background-color: rgba(255, 255, 255, 0.5);
             display: flex;
             justify-content:center;
             align-items: center;
             @media screen and (min-device-width: 390px) and (max-device-width : 1024px) and (max-device-height: 932px) {
                 width: 40px;
                 font-size: 10px;
-            }
-            &:active {
-                box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
-                border: 1px white solid;
             }
         }
     }
@@ -71,7 +68,7 @@
         text-decoration: none;
         color: white;
         font-size: 25px;
-        transition: all 0.3s ease-in-out;
+        transition: $transition;
         &:hover {
             transform: scale(1.2);
           }

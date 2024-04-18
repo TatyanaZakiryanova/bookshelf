@@ -1,3 +1,6 @@
+@import '../../styles/button.scss';
+@import '../../styles/variables.scss';
+
 .notfav {
     padding: 5rem;
     font-size: 2rem;
@@ -7,13 +10,11 @@
         color: white;
     }
     .back {
+        @include button;
         font-size: 2rem;
         margin-top: 30px;
         padding: 7px;
-        border: none;
-        background-color: rgba(255, 255, 255, 0.5);
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
+        transition: $transition;
         &:hover {
             color: white;
         }

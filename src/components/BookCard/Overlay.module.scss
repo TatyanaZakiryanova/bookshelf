@@ -1,3 +1,6 @@
+@import '../../styles/button.scss';
+@import '../../styles/variables.scss';
+
 .overlay {
     min-height: 100vh;
     width: 100%;
@@ -24,7 +27,7 @@
           display: flex;
           justify-content: space-evenly;
         .info {
-            margin-bottom: 10px;
+            margin-bottom: $bottom;
             .added {
                 display: flex;
                 align-items: center;
@@ -34,23 +37,17 @@
             width: 150px;
             height: 200px;
             margin-right: 20px;
-            margin-bottom: 10px;
+            margin-bottom: $bottom;
         }
         }
         button {
+            @include button;
             height: 40px;
             padding: 0.5rem;
             margin-top: 5px;
-            margin-bottom: 10px;
-            border: none;
-            font-size: 20px;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            &:active {
-            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+            margin-bottom: $bottom;
         }        
     }
-}
 }
 
 @keyframes zoomIn {
