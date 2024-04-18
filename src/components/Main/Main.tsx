@@ -1,4 +1,4 @@
-import { KeyboardEvent, useState } from 'react';
+import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import Card from '../Card/Card';
 import axios from 'axios';
 import { FaBook } from 'react-icons/fa';
@@ -34,6 +34,18 @@ const Main = () => {
 
   const [bookData, setBookData] = useState<Book[]>([]);
 
+  const { items } = useAppSelector((state) => state.favReducer);
+
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('favorites', json);
+    }
+    isMounted.current = true;
+  }, [items]);
+
   const handleSearch = async () => {
     try {
       const response = await axios.get(
@@ -43,7 +55,9 @@ const Main = () => {
           '&maxResults=40',
       );
       setBookData(response.data.items);
-    } catch (error) {}
+    } catch (error) {
+      alert('Books not found');
+    }
   };
 
   const searchKey = (e: KeyboardEvent) => {

@@ -1,5 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { calcTotal } from '../components/utils/Sum';
+import { GetFavoritesList } from '../components/utils/Favorites';
 
 export type FavItem = {
   id: string;
@@ -18,10 +19,7 @@ export type FavSlice = {
   total: number;
 };
 
-const initialState: FavSlice = {
-  items: [],
-  total: 0,
-};
+const initialState: FavSlice = GetFavoritesList();
 
 const favSlice = createSlice({
   name: 'favorites',

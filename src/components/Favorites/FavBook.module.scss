@@ -16,10 +16,13 @@
         height: 30px;
         cursor: pointer;
         &:active {
-            color: white;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
         }
         &:hover {
             background-color: white;
+        }
+        &:disabled {
+            pointer-events: none;
         }
     }
         .title {

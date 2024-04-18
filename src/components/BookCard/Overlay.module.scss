@@ -25,6 +25,10 @@
           justify-content: space-evenly;
         .info {
             margin-bottom: 10px;
+            .added {
+                display: flex;
+                align-items: center;
+            }
          }
         img {
             width: 150px;
