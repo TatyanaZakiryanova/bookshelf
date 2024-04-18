@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { FavItem } from '../../redux/favSlice';
 import { useAppSelector } from '../../redux/store';
 import FavBook from './FavBook';
 import styles from './Favorites.module.scss';
 import NotFavorites from './NotFavorites';
+import { FavItem } from '../../redux/favSlice/types';
 
 const Favorites = () => {
   const items = useAppSelector((state) => state.favReducer.items);

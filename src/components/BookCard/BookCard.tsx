@@ -1,9 +1,10 @@
 import { MouseEventHandler } from 'react';
-import { Book } from '../Main/Main';
 import styles from './Overlay.module.scss';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { FavItem, addItem } from '../../redux/favSlice';
+import { addItem } from '../../redux/favSlice/favSlice';
 import { MdFavorite } from 'react-icons/md';
+import { Book } from '../Main/types';
+import { FavItem } from '../../redux/favSlice/types';
 
 const BookCard = ({
   show,

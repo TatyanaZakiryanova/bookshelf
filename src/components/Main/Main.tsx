@@ -7,27 +7,7 @@ import styles from './Main.module.scss';
 import { Link } from 'react-router-dom';
 import { MdFavorite } from 'react-icons/md';
 import { useAppSelector } from '../../redux/store';
-
-export interface Book {
-  id: string;
-  volumeInfo: {
-    title: string;
-    authors: string[];
-    imageLinks: {
-      smallThumbnail: string;
-      thumbnail: string;
-    };
-    publisher: string;
-    publishedDate: string;
-    description: string;
-    previewLink: string;
-  };
-  saleInfo: {
-    listPrice: {
-      amount: string;
-    };
-  };
-}
+import { Book } from './types';
 
 const Main = () => {
   const [search, setSearch] = useState<string>('');

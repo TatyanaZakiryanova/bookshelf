@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import favReducer from './favSlice';
+import favReducer from './favSlice/favSlice';
 
 export const store = configureStore({
   reducer: {

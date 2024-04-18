@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import BookCard from '../BookCard/BookCard';
-import { Book } from '../Main/Main';
 import React from 'react';
 import styles from './Card.module.scss';
+import { Book } from '../Main/types';
 
 const Card = ({ book }: { book: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);

@@ -1,7 +1,8 @@
 import React from 'react';
-import { FavItem, addItem, minusNumber, removeItem } from '../../redux/favSlice';
+import { addItem, minusNumber, removeItem } from '../../redux/favSlice/favSlice';
 import styles from './FavBook.module.scss';
 import { useAppDispatch } from '../../redux/store';
+import { FavItem } from '../../redux/favSlice/types';
 
 const FavBook: React.FC<FavItem> = ({
   id,
