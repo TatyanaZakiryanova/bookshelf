@@ -35,9 +35,7 @@ const Main = () => {
           '&maxResults=40',
       );
       setBookData(response.data.items);
-    } catch (error) {
-      alert('Books not found');
-    }
+    } catch (error) {}
   };
 
   const searchKey = (e: KeyboardEvent) => {
