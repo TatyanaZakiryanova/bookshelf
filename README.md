@@ -1,8 +1,11 @@
 # Bookshelf
-
+TS + React + Redux Toolkit.  
+<br />
 App for searching e-books. Features: viewing a book description, going to book pages, saving a list of favorite books.  
 <br />
-Приложение для поиска электронных книг. Возможности: просмотр описания книги, переход на страницу книги, сохранение списка избранных книг.
+Приложение для поиска электронных книг. Возможности: просмотр описания книги, переход на страницу книги, сохранение списка избранных книг.  
+<br />
+Link: https://bookshelfsearch.netlify.app/
 
 ## Preview
 
