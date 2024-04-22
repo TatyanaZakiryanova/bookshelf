@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import BookCard from '../BookCard/BookCard';
-import React from 'react';
 import styles from './Card.module.scss';
 import { Book } from '../Main/types';
 
@@ -17,7 +16,7 @@ const Card = ({ book }: { book: Book[] }) => {
 
         if (thumbnail != undefined && amount != undefined) {
           return (
-            <React.Fragment key={item.id}>
+            <Fragment key={item.id}>
               <div className={styles.card}>
                 <img
                   src={thumbnail}
@@ -33,7 +32,7 @@ const Card = ({ book }: { book: Book[] }) => {
                 </div>
               </div>
               <BookCard show={show} item={bookItem} onClose={() => setShow(false)} />
-            </React.Fragment>
+            </Fragment>
           );
         }
       })}
