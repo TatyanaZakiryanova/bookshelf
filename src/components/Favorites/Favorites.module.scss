@@ -1,4 +1,5 @@
 @import '../../styles/button.scss';
+@import '../../styles/variables.scss';
 
 .title {
     font-size: 2rem;
@@ -27,4 +28,8 @@
     @include button;
     padding: 0.5rem;
     margin: 0 0 50px 50px;
+    transition: $transition;
+    &:hover {
+        color: white;
+    }
 }

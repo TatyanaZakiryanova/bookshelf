@@ -1,7 +1,6 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import Card from '../Card/Card';
 import axios from 'axios';
-import { FaBook } from 'react-icons/fa';
 import { GrSearch } from 'react-icons/gr';
 import styles from './Main.module.scss';
 import { Link } from 'react-router-dom';
@@ -48,14 +47,7 @@ const Main = () => {
 
   return (
     <>
-      <div className={styles.header}>
-        <div className={styles.icon}>
-          <FaBook className={styles.logo} size={60} />
-        </div>
-        <div className={styles.title}>
-          <h1>BOOKSHELF</h1>
-          <h4>book search service on google books</h4>
-        </div>
+      <div>
         <div className={styles.search}>
           <input
             type="text"
