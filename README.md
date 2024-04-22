@@ -1,5 +1,5 @@
 # Bookshelf
-TS + React + Redux.  
+TS + React + Redux Toolkit.  
 <br />
 App for searching e-books. Features: viewing a book description, going to book pages, saving a list of favorite books.  
 <br />
