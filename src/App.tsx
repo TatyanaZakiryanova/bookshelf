@@ -1,8 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Favorites from './components/Favorites/Favorites';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
+import { Suspense, lazy } from 'react';
+import Spinner from './components/Spinner/Spinner';
+
+const Favorites = lazy(() => import('./components/Favorites/Favorites'));
 
 const App = (): JSX.Element => {
   return (
@@ -11,7 +14,14 @@ const App = (): JSX.Element => {
         <Header />
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="favorites" element={<Favorites />} />
+          <Route
+            path="favorites"
+            element={
+              <Suspense fallback={<Spinner />}>
+                <Favorites />
+              </Suspense>
+            }
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

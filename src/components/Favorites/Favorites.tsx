@@ -4,6 +4,7 @@ import FavBook from './FavBook';
 import styles from './Favorites.module.scss';
 import NotFavorites from './NotFavorites';
 import { FavItem } from '../../redux/favSlice/types';
+import { MdFavorite } from 'react-icons/md';
 
 const Favorites = () => {
   const items = useAppSelector((state) => state.favReducer.items);
@@ -16,7 +17,9 @@ const Favorites = () => {
   return (
     <>
       <div className={styles.title}>
-        Favorites
+        <div className={styles.icon}>
+          <MdFavorite /> Favorites
+        </div>
         <p>Books in favorites list: {items.length}</p>
       </div>
       <div className={styles.items}>

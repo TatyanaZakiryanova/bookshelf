@@ -17,8 +17,16 @@
     .inform {
         button {
             border: none;
-            background-color: rgba(0,0,0,0);
+            background-color: rgba(0, 0, 0, 0);
             cursor: pointer;
+            .addtofav {
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 25px;
+                transition: $transition;
+                &:hover {
+                    color: white;
+                }
+            }
         }
         .title {
             font-size: 20px;

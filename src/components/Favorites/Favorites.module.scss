@@ -4,7 +4,13 @@
 .title {
     font-size: 2rem;
     padding: 10px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon {
+        display: flex;
+        align-items: center;
+    }
     p {
         font-size: 1rem;
     }
