@@ -6,7 +6,7 @@ App for searching e-books. Features: viewing a book description, going to book p
 
 ## Preview
 
-<img src="./src/assets/images/bookshelfpreview.PNG" alt="preview" width="1400" height="400">
+<img src="./src/assets/images/preview.PNG" alt="preview" width="1400" height="400">
 
 ## How to start project
 
