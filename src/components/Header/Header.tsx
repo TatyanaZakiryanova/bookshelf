@@ -1,7 +1,21 @@
 import { FaBook } from 'react-icons/fa';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../redux/store';
+import { useEffect, useRef } from 'react';
 const Header = () => {
+  const { items } = useAppSelector((state) => state.favReducer);
+
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('favorites', json);
+    }
+    isMounted.current = true;
+  }, [items]);
+
   return (
     <>
       <div className={styles.header}>

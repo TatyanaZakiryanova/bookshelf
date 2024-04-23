@@ -31,8 +31,11 @@ const favSlice = createSlice({
       }
       state.total = calcTotal(state.items);
     },
+    clearList: (state) => {
+      (state.items = []), (state.total = 0);
+    },
   },
 });
 
-export const { addItem, removeItem, minusNumber } = favSlice.actions;
+export const { addItem, removeItem, minusNumber, clearList } = favSlice.actions;
 export default favSlice.reducer;

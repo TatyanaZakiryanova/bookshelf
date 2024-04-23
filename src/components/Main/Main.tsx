@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { KeyboardEvent, useState } from 'react';
 import Card from '../Card/Card';
 import axios from 'axios';
 import { GrSearch } from 'react-icons/gr';
@@ -12,18 +12,6 @@ const Main = () => {
   const [search, setSearch] = useState<string>('');
 
   const [bookData, setBookData] = useState<Book[]>([]);
-
-  const { items } = useAppSelector((state) => state.favReducer);
-
-  const isMounted = useRef(false);
-
-  useEffect(() => {
-    if (isMounted.current) {
-      const json = JSON.stringify(items);
-      localStorage.setItem('favorites', json);
-    }
-    isMounted.current = true;
-  }, [items]);
 
   const handleSearch = async () => {
     try {

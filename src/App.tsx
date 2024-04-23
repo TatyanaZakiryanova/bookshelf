@@ -2,10 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './components/Main/Main';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
+import Favorites from './components/Favorites/Favorites';
 import Spinner from './components/Spinner/Spinner';
-
-const Favorites = lazy(() => import('./components/Favorites/Favorites'));
 
 const App = (): JSX.Element => {
   return (
