@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { FaDeleteLeft } from 'react-icons/fa6';
 import { fetchBooks } from '../../redux/booksSlice/booksSlice';
 import { setSearchValue } from '../../redux/searchSlice/searchSlice';
-import Spinner from '../Spinner/Spinner';
+import Skeleton from './Skeleton';
 
 const Main = () => {
   const dispatch = useAppDispatch();
@@ -36,6 +36,8 @@ const Main = () => {
   };
 
   const addedItems = useAppSelector((state) => state.favReducer.items.length);
+
+  const skeleton = [...new Array(5)].map((_, index) => <Skeleton key={index} />);
 
   return (
     <>
@@ -67,7 +69,7 @@ const Main = () => {
       ) : (
         <div className={styles.container}>
           {' '}
-          {status === 'loading' ? <Spinner /> : <Card book={items} />}
+          {status === 'loading' ? skeleton : <Card book={items} />}
         </div>
       )}
     </>
