@@ -14,7 +14,9 @@ const Favorites = () => {
   const dispatch = useAppDispatch();
 
   const onClickClearList = () => {
-    dispatch(clearList());
+    if (window.confirm('Clear list?')) {
+      dispatch(clearList());
+    }
   };
 
   if (!total) {

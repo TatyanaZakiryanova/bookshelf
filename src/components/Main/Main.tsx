@@ -1,35 +1,37 @@
-import { KeyboardEvent, useState } from 'react';
+import { ChangeEvent, KeyboardEvent } from 'react';
 import Card from '../Card/Card';
-import axios from 'axios';
 import { GrSearch } from 'react-icons/gr';
 import styles from './Main.module.scss';
 import { Link } from 'react-router-dom';
 import { MdFavorite } from 'react-icons/md';
-import { useAppSelector } from '../../redux/store';
-import { Book } from './types';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { FaDeleteLeft } from 'react-icons/fa6';
+import { fetchBooks } from '../../redux/booksSlice/booksSlice';
+import { setSearchValue } from '../../redux/searchSlice/searchSlice';
+import Spinner from '../Spinner/Spinner';
 
 const Main = () => {
-  const [search, setSearch] = useState<string>('');
+  const dispatch = useAppDispatch();
 
-  const [bookData, setBookData] = useState<Book[]>([]);
+  const { items, status } = useAppSelector((state) => state.booksReducer);
+  const { value } = useAppSelector((state) => state.searchReducer);
 
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get(
-        'https://www.googleapis.com/books/v1/volumes?q=' +
-          search +
-          '&key=AIzaSyCeC6XVMuZOAY3TjODjgT7R5Joc4qHcjEE' +
-          '&maxResults=40',
-      );
-      setBookData(response.data.items);
-    } catch (error) {
-      alert('Books not found');
-    }
+  const setValue = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchValue(e.target.value));
+  };
+
+  const clearInput = () => {
+    dispatch(setSearchValue(''));
+  };
+
+  const getBooks = async () => {
+    const searchValue = value;
+    dispatch(fetchBooks(searchValue));
   };
 
   const searchKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleSearch();
+      getBooks();
     }
   };
 
@@ -42,11 +44,16 @@ const Main = () => {
           <input
             type="text"
             placeholder="Enter book name..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            value={value}
+            onChange={setValue}
             onKeyUp={searchKey}
           />
-          <button onClick={handleSearch}>
+          {value && (
+            <button onClick={clearInput} className={styles.clear}>
+              <FaDeleteLeft className={styles.clearicon} />
+            </button>
+          )}
+          <button onClick={getBooks}>
             <GrSearch className={styles.searchbutton} size={20} /> Search
           </button>
         </div>
@@ -55,9 +62,14 @@ const Main = () => {
           {addedItems}
         </Link>
       </div>
-      <div className={styles.container}>
-        <Card book={bookData} />
-      </div>
+      {status === 'null' ? null : status === 'error' ? (
+        <div>Error</div>
+      ) : (
+        <div className={styles.container}>
+          {' '}
+          {status === 'loading' ? <Spinner /> : <Card book={items} />}
+        </div>
+      )}
     </>
   );
 };

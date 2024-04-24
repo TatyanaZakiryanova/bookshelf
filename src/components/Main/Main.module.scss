@@ -10,7 +10,7 @@
     gap: 10px; 
     justify-content: center;
     box-sizing: border-box;
-    background-color: rgb(147, 131, 120);
+    background-color: $maincolor;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
     .search {
@@ -45,6 +45,21 @@
             @media screen and (min-device-width: 390px) and (max-device-width : 1024px) and (max-device-height: 932px) {
                 width: 40px;
                 font-size: 10px;
+            }
+        }
+        .clear {
+            position: absolute;
+            right: 450px;
+            &:hover {
+                color: black;
+            }
+            .clearicon {
+                position: absolute;
+                opacity: 0.2;
+                &:hover {
+                    opacity: 0.8;
+                    color:  $maincolor;
+                }
             }
         }
     }

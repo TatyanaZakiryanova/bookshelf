@@ -19,15 +19,15 @@
 .items {
     display: flex;
     flex-flow: row wrap;
-    margin: 40px;
+    margin: 50px;
 }
 
 .total {
     padding: 10px;
-    margin: 20px 0 20px 50px;
+    margin: 20px 0 20px 60px;
     font-size: 1.5rem;
     background-color: white;
-    width: 270px;
+    width: 250px;
     text-align: center;
 }
 
@@ -37,7 +37,7 @@
 .back {
     @include button;
     padding: 0.5rem;
-    margin: 0 0 50px 50px;
+    margin: 0 0 50px 60px;
     transition: $transition;
     &:hover {
         color: white;
@@ -48,7 +48,7 @@
     @include button;
     transition: $transition;
     margin: 0 50px 50px 0;
-    padding: 0.2rem;
+    padding: 0.5rem;
     &:hover {
         color: white;
     }

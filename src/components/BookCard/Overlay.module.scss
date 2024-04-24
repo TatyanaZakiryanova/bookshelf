@@ -23,6 +23,12 @@
         box-sizing: border-box;
         overflow: auto;
         font-size: 1rem;
+        .close {
+            @include button;
+            margin-bottom: $bottom;
+            width: 35px;
+            height: 35px;
+        }
         .inform {
           display: flex;
           justify-content: space-evenly;
@@ -40,9 +46,12 @@
             margin-bottom: $bottom;
         }
         }
-        button {
+        .page,
+        .added {
             @include button;
+            width: 200px;
             height: 40px;
+            text-align: center;
             padding: 0.5rem;
             margin-top: 5px;
             margin-bottom: $bottom;

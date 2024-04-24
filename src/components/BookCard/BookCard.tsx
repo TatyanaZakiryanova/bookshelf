@@ -59,7 +59,7 @@ const BookCard = ({
                 {item.volumeInfo.publisher} <span>{item.volumeInfo.publishedDate}</span>
               </h4>
               <a href={item.volumeInfo.previewLink} target="_blank">
-                <button>Go to book page</button>
+                <button className={styles.page}>Go to book page</button>
               </a>
               <br />
               <button onClick={addToFavorites} className={styles.added}>
