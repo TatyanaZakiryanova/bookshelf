@@ -38,9 +38,12 @@ const Favorites = () => {
       </div>
       <div className={styles.total}>Added books worth: {total} &#8381;</div>
       <div className={styles.bottom}>
-        <Link to="/">
-          <button className={styles.back}>← Home</button>
-        </Link>
+        <button
+          className={styles.back}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        >
+          <Link to="/">← Home</Link>
+        </button>
         <button onClick={onClickClearList} className={styles.clear}>
           Clear list
         </button>

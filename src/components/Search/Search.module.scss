@@ -36,14 +36,15 @@
         }
     }
     .clear {
-        position: absolute;
-        right: 450px;
-        &:hover {
-            color: black;
-        }
+        position: relative;
+        text-align: center;
+        right: 45px;
+        bottom: 13px;
         .clearicon {
             position: absolute;
+            font-size: 25px;
             opacity: 0.2;
+            cursor: pointer;
             &:hover {
                 opacity: 0.8;
                 color:  $maincolor;

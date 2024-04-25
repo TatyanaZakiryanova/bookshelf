@@ -46,9 +46,9 @@ const Search = () => {
             onKeyUp={searchKey}
           />
           {value && (
-            <button onClick={clearInput} className={styles.clear}>
-              <FaDeleteLeft className={styles.clearicon} />
-            </button>
+            <span className={styles.clear}>
+              <FaDeleteLeft className={styles.clearicon} onClick={clearInput} />
+            </span>
           )}
           <button onClick={getBooks}>
             <GrSearch className={styles.searchbutton} size={20} /> Search

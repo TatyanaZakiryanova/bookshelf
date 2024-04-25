@@ -2,10 +2,10 @@ import { useAppSelector } from '../../redux/store';
 import Skeleton from './Skeleton';
 import { MdFavorite } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import NotFound from '../NotFound/NotFound';
 import Card from '../../components/Card/Card';
 import Search from '../../components/Search/Search';
 import styles from './Main.module.scss';
+import BooksNotFound from '../../components/BooksNotFound/BooksNotFound';
 
 const Main = (): JSX.Element => {
   const { items, status } = useAppSelector((state) => state.booksReducer);
@@ -22,7 +22,7 @@ const Main = (): JSX.Element => {
         {addedItems}
       </Link>
       {status === 'null' ? null : status === 'error' ? (
-        <NotFound />
+        <BooksNotFound />
       ) : (
         <div className={styles.container}>
           {' '}

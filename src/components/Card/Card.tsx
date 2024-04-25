@@ -5,7 +5,7 @@ import { Book } from '../../pages/Main/types';
 import { useAppDispatch } from '../../redux/store';
 import { FavItem } from '../../redux/favSlice/types';
 import { addItem } from '../../redux/favSlice/favSlice';
-import { MdFavorite } from 'react-icons/md';
+import { MdOutlineFavorite } from 'react-icons/md';
 
 const Card = ({ book }: { book: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
@@ -47,9 +47,7 @@ const Card = ({ book }: { book: Book[] }) => {
                   }}
                 />{' '}
                 <div className={styles.inform}>
-                  <button onClick={addToFav}>
-                    <MdFavorite className={styles.addtofav} />
-                  </button>
+                  <MdOutlineFavorite className={styles.addtofav} onClick={addToFav} />
                   <h3 className={styles.title}>{item.volumeInfo.title}</h3>
                   <h4 className={styles.author}>{author}</h4>
                   <h4 className={styles.amount}>{amount} &#8381;</h4>

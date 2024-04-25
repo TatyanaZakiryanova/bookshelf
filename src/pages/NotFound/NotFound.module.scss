@@ -1,11 +1,21 @@
+@import '../../styles/components/button.scss';
+@import '../../styles/variables.scss';
+
 .error {
     padding: 5rem;
     font-size: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    .bottom {
-        margin-top: 15px;
-        font-size: 1rem;
+    justify-content: center;
+    .back {
+        @include button;
+        padding: 0.5rem;
+        margin-top: 30px;
+        font-size: 1.5rem;
+        transition: $transition;
+        &:hover {
+        color: white;
+    }
     }
 }

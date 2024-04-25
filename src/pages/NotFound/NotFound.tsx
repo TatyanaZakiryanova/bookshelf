@@ -1,13 +1,16 @@
-import { TbBookOff } from 'react-icons/tb';
+import { Link } from 'react-router-dom';
 import styles from './NotFound.module.scss';
+import { VscError } from 'react-icons/vsc';
 
 const NotFound = () => {
   return (
     <>
       <div className={styles.error}>
-        <TbBookOff size={120} />
+        <VscError size={60} />
         Data not found
-        <p className={styles.bottom}>Please try again later</p>
+        <Link to="">
+          <button className={styles.back}>← Home</button>
+        </Link>
       </div>
     </>
   );

@@ -11,7 +11,12 @@ const NotFavorites = () => {
         You haven't added books to your favorites yet.
         <br />
         <Link to="/">
-          <button className={styles.back}>← Home</button>
+          <button
+            className={styles.back}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            ← Home
+          </button>
         </Link>
       </div>
     </div>
