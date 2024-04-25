@@ -1,21 +1,7 @@
-import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { BooksState, Status } from './types';
-import { Book } from '../../components/Main/types';
-import axios from 'axios';
-
-export const fetchBooks = createAsyncThunk<Book[], string>('books/fetchBooks', async (search) => {
-  try {
-    const response = await axios.get(
-      'https://www.googleapis.com/books/v1/volumes?q=' +
-        search +
-        '&key=AIzaSyCeC6XVMuZOAY3TjODjgT7R5Joc4qHcjEE' +
-        '&maxResults=40',
-    );
-    return response.data.items;
-  } catch (error) {
-    alert('Data not found');
-  }
-});
+import { Book } from '../../pages/Main/types';
+import { fetchBooks } from './asyncActions';
 
 const initialState: BooksState = {
   items: [],

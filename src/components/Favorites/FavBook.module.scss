@@ -1,10 +1,10 @@
-@import '../../styles/button.scss';
+@import '../../styles/components/button.scss';
 @import '../../styles/variables.scss';
 
 .item {
     padding: 10px;
     margin: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: $opacity;
     width: 250px;
     img {
         margin: 5px;

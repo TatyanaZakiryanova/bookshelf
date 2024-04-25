@@ -1,4 +1,4 @@
-@import '../../styles/button.scss';
+@import '../../styles/components/button.scss';
 @import '../../styles/variables.scss';
 
 .overlay {
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: zoomIn 0.5s forwards;
+    animation: zoomIn 0.2s forwards;
     .inner {
         background-color: rgb(216, 199, 188);
         width: 700px;
@@ -34,10 +34,20 @@
           justify-content: space-evenly;
         .info {
             margin-bottom: $bottom;
+            a {
+                text-decoration: none;
+            }
+            .page,
             .added {
+                @include button;
                 display: flex;
                 align-items: center;
-            }
+                justify-content: center;
+                width: 200px;
+                height: 40px;
+                padding: 0.5rem;
+                margin-top: 5px;
+            }        
          }
         img {
             width: 150px;
@@ -46,18 +56,19 @@
             margin-bottom: $bottom;
         }
         }
-        .page,
-        .added {
-            @include button;
-            width: 200px;
-            height: 40px;
-            text-align: center;
-            padding: 0.5rem;
-            margin-top: 5px;
-            margin-bottom: $bottom;
-        }        
     }
 }
+
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+    }
+
 
 @keyframes zoomIn {
     0% {

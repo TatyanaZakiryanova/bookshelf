@@ -1,0 +1,32 @@
+@import '../../styles/components/button.scss';
+@import '../../styles/variables.scss';
+
+.container {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,0.5fr));;
+    gap: 10px; 
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: $maincolor;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+    .favorites {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        text-decoration: none;
+        color: white;
+        font-size: 25px;
+        transition: $transition;
+        &:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+          }
+        .icon {
+            font-size: 35px;
+        }
+    }
+

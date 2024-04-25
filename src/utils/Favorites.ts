@@ -1,4 +1,4 @@
-import { FavItem } from '../../redux/favSlice/types';
+import { FavItem } from '../redux/favSlice/types';
 import { calcTotal } from './Sum';
 
 export const GetFavoritesList = () => {

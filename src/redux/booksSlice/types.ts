@@ -1,4 +1,4 @@
-import { Book } from '../../components/Main/types';
+import { Book } from '../../pages/Main/types';
 
 export enum Status {
   NULL = 'null',

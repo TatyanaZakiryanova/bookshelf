@@ -1,28 +1,29 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Main from './components/Main/Main';
-import Header from './components/Header/Header';
-import NotFound from './components/NotFound/NotFound';
 import { Suspense, lazy } from 'react';
 import Spinner from './components/Spinner/Spinner';
+import Main from './pages/Main/Main';
+import NotFound from './pages/NotFound/NotFound';
+import MainLayout from './layouts/MainLayout';
 
-const Favorites = lazy(() => import('./components/Favorites/Favorites'));
+const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 
 const App = (): JSX.Element => {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route
-            path="favorites"
-            element={
-              <Suspense fallback={<Spinner />}>
-                <Favorites />
-              </Suspense>
-            }
-          />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<MainLayout />}>
+            <Route path="" element={<Main />} />
+            <Route
+              path="favorites"
+              element={
+                <Suspense fallback={<Spinner />}>
+                  <Favorites />
+                </Suspense>
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>

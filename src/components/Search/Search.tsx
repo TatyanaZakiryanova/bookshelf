@@ -1,20 +1,17 @@
-import { ChangeEvent, KeyboardEvent } from 'react';
-import Card from '../Card/Card';
-import { GrSearch } from 'react-icons/gr';
-import styles from './Main.module.scss';
-import { Link } from 'react-router-dom';
-import { MdFavorite } from 'react-icons/md';
+import { ChangeEvent, useRef, KeyboardEvent } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { FaDeleteLeft } from 'react-icons/fa6';
-import { fetchBooks } from '../../redux/booksSlice/booksSlice';
 import { setSearchValue } from '../../redux/searchSlice/searchSlice';
-import Skeleton from './Skeleton';
+import { fetchBooks } from '../../redux/booksSlice/asyncActions';
+import { FaDeleteLeft } from 'react-icons/fa6';
+import { GrSearch } from 'react-icons/gr';
+import styles from './Search.module.scss';
 
-const Main = () => {
+const Search = () => {
   const dispatch = useAppDispatch();
 
-  const { items, status } = useAppSelector((state) => state.booksReducer);
   const { value } = useAppSelector((state) => state.searchReducer);
+
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const setValue = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch(setSearchValue(e.target.value));
@@ -22,28 +19,26 @@ const Main = () => {
 
   const clearInput = () => {
     dispatch(setSearchValue(''));
+    inputRef.current?.focus();
   };
 
   const getBooks = async () => {
-    const searchValue = value;
-    dispatch(fetchBooks(searchValue));
+    dispatch(fetchBooks(value));
   };
 
   const searchKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
       getBooks();
+      inputRef.current?.blur();
     }
   };
-
-  const addedItems = useAppSelector((state) => state.favReducer.items.length);
-
-  const skeleton = [...new Array(5)].map((_, index) => <Skeleton key={index} />);
 
   return (
     <>
       <div>
         <div className={styles.search}>
           <input
+            ref={inputRef}
             type="text"
             placeholder="Enter book name..."
             value={value}
@@ -59,21 +54,9 @@ const Main = () => {
             <GrSearch className={styles.searchbutton} size={20} /> Search
           </button>
         </div>
-        <Link to="favorites" className={styles.favorites}>
-          <MdFavorite className={styles.icon} />
-          {addedItems}
-        </Link>
       </div>
-      {status === 'null' ? null : status === 'error' ? (
-        <div>Error</div>
-      ) : (
-        <div className={styles.container}>
-          {' '}
-          {status === 'loading' ? skeleton : <Card book={items} />}
-        </div>
-      )}
     </>
   );
 };
 
-export default Main;
+export default Search;

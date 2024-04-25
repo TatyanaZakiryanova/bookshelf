@@ -1,12 +1,13 @@
-import { TbFaceIdError } from 'react-icons/tb';
+import { TbBookOff } from 'react-icons/tb';
 import styles from './NotFound.module.scss';
 
 const NotFound = () => {
   return (
     <>
       <div className={styles.error}>
-        <TbFaceIdError size={60} />
+        <TbBookOff size={120} />
         Data not found
+        <p className={styles.bottom}>Please try again later</p>
       </div>
     </>
   );

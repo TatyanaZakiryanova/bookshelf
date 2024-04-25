@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
-import FavBook from './FavBook';
-import styles from './Favorites.module.scss';
-import NotFavorites from './NotFavorites';
-import { FavItem } from '../../redux/favSlice/types';
-import { MdFavorite } from 'react-icons/md';
 import { clearList } from '../../redux/favSlice/favSlice';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
+import NotFavorites from '../../components/Favorites/NotFavorites';
+import { MdFavorite } from 'react-icons/md';
+import { FavItem } from '../../redux/favSlice/types';
+import FavBook from '../../components/Favorites/FavBook';
+import { Link } from 'react-router-dom';
+import styles from './Favorites.module.scss';
 
 const Favorites = () => {
   const items = useAppSelector((state) => state.favReducer.items);

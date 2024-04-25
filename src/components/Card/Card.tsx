@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react';
 import BookCard from '../BookCard/BookCard';
 import styles from './Card.module.scss';
-import { Book } from '../Main/types';
+import { Book } from '../../pages/Main/types';
 import { useAppDispatch } from '../../redux/store';
 import { FavItem } from '../../redux/favSlice/types';
 import { addItem } from '../../redux/favSlice/favSlice';

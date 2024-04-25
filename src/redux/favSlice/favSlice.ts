@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { calcTotal } from '../../components/utils/Sum';
-import { GetFavoritesList } from '../../components/utils/Favorites';
+import { calcTotal } from '../../utils/Sum';
+import { GetFavoritesList } from '../../utils/Favorites';
 import { FavItem, FavSlice } from './types';
 
 const initialState: FavSlice = GetFavoritesList();

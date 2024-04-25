@@ -3,7 +3,7 @@ import styles from './Overlay.module.scss';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { addItem } from '../../redux/favSlice/favSlice';
 import { MdFavorite } from 'react-icons/md';
-import { Book } from '../Main/types';
+import { Book } from '../../pages/Main/types';
 import { FavItem } from '../../redux/favSlice/types';
 
 const BookCard = ({
