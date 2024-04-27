@@ -9,7 +9,8 @@ import styles from './Search.module.scss';
 const Search = () => {
   const dispatch = useAppDispatch();
 
-  const { value } = useAppSelector((state) => state.searchReducer);
+  const { search } = useAppSelector((state) => state.searchReducer);
+  const sort = useAppSelector((state) => state.searchReducer.orderBy);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -23,7 +24,8 @@ const Search = () => {
   };
 
   const getBooks = async () => {
-    dispatch(fetchBooks(value));
+    const orderBy = sort.parameter;
+    dispatch(fetchBooks({ search, orderBy }));
   };
 
   const searchKey = (e: KeyboardEvent) => {
@@ -41,11 +43,11 @@ const Search = () => {
             ref={inputRef}
             type="text"
             placeholder="Enter book name..."
-            value={value}
+            value={search}
             onChange={setValue}
             onKeyUp={searchKey}
           />
-          {value && (
+          {search && (
             <span className={styles.clear}>
               <FaDeleteLeft className={styles.clearicon} onClick={clearInput} />
             </span>

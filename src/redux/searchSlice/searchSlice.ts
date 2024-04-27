@@ -1,8 +1,12 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { SearchParams } from './types';
+import { OrderParams, ResultsParams } from './types';
 
-const initialState: SearchParams = {
-  value: '',
+const initialState: ResultsParams = {
+  search: '',
+  orderBy: {
+    name: 'Relevance',
+    parameter: 'relevance',
+  },
 };
 
 const searchSlice = createSlice({
@@ -10,11 +14,14 @@ const searchSlice = createSlice({
   initialState,
   reducers: {
     setSearchValue(state, action: PayloadAction<string>) {
-      state.value = action.payload;
+      state.search = action.payload;
+    },
+    setOrderParameter: (state, action: PayloadAction<OrderParams>) => {
+      state.orderBy = action.payload;
     },
   },
 });
 
-export const { setSearchValue } = searchSlice.actions;
+export const { setSearchValue, setOrderParameter } = searchSlice.actions;
 
 export default searchSlice.reducer;

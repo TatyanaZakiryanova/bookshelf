@@ -6,6 +6,7 @@ import Card from '../../components/Card/Card';
 import Search from '../../components/Search/Search';
 import styles from './Main.module.scss';
 import BooksNotFound from '../../components/BooksNotFound/BooksNotFound';
+import Order from '../../components/Order/Order';
 
 const Main = (): JSX.Element => {
   const { items, status } = useAppSelector((state) => state.booksReducer);
@@ -24,10 +25,15 @@ const Main = (): JSX.Element => {
       {status === 'null' ? null : status === 'error' ? (
         <BooksNotFound />
       ) : (
-        <div className={styles.container}>
-          {' '}
-          {status === 'loading' ? skeleton : <Card book={items} />}
-        </div>
+        <>
+          <div className={styles.top}>
+            <Order />
+            <div>Nav</div>
+          </div>
+          <div className={styles.container}>
+            {status === 'loading' ? skeleton : <Card book={items} />}
+          </div>
+        </>
       )}
     </>
   );

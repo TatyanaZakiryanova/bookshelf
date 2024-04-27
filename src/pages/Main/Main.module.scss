@@ -1,6 +1,12 @@
 @import '../../styles/components/button.scss';
 @import '../../styles/variables.scss';
 
+.top {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 190px;
+}
+
 .container {
     width: 70%;
     margin: 0 auto;
