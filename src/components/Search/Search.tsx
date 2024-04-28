@@ -11,6 +11,7 @@ const Search = () => {
 
   const { search } = useAppSelector((state) => state.searchReducer);
   const sort = useAppSelector((state) => state.searchReducer.orderBy);
+  const filterval = useAppSelector((state) => state.searchReducer.filter);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -25,7 +26,8 @@ const Search = () => {
 
   const getBooks = async () => {
     const orderBy = sort.parameter;
-    dispatch(fetchBooks({ search, orderBy }));
+    const filter = filterval.value;
+    dispatch(fetchBooks({ search, orderBy, filter }));
   };
 
   const searchKey = (e: KeyboardEvent) => {

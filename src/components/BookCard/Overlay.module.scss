@@ -14,6 +14,7 @@
     align-items: center;
     justify-content: center;
     animation: zoomIn 0.2s forwards;
+    z-index: 2;
     .inner {
         background-color: rgb(216, 199, 188);
         width: 700px;

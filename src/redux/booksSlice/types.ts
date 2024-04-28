@@ -1,5 +1,5 @@
 import { Book } from '../../pages/Main/types';
-import { OrderParams } from '../searchSlice/types';
+import { FilterParams, OrderParams } from '../searchSlice/types';
 
 export enum Status {
   NULL = 'null',
@@ -16,4 +16,5 @@ export interface BooksState {
 export type SearchParams = {
   search: string;
   orderBy: OrderParams['parameter'];
+  filter: FilterParams['value'];
 };

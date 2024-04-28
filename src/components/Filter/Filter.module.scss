@@ -1,0 +1,27 @@
+@import '../../styles/components/button.scss';
+@import '../../styles/variables.scss';
+
+.filter {
+    .active {
+        background-color: $maincolor;
+        color: white;
+    }
+    ul {
+        display: flex;
+        li {
+            list-style-type: none;
+            button {
+                @include button;
+                position: relative;
+                top: 20px;
+                font-size: 1.1rem;
+                margin: 0 0 3px 10px;
+                padding: 5px;
+                transition: $transition;
+                &:hover {
+                    background-color: $maincolor;
+                }
+            }
+        }
+    }
+}

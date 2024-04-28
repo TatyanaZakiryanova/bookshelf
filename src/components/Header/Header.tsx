@@ -26,7 +26,7 @@ const Header = () => {
         </Link>
         <div className={styles.title}>
           <h1>BOOKSHELF</h1>
-          <h4>book search service on google books</h4>
+          <h4>e-books search service</h4>
         </div>
       </div>
     </>
