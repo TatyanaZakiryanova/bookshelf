@@ -8,6 +8,7 @@ import styles from './Main.module.scss';
 import BooksNotFound from '../../components/BooksNotFound/BooksNotFound';
 import Order from '../../components/Order/Order';
 import Filter from '../../components/Filter/Filter';
+import Pagination from '../../components/Pagination/Pagination';
 
 const Main = (): JSX.Element => {
   const { items, status } = useAppSelector((state) => state.booksReducer);
@@ -33,6 +34,9 @@ const Main = (): JSX.Element => {
           </div>
           <div className={styles.container}>
             {status === 'loading' ? skeleton : <Card book={items} />}
+          </div>
+          <div>
+            <Pagination />
           </div>
         </>
       )}

@@ -11,6 +11,7 @@ const initialState: ResultsParams = {
     name: 'All books',
     value: FilterEnum.EBOOKS,
   },
+  startIndex: 0,
 };
 
 const searchSlice = createSlice({
@@ -26,9 +27,13 @@ const searchSlice = createSlice({
     setFilterParameter: (state, action: PayloadAction<FilterParams>) => {
       state.filter = action.payload;
     },
+    setStartIndex: (state, action: PayloadAction<number>) => {
+      state.startIndex = action.payload;
+    },
   },
 });
 
-export const { setSearchValue, setOrderParameter, setFilterParameter } = searchSlice.actions;
+export const { setSearchValue, setOrderParameter, setFilterParameter, setStartIndex } =
+  searchSlice.actions;
 
 export default searchSlice.reducer;

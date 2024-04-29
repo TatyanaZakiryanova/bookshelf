@@ -10,8 +10,9 @@ const Search = () => {
   const dispatch = useAppDispatch();
 
   const { search } = useAppSelector((state) => state.searchReducer);
-  const sort = useAppSelector((state) => state.searchReducer.orderBy);
-  const filterval = useAppSelector((state) => state.searchReducer.filter);
+  const orderBy = useAppSelector((state) => state.searchReducer.orderBy.parameter);
+  const filter = useAppSelector((state) => state.searchReducer.filter.value);
+  const startIndex = useAppSelector((state) => state.searchReducer.startIndex);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -25,9 +26,7 @@ const Search = () => {
   };
 
   const getBooks = async () => {
-    const orderBy = sort.parameter;
-    const filter = filterval.value;
-    dispatch(fetchBooks({ search, orderBy, filter }));
+    dispatch(fetchBooks({ search, orderBy, filter, startIndex }));
   };
 
   const searchKey = (e: KeyboardEvent) => {

@@ -1,8 +1,6 @@
-import { useEffect } from 'react';
 import { setFilterParameter } from '../../redux/searchSlice/searchSlice';
 import { FilterEnum, FilterParams } from '../../redux/searchSlice/types';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { fetchBooks } from '../../redux/booksSlice/asyncActions';
 import styles from './Filter.module.scss';
 
 const filterBy: FilterParams[] = [
@@ -30,17 +28,11 @@ const filterBy: FilterParams[] = [
 
 const Filter = () => {
   const dispatch = useAppDispatch();
-  const { search } = useAppSelector((state) => state.searchReducer);
-  const orderBy = useAppSelector((state) => state.searchReducer.orderBy.parameter);
   const filter = useAppSelector((state) => state.searchReducer.filter.value);
 
   const onClickFilter = (obj: FilterParams) => {
     dispatch(setFilterParameter(obj));
   };
-
-  useEffect(() => {
-    dispatch(fetchBooks({ search, orderBy, filter }));
-  }, [filter]);
 
   return (
     <>

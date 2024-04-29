@@ -17,4 +17,5 @@ export type SearchParams = {
   search: string;
   orderBy: OrderParams['parameter'];
   filter: FilterParams['value'];
+  startIndex: number;
 };

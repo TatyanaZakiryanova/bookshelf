@@ -25,4 +25,5 @@ export interface ResultsParams {
   search: string;
   orderBy: OrderParams;
   filter: FilterParams;
+  startIndex: number;
 }

@@ -19,17 +19,18 @@ const order: OrderParams[] = [
 const Order = () => {
   const dispatch = useAppDispatch();
   const { search } = useAppSelector((state) => state.searchReducer);
+  const filter = useAppSelector((state) => state.searchReducer.filter.value);
+  const startIndex = useAppSelector((state) => state.searchReducer.startIndex);
   const ordervalue = useAppSelector((state) => state.searchReducer.orderBy);
   const orderBy = ordervalue.parameter;
-  const filter = useAppSelector((state) => state.searchReducer.filter.value);
 
   const onClickOrder = (obj: OrderParams) => {
     dispatch(setOrderParameter(obj));
   };
 
   useEffect(() => {
-    dispatch(fetchBooks({ search, orderBy, filter }));
-  }, [orderBy]);
+    dispatch(fetchBooks({ search, orderBy, filter, startIndex }));
+  }, [orderBy, filter, startIndex]);
 
   return (
     <>
