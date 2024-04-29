@@ -5,7 +5,7 @@ import { fetchBooks } from './asyncActions';
 
 const initialState: BooksState = {
   items: [],
-  status: Status.NULL,
+  status: Status.IDLE,
 };
 
 const booksSlice = createSlice({

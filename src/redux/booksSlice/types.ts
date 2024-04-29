@@ -2,7 +2,7 @@ import { Book } from '../../pages/Main/types';
 import { FilterParams, OrderParams } from '../searchSlice/types';
 
 export enum Status {
-  NULL = 'null',
+  IDLE = 'idle',
   LOADING = 'loading',
   SUCCESS = 'success',
   ERROR = 'error',

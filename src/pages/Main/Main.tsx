@@ -24,7 +24,7 @@ const Main = (): JSX.Element => {
         <MdFavorite className={styles.icon} />
         {addedItems}
       </Link>
-      {status === 'null' ? null : status === 'error' ? (
+      {status === 'idle' ? null : status === 'error' ? (
         <BooksNotFound />
       ) : (
         <>
