@@ -1,8 +1,9 @@
-import { Book } from '../../pages/Main/types';
-import { addItem } from '../../redux/favSlice/favSlice';
-import { FavItem } from '../../redux/favSlice/types';
-import { useAppDispatch } from '../../redux/store';
-import { AddToFavoritesFunction } from '../Card/Card';
+import { Book } from '../pages/Main/types';
+import { addItem } from '../redux/favSlice/favSlice';
+import { FavItem } from '../redux/favSlice/types';
+import { useAppDispatch } from '../redux/store';
+
+type AddToFavoritesFunction = (item: Book) => void;
 
 const useFavorites = () => {
   const dispatch = useAppDispatch();

@@ -8,6 +8,8 @@
     width: 250px;
     img {
         margin: 5px;
+        height: 180px;
+        width: 130px;
     }
     button {
         @include button;

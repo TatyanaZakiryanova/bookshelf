@@ -1,9 +1,9 @@
 import { MouseEventHandler } from 'react';
 import styles from './Overlay.module.scss';
-import { useAppSelector } from '../../redux/store';
 import { MdFavorite } from 'react-icons/md';
 import { Book } from '../../pages/Main/types';
-import useFavorites from '../hooks/useFavorites';
+import useFavorites from '../../hooks/useFavorites';
+import { findAddedBook } from '../../redux/favSlice/selectors';
 
 const BookCard = ({
   show,
@@ -16,8 +16,6 @@ const BookCard = ({
 }) => {
   const { addToFavorites } = useFavorites();
 
-  const findAddedBook = (id: string) =>
-    useAppSelector((state) => state.favReducer.items.find((item) => item.id === id));
   const addedBook = findAddedBook(item.id);
   const addedValue = addedBook ? `In favorites: ${addedBook.count}` : 'Add to favorites';
 

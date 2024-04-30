@@ -38,7 +38,7 @@ const FavBook: React.FC<FavItem> = ({
       <p className={styles.title}>{title}</p>
       <div className={styles.inform}>
         <p className={styles.authors}>Authors: {authors}</p>
-        <p className={styles.amount}>Amount: {amount} ₽</p>
+        <p className={styles.amount}>Price: {amount}</p>
         <p className={styles.publisher}>Publisher: {publisher}</p>
         <p>{publishedDate}</p>
         <p className={styles.previewLink}>

@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/components/favicon.scss';
 
 .card {
     padding: 0.5rem;
@@ -17,18 +18,16 @@
         cursor: pointer;
     }
     .inform {
-            .addtofav {
-                background-color: rgba(0, 0, 0, 0.4);
-                color: rgba(255, 255, 255, 0.5);
-                font-size: 25px;
-                transition: $transition;
-                position: absolute;
-                top: 15px;
-                right: 25px;
-                cursor: pointer;
+        .addtofav {
+            @include favicon;
+            color: rgba(255, 255, 255, 0.5);
                 &:hover {
                     color: white;
                 }
+        }
+        .added {
+            @include favicon;
+            color: white;
         }
         .title {
             font-size: 20px;

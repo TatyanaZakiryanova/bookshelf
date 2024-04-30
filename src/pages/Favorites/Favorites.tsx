@@ -6,6 +6,7 @@ import { FavItem } from '../../redux/favSlice/types';
 import FavBook from '../../components/Favorites/FavBook';
 import { Link } from 'react-router-dom';
 import styles from './Favorites.module.scss';
+import { FaCoins } from 'react-icons/fa6';
 
 const Favorites = () => {
   const items = useAppSelector((state) => state.favReducer.items);
@@ -36,7 +37,10 @@ const Favorites = () => {
           <FavBook key={item.id} {...item} />
         ))}
       </div>
-      <div className={styles.total}>Added books worth: {total} &#8381;</div>
+      <div className={styles.total}>
+        <FaCoins />
+        Added books worth: {total}
+      </div>
       <div className={styles.bottom}>
         <button className={styles.back}>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>

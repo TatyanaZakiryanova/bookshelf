@@ -1,0 +1,9 @@
+@mixin favicon() {
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 25px;
+    transition: $transition;
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    cursor: pointer;
+}
