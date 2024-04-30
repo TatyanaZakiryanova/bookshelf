@@ -1,37 +1,21 @@
 import { MouseEventHandler } from 'react';
 import styles from './Overlay.module.scss';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
-import { addItem } from '../../redux/favSlice/favSlice';
+import { useAppSelector } from '../../redux/store';
 import { MdFavorite } from 'react-icons/md';
 import { Book } from '../../pages/Main/types';
-import { FavItem } from '../../redux/favSlice/types';
+import { AddToFavoritesFunction } from '../Card/Card';
 
 const BookCard = ({
   show,
   item,
   onClose,
+  addToFavorites,
 }: {
   show: Boolean;
   item: Book;
   onClose: MouseEventHandler;
+  addToFavorites: AddToFavoritesFunction;
 }) => {
-  const dispatch = useAppDispatch();
-
-  const addToFavorites = () => {
-    const book: FavItem = {
-      id: item.id,
-      title: item.volumeInfo.title,
-      authors: item.volumeInfo.authors,
-      thumbnail: item.volumeInfo.imageLinks.thumbnail,
-      publisher: item.volumeInfo.publisher,
-      publishedDate: item.volumeInfo.publishedDate,
-      previewLink: item.volumeInfo.previewLink,
-      amount: item.saleInfo.listPrice.amount,
-      count: 0,
-    };
-    dispatch(addItem(book));
-  };
-
   const findAddedBook = (id: string) =>
     useAppSelector((state) => state.favReducer.items.find((item) => item.id === id));
   const addedBook = findAddedBook(item.id);
@@ -41,7 +25,7 @@ const BookCard = ({
     return null;
   }
 
-  let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+  let thumbnail = item.volumeInfo.imageLinks?.smallThumbnail;
 
   return (
     <>
@@ -62,7 +46,7 @@ const BookCard = ({
                 <button className={styles.page}>Go to book page</button>
               </a>
               <br />
-              <button onClick={addToFavorites} className={styles.added}>
+              <button onClick={() => addToFavorites(item)} className={styles.added}>
                 <MdFavorite />
                 {addedValue}
               </button>

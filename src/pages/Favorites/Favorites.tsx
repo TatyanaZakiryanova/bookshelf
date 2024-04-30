@@ -19,7 +19,7 @@ const Favorites = () => {
     }
   };
 
-  if (!total) {
+  if (!items || items.length === 0) {
     return <NotFavorites />;
   }
 

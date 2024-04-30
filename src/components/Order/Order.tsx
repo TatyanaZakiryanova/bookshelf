@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { setOrderParameter } from '../../redux/searchSlice/searchSlice';
 import { fetchBooks } from '../../redux/booksSlice/asyncActions';
@@ -24,12 +24,18 @@ const Order = () => {
   const ordervalue = useAppSelector((state) => state.searchReducer.orderBy);
   const orderBy = ordervalue.parameter;
 
+  const [initialQueryDone, setInitialQueryDone] = useState(false);
+
   const onClickOrder = (obj: OrderParams) => {
     dispatch(setOrderParameter(obj));
   };
 
   useEffect(() => {
-    dispatch(fetchBooks({ search, orderBy, filter, startIndex }));
+    if (initialQueryDone) {
+      dispatch(fetchBooks({ search, orderBy, filter, startIndex }));
+    } else {
+      setInitialQueryDone(true);
+    }
   }, [orderBy, filter, startIndex]);
 
   return (
