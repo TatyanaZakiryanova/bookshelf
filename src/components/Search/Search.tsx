@@ -1,4 +1,4 @@
-import { ChangeEvent, useRef, KeyboardEvent } from 'react';
+import { ChangeEvent, useRef, KeyboardEvent, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { setSearchValue } from '../../redux/searchSlice/searchSlice';
 import { fetchBooks } from '../../redux/booksSlice/asyncActions';
@@ -9,21 +9,23 @@ import styles from './Search.module.scss';
 const Search = () => {
   const dispatch = useAppDispatch();
 
-  const { search } = useAppSelector((state) => state.searchReducer);
+  const { search, startIndex } = useAppSelector((state) => state.searchReducer);
   const orderBy = useAppSelector((state) => state.searchReducer.orderBy.parameter);
   const filter = useAppSelector((state) => state.searchReducer.filter.value);
-  const startIndex = useAppSelector((state) => state.searchReducer.startIndex);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const setValue = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchValue(e.target.value));
-  };
+  const setValue = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      dispatch(setSearchValue(e.target.value));
+    },
+    [dispatch],
+  );
 
-  const clearInput = () => {
+  const clearInput = useCallback(() => {
     dispatch(setSearchValue(''));
     inputRef.current?.focus();
-  };
+  }, [dispatch]);
 
   const getBooks = async () => {
     dispatch(fetchBooks({ search, orderBy, filter, startIndex }));

@@ -18,9 +18,8 @@ const order: OrderParams[] = [
 
 const Order = () => {
   const dispatch = useAppDispatch();
-  const { search } = useAppSelector((state) => state.searchReducer);
+  const { search, startIndex } = useAppSelector((state) => state.searchReducer);
   const filter = useAppSelector((state) => state.searchReducer.filter.value);
-  const startIndex = useAppSelector((state) => state.searchReducer.startIndex);
   const ordervalue = useAppSelector((state) => state.searchReducer.orderBy);
   const orderBy = ordervalue.parameter;
 
