@@ -1,8 +1,8 @@
-import styles from './Overlay.module.scss';
 import { MdFavorite } from 'react-icons/md';
 import { Book } from '../../pages/Main/types';
 import useFavorites from '../../hooks/useFavorites';
 import { findAddedBook } from '../../redux/favSlice/selectors';
+import styles from './BookCard.module.scss';
 
 const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const { addToFavorites } = useFavorites();

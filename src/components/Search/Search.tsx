@@ -35,7 +35,7 @@ const Search = () => {
   };
 
   const getBooks = async () => {
-    dispatch(fetchBooks({ search, orderBy, filter, startIndex, langRestrict }));
+    await dispatch(fetchBooks({ search, orderBy, filter, startIndex, langRestrict }));
   };
 
   const searchKey = (e: KeyboardEvent) => {

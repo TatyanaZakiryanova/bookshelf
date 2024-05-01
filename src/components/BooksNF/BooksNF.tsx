@@ -7,7 +7,7 @@ const BooksNotFound = () => {
       <div className={styles.error}>
         <TbBookOff size={120} />
         Books not found
-        <p className={styles.bottom}>Please try another query</p>
+        <p className={styles.bottom}>Please try again later</p>
       </div>
     </>
   );

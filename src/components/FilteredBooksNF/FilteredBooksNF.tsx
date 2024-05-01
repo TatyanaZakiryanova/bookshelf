@@ -6,7 +6,7 @@ const FilteredBooksNF = () => {
     <div className={styles.error}>
       <GiBookshelf size={130} />
       <br />
-      No books were found for this filter.
+      No books were found for this query.
     </div>
   );
 };
