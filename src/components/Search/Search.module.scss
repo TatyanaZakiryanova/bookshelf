@@ -9,19 +9,13 @@
     input {
        width: 500px;
        height: 50px;
-       padding: 0 0.5rem;
-       margin: 0 0.5rem;
+       padding: 0 8px;
+       margin: 0 8px;
        border: none;
        &:focus {
         outline: none;
        }
     @media screen and (max-width: 430px) {
-        width: 250px;
-    }
-    @media screen and (max-width: 390px) {
-        width: 250px;
-    }
-    @media screen and (max-width: 360px) {
         width: 250px;
     }
 }
@@ -36,13 +30,9 @@
         &:hover {
             color: white;
         }
-        @media screen and (max-width: 390px) {
-            width: 40px;
-            font-size: 10px;
-        }
-        @media screen and (max-width: 360px) {
-            width: 40px;
-            font-size: 10px;
+        @media screen and (max-width: 430px) {
+            width: 50px;
+            font-size: 13px;
         }
     }
     .clear {

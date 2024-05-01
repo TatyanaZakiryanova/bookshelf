@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux';
 import { setFilterParameter } from '../../redux/searchSlice/searchSlice';
 import { FilterEnum, FilterParams } from '../../redux/searchSlice/types';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import styles from './Filter.module.scss';
+import { filterSelector } from '../../redux/searchSlice/selectors';
 
 const filterBy: FilterParams[] = [
   {
@@ -28,7 +30,7 @@ const filterBy: FilterParams[] = [
 
 const Filter = () => {
   const dispatch = useAppDispatch();
-  const filter = useAppSelector((state) => state.searchReducer.filter.value);
+  const filter = useSelector(filterSelector);
 
   const onClickFilter = (obj: FilterParams) => {
     dispatch(setFilterParameter(obj));
@@ -42,7 +44,7 @@ const Filter = () => {
             <li key={i}>
               <button
                 onClick={() => onClickFilter(obj)}
-                className={filter === obj.value ? styles.active : ''}
+                className={filter.value === obj.value ? styles.active : ''}
               >
                 {obj.name}
               </button>

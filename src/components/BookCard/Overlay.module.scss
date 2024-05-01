@@ -7,9 +7,7 @@
     position: fixed;
     left: 0;
     top: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(150deg, rgba(1, 1, 1, 0.1), rgba(138, 113, 113, 0.1));
+    background-color: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,27 +15,26 @@
     z-index: 2;
     .inner {
         background-color: rgb(216, 199, 188);
-        width: 700px;
+        width: 750px;
         height: 500px;
-        padding: 1.5rem;
-        position: relative;
+        padding: 20px;
         box-sizing: border-box;
         overflow: auto;
-        font-size: 1rem;
         .close {
             @include button;
-            margin-bottom: $bottom;
+            font-size: 13px;
             width: 35px;
             height: 35px;
+            margin-bottom: $bottom;
+            &:hover {
+                background-color: white;
+            }
         }
         .inform {
           display: flex;
           justify-content: space-evenly;
         .info {
             margin-bottom: $bottom;
-            a {
-                text-decoration: none;
-            }
             .page,
             .added {
                 @include button;
@@ -46,8 +43,10 @@
                 justify-content: center;
                 width: 200px;
                 height: 40px;
-                padding: 0.5rem;
                 margin-top: 5px;
+                &:hover {
+                    background-color: white;
+                }
             }        
          }
         img {

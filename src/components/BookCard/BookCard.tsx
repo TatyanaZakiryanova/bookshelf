@@ -1,27 +1,14 @@
-import { MouseEventHandler } from 'react';
 import styles from './Overlay.module.scss';
 import { MdFavorite } from 'react-icons/md';
 import { Book } from '../../pages/Main/types';
 import useFavorites from '../../hooks/useFavorites';
 import { findAddedBook } from '../../redux/favSlice/selectors';
 
-const BookCard = ({
-  show,
-  item,
-  onClose,
-}: {
-  show: Boolean;
-  item: Book;
-  onClose: MouseEventHandler;
-}) => {
+const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const { addToFavorites } = useFavorites();
 
   const addedBook = findAddedBook(item.id);
   const addedValue = addedBook ? `In favorites: ${addedBook.count}` : 'Add to favorites';
-
-  if (!show) {
-    return null;
-  }
 
   let thumbnail = item.volumeInfo.imageLinks?.smallThumbnail;
 

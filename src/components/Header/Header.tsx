@@ -1,10 +1,12 @@
 import { FaBook } from 'react-icons/fa';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../redux/store';
 import { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
+import { favItemsSelector } from '../../redux/favSlice/selectors';
+
 const Header = () => {
-  const { items } = useAppSelector((state) => state.favReducer);
+  const items = useSelector(favItemsSelector);
 
   const isMounted = useRef(false);
 

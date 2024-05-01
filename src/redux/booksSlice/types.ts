@@ -1,5 +1,5 @@
 import { Book } from '../../pages/Main/types';
-import { FilterParams, OrderParams } from '../searchSlice/types';
+import { FilterParams, LangParams, OrderParams } from '../searchSlice/types';
 
 export enum Status {
   IDLE = 'idle',
@@ -18,4 +18,5 @@ export type SearchParams = {
   orderBy: OrderParams['parameter'];
   filter: FilterParams['value'];
   startIndex: number;
+  langRestrict: LangParams['value'];
 };

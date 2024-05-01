@@ -31,27 +31,25 @@ const FavBook: React.FC<FavItem> = ({
 
   return (
     <div className={styles.item}>
-      <div className={styles.delete}>
+      <div>
         <button onClick={deleteItem}>X</button>
       </div>
       <img src={thumbnail} />
       <p className={styles.title}>{title}</p>
       <div className={styles.inform}>
-        <p className={styles.authors}>Authors: {authors}</p>
+        <p>Authors: {authors}</p>
         <p className={styles.amount}>Price: {amount}</p>
-        <p className={styles.publisher}>Publisher: {publisher}</p>
+        <p>Publisher: {publisher}</p>
         <p>{publishedDate}</p>
         <p className={styles.previewLink}>
           <a href={previewLink} target="_blank" className={styles.bookpage}>
             ➥ Book page
           </a>
         </p>
-        <p className={styles.count}>Number: {count}</p>
-        <div className={styles.number}>
-          <button onClick={plusItem} className={styles.plus}>
-            +
-          </button>
-          <button onClick={minusItem} disabled={count === 1} className={styles.minus}>
+        <p>Number: {count}</p>
+        <div>
+          <button onClick={plusItem}>+</button>
+          <button onClick={minusItem} disabled={count === 1}>
             -
           </button>
         </div>

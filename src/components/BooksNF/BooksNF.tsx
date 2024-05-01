@@ -1,5 +1,5 @@
 import { TbBookOff } from 'react-icons/tb';
-import styles from './BooksNotFound.module.scss';
+import styles from './BooksNF.module.scss';
 
 const BooksNotFound = () => {
   return (

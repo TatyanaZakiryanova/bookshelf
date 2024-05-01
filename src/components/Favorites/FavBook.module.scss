@@ -7,16 +7,17 @@
     background-color: $opacity;
     width: 250px;
     img {
-        margin: 5px;
+        margin: 5px 0;
         height: 180px;
         width: 130px;
     }
     button {
         @include button;
+        margin: 5px 5px 10px 0;
         padding: 5px;
-        margin: 5px;
         width: 35px;
         height: 35px;
+        font-size: 1rem;
         &:hover {
             background-color: white;
         }

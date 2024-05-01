@@ -1,5 +1,5 @@
 import { clearList } from '../../redux/favSlice/favSlice';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import NotFavorites from '../../components/Favorites/NotFavorites';
 import { MdFavorite } from 'react-icons/md';
 import { FavItem } from '../../redux/favSlice/types';
@@ -7,10 +7,12 @@ import FavBook from '../../components/Favorites/FavBook';
 import { Link } from 'react-router-dom';
 import styles from './Favorites.module.scss';
 import { FaCoins } from 'react-icons/fa6';
+import { useSelector } from 'react-redux';
+import { favItemsSelector, favTotalSelector } from '../../redux/favSlice/selectors';
 
 const Favorites = () => {
-  const items = useAppSelector((state) => state.favReducer.items);
-  const total = useAppSelector((state) => state.favReducer.total);
+  const items = useSelector(favItemsSelector);
+  const total = useSelector(favTotalSelector);
 
   const dispatch = useAppDispatch();
 

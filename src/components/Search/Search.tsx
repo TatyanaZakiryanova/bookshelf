@@ -1,17 +1,27 @@
 import { ChangeEvent, useRef, KeyboardEvent } from 'react';
-import { useAppDispatch, useAppSelector } from '../../redux/store';
+import { useAppDispatch } from '../../redux/store';
 import { setSearchValue } from '../../redux/searchSlice/searchSlice';
 import { fetchBooks } from '../../redux/booksSlice/asyncActions';
 import { FaDeleteLeft } from 'react-icons/fa6';
 import { GrSearch } from 'react-icons/gr';
 import styles from './Search.module.scss';
+import { useSelector } from 'react-redux';
+import {
+  filterValueSelector,
+  langRestrictValueSelector,
+  orderByParameterSelector,
+  searchSelector,
+  startIndexSelector,
+} from '../../redux/searchSlice/selectors';
 
 const Search = () => {
   const dispatch = useAppDispatch();
 
-  const { search, startIndex } = useAppSelector((state) => state.searchReducer);
-  const orderBy = useAppSelector((state) => state.searchReducer.orderBy.parameter);
-  const filter = useAppSelector((state) => state.searchReducer.filter.value);
+  const search = useSelector(searchSelector);
+  const startIndex = useSelector(startIndexSelector);
+  const filter = useSelector(filterValueSelector);
+  const langRestrict = useSelector(langRestrictValueSelector);
+  const orderBy = useSelector(orderByParameterSelector);
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -25,7 +35,7 @@ const Search = () => {
   };
 
   const getBooks = async () => {
-    dispatch(fetchBooks({ search, orderBy, filter, startIndex }));
+    dispatch(fetchBooks({ search, orderBy, filter, startIndex, langRestrict }));
   };
 
   const searchKey = (e: KeyboardEvent) => {

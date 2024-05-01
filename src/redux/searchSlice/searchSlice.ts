@@ -1,5 +1,13 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { FilterEnum, FilterParams, OrderEnum, OrderParams, ResultsParams } from './types';
+import {
+  FilterEnum,
+  FilterParams,
+  LangEnum,
+  LangParams,
+  OrderEnum,
+  OrderParams,
+  ResultsParams,
+} from './types';
 
 const initialState: ResultsParams = {
   search: '',
@@ -12,6 +20,10 @@ const initialState: ResultsParams = {
     value: FilterEnum.EBOOKS,
   },
   startIndex: 0,
+  langRestrict: {
+    name: 'All',
+    value: LangEnum.ALL,
+  },
 };
 
 const searchSlice = createSlice({
@@ -30,10 +42,18 @@ const searchSlice = createSlice({
     setStartIndex: (state, action: PayloadAction<number>) => {
       state.startIndex = action.payload;
     },
+    setLanguageValue: (state, action: PayloadAction<LangParams>) => {
+      state.langRestrict = action.payload;
+    },
   },
 });
 
-export const { setSearchValue, setOrderParameter, setFilterParameter, setStartIndex } =
-  searchSlice.actions;
+export const {
+  setSearchValue,
+  setOrderParameter,
+  setFilterParameter,
+  setStartIndex,
+  setLanguageValue,
+} = searchSlice.actions;
 
 export default searchSlice.reducer;

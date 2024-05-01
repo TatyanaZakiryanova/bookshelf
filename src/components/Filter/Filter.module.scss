@@ -27,6 +27,9 @@
                 &:hover {
                     background-color: $maincolor;
                 }
+                @media screen and (max-width: 1024px) {
+                    font-size: 13px;
+                }
                 @media screen and (max-width: 430px) {
                     margin: 0;
                     font-size: 1rem;

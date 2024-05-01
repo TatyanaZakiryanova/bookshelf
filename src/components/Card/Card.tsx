@@ -9,7 +9,7 @@ import FilteredBooksNF from '../FilteredBooksNF/FilteredBooksNF';
 
 const Card = ({ book }: { book: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
-  const [bookItem, setBookItem] = useState<Book>(Object);
+  const [bookItem, setBookItem] = useState<Book | null>(null);
   const { addToFavorites } = useFavorites();
 
   const memoizedThumbnails = useMemo(() => {
@@ -20,26 +20,25 @@ const Card = ({ book }: { book: Book[] }) => {
     }
   }, [book]);
 
+  const handleBookClick = (book: Book) => {
+    setShow(true);
+    setBookItem(book);
+  };
+
   return (
     <>
       {book && book.length > 0 ? (
         book.map((item: Book, index: number) => {
           let thumbnail = memoizedThumbnails[index];
           let amount = item.saleInfo?.listPrice?.amount;
-          let author = item.volumeInfo?.authors;
+          let author = item.volumeInfo?.authors?.slice(0, 5).join(', ');
           const added = findAddedBook(item.id);
 
           if (thumbnail) {
             return (
               <div key={item.id}>
                 <div className={styles.card}>
-                  <img
-                    src={thumbnail}
-                    onClick={() => {
-                      setShow(true);
-                      setBookItem(item);
-                    }}
-                  />{' '}
+                  <img src={thumbnail} onClick={() => handleBookClick(item)} />{' '}
                   <div className={styles.inform}>
                     <MdOutlineFavorite
                       className={added ? styles.added : styles.addtofav}
@@ -47,10 +46,9 @@ const Card = ({ book }: { book: Book[] }) => {
                     />
                     <h3 className={styles.title}>{item.volumeInfo.title}</h3>
                     <h4 className={styles.author}>{author}</h4>
-                    <h4 className={styles.amount}>{amount || '0'}</h4>
+                    <h4 className={styles.amount}>{amount || 'Free'}</h4>
                   </div>
                 </div>
-                <BookCard show={show} item={bookItem} onClose={() => setShow(false)} />
               </div>
             );
           }
@@ -58,6 +56,7 @@ const Card = ({ book }: { book: Book[] }) => {
       ) : (
         <FilteredBooksNF />
       )}
+      {bookItem && show && <BookCard item={bookItem} onClose={() => setShow(false)} />}
     </>
   );
 };

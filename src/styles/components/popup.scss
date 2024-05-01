@@ -1,0 +1,34 @@
+@import '../variables.scss';
+
+@mixin popup() {
+    position: relative;
+    top: 20px;
+    z-index: 1;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    &:hover {
+        .list {
+            display: block;
+        }
+    }
+    .list {
+        display: none;
+        position: absolute;
+        background-color:  rgb(225, 204, 189);
+        padding: 5px 0;
+        min-width: 130px;
+        ul {
+            display: flex;
+            flex-direction: column;
+            li {
+                padding: 8px;
+                list-style-type: none;
+                transition: $transition;
+                &:hover {
+                    background-color: rgba(255, 255, 255, 0.8)
+                }
+            }
+        }
+        }
+    }
