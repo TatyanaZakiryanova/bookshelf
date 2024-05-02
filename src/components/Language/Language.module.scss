@@ -2,7 +2,6 @@
 
 .language {
     @include popup;
-    z-index: 3;
     @media screen and (max-width: 820px) {
         font-size: 13px;
     }

@@ -37,7 +37,7 @@ const Main = (): JSX.Element => {
             <Filter />
           </div>
           <div className={styles.container}>
-            {status === 'loading' ? skeleton : <Card book={items} />}
+            {status === 'loading' ? skeleton : <Card books={items} />}
           </div>
           <div>
             <Pagination />

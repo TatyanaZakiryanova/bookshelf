@@ -37,16 +37,16 @@ const Order = () => {
 
   const [initialQueryDone, setInitialQueryDone] = useState(false);
 
-  const onClickOrder = (obj: OrderParams) => {
-    dispatch(setOrderParameter(obj));
-  };
-
   useEffect(() => {
     if (initialQueryDone) {
       dispatch(fetchBooks({ search, orderBy, filter, startIndex, langRestrict }));
     }
     setInitialQueryDone(true);
   }, [orderBy, filter, startIndex, langRestrict]);
+
+  const onClickOrder = (obj: OrderParams) => {
+    dispatch(setOrderParameter(obj));
+  };
 
   return (
     <>

@@ -7,18 +7,18 @@ import useFavorites from '../../hooks/useFavorites';
 import { findAddedBook } from '../../redux/favSlice/selectors';
 import FilteredBooksNF from '../FilteredBooksNF/FilteredBooksNF';
 
-const Card = ({ book }: { book: Book[] }) => {
+const Card = ({ books }: { books: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
   const [bookItem, setBookItem] = useState<Book | null>(null);
   const { addToFavorites } = useFavorites();
 
   const memoizedThumbnails = useMemo(() => {
-    if (book && book.length > 0) {
-      return book.map((item) => item.volumeInfo.imageLinks?.smallThumbnail);
+    if (books && books.length > 0) {
+      return books.map((item) => item.volumeInfo.imageLinks?.smallThumbnail);
     } else {
       return [];
     }
-  }, [book]);
+  }, [books]);
 
   const handleBookClick = (book: Book) => {
     setShow(true);
@@ -27,8 +27,8 @@ const Card = ({ book }: { book: Book[] }) => {
 
   return (
     <>
-      {book && book.length > 0 ? (
-        book.map((item: Book, index: number) => {
+      {books && books.length > 0 ? (
+        books.map((item: Book, index: number) => {
           let thumbnail = memoizedThumbnails[index];
           let amount = item.saleInfo?.listPrice?.amount;
           let author = item.volumeInfo?.authors?.slice(0, 5).join(', ');
