@@ -1,5 +1,5 @@
 import { Book } from '../pages/Main/types';
-import { addItem } from '../redux/favSlice/favSlice';
+import { addItem, removeItem } from '../redux/favSlice/favSlice';
 import { FavItem } from '../redux/favSlice/types';
 import { useAppDispatch } from '../redux/store';
 
@@ -24,7 +24,11 @@ const useFavorites = () => {
     dispatch(addItem(book));
   };
 
-  return { addToFavorites };
+  const removeFromFavorites = (id: string) => {
+    dispatch(removeItem({ id } as FavItem));
+  };
+
+  return { addToFavorites, removeFromFavorites };
 };
 
 export default useFavorites;

@@ -10,7 +10,7 @@ import FilteredBooksNF from '../FilteredBooksNF/FilteredBooksNF';
 const Card = ({ books }: { books: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
   const [bookItem, setBookItem] = useState<Book | null>(null);
-  const { addToFavorites } = useFavorites();
+  const { addToFavorites, removeFromFavorites } = useFavorites();
 
   const memoizedThumbnails = useMemo(() => {
     if (books && books.length > 0) {
@@ -42,7 +42,9 @@ const Card = ({ books }: { books: Book[] }) => {
                   <div className={styles.inform}>
                     <MdOutlineFavorite
                       className={added ? styles.added : styles.addtofav}
-                      onClick={() => addToFavorites(item)}
+                      onClick={
+                        added ? () => removeFromFavorites(item.id) : () => addToFavorites(item)
+                      }
                     />
                     <h3 className={styles.title}>{item.volumeInfo.title}</h3>
                     <h4 className={styles.author}>{author}</h4>
