@@ -1,5 +1,3 @@
-import { clearList } from '../../redux/favSlice/favSlice';
-import { useAppDispatch } from '../../redux/store';
 import NotFavorites from '../../components/Favorites/NotFavorites';
 import { MdFavorite } from 'react-icons/md';
 import { FavItem } from '../../redux/favSlice/types';
@@ -9,17 +7,16 @@ import styles from './Favorites.module.scss';
 import { FaCoins } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 import { favItemsSelector, favTotalSelector } from '../../redux/favSlice/selectors';
+import { useState } from 'react';
+import ClearListModal from '../../components/ModalClear/ClearListModal';
 
 const Favorites = () => {
   const items = useSelector(favItemsSelector);
   const total = useSelector(favTotalSelector);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
-  const dispatch = useAppDispatch();
-
-  const onClickClearList = () => {
-    if (window.confirm('Clear list?')) {
-      dispatch(clearList());
-    }
+  const handleModalClick = () => {
+    setShowModal(true);
   };
 
   if (!items || items.length === 0) {
@@ -49,9 +46,10 @@ const Favorites = () => {
             ← Home
           </Link>
         </button>
-        <button onClick={onClickClearList} className={styles.clear}>
+        <button onClick={handleModalClick} className={styles.clear}>
           Clear list
         </button>
+        {showModal && <ClearListModal onClose={() => setShowModal(false)} />}
       </div>
     </>
   );

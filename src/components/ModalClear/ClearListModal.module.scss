@@ -1,0 +1,58 @@
+@import '../../styles/components/modal.scss';
+@import '../../styles/components/button.scss';
+@import '../../styles/variables.scss';
+
+.modal {
+    @include modal;
+    .content {
+        background-color: rgb(216, 199, 188);
+        width: 300px;
+        height: 200px;
+        padding: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        .close {
+            height: 30px;
+            width: 30px;
+            font-size: 13px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            @include button;
+            width: 80px;
+            font-size: 1.1rem;
+            padding: 6px;
+            transition: $transition;
+             &:hover {
+                color: white;
+            }
+            }
+        }
+        }
+
+@-webkit-keyframes zoomIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+    }
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+    50% {
+        opacity: 1;
+    }
+    }

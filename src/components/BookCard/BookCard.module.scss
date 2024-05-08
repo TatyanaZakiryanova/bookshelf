@@ -1,18 +1,9 @@
 @import '../../styles/components/button.scss';
 @import '../../styles/variables.scss';
+@import '../../styles/components/modal.scss';
 
 .overlay {
-    min-height: 100vh;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    animation: zoomIn 0.2s forwards;
-    z-index: 2;
+    @include modal;
     .inner {
         background-color: rgb(216, 199, 188);
         width: 750px;
