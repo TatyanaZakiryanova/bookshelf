@@ -20,10 +20,10 @@ const Pagination = () => {
       <button onClick={() => onClickPage(0)} disabled={startIndex === 0}>
         <ImFirst size={20} className={styles.arrow} />
       </button>
-      <button onClick={() => onClickPage(startIndex - 20)} disabled={startIndex === 0}>
+      <button onClick={() => onClickPage(startIndex - 40)} disabled={startIndex === 0}>
         <BiSolidLeftArrow size={15} className={styles.arrow} />
       </button>
-      <button onClick={() => onClickPage(startIndex + 20)}>
+      <button onClick={() => onClickPage(startIndex + 40)}>
         <BiSolidRightArrow size={15} className={styles.arrow} />
       </button>
     </div>
