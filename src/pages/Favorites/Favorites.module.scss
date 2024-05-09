@@ -50,6 +50,8 @@
 
 .clear {
     @include button;
+    display: flex;
+    align-items: center;
     margin: 0 50px 50px 0;
     padding: 8px;
     &:hover {

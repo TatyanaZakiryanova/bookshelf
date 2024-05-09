@@ -1,14 +1,16 @@
 import NotFavorites from '../../components/Favorites/NotFavorites';
-import { MdFavorite } from 'react-icons/md';
+import { MdFavorite, MdOutlineAttachMoney } from 'react-icons/md';
 import { FavItem } from '../../redux/favSlice/types';
 import FavBook from '../../components/Favorites/FavBook';
 import { Link } from 'react-router-dom';
 import styles from './Favorites.module.scss';
-import { FaCoins } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 import { favItemsSelector, favTotalSelector } from '../../redux/favSlice/selectors';
 import { useState } from 'react';
 import ClearListModal from '../../components/ModalClear/ClearListModal';
+import { SlArrowLeft } from 'react-icons/sl';
+import { AiOutlineDelete } from 'react-icons/ai';
+import { RiDeleteBin7Line } from 'react-icons/ri';
 
 const Favorites = () => {
   const items = useSelector(favItemsSelector);
@@ -37,16 +39,18 @@ const Favorites = () => {
         ))}
       </div>
       <div className={styles.total}>
-        <FaCoins />
+        <MdOutlineAttachMoney size={27} />
         Added books worth: {total}
       </div>
       <div className={styles.bottom}>
         <button className={styles.back}>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            ← Home
+            <SlArrowLeft size={14} />
+            Home
           </Link>
         </button>
         <button onClick={handleModalClick} className={styles.clear}>
+          <RiDeleteBin7Line />
           Clear list
         </button>
         {showModal && <ClearListModal onClose={() => setShowModal(false)} />}
