@@ -9,7 +9,6 @@ import { favItemsSelector, favTotalSelector } from '../../redux/favSlice/selecto
 import { useState } from 'react';
 import ClearListModal from '../../components/ModalClear/ClearListModal';
 import { SlArrowLeft } from 'react-icons/sl';
-import { AiOutlineDelete } from 'react-icons/ai';
 import { RiDeleteBin7Line } from 'react-icons/ri';
 
 const Favorites = () => {

@@ -1,8 +1,6 @@
 import { useAppDispatch } from '../../redux/store';
 import { clearList } from '../../redux/favSlice/favSlice';
 import styles from './ClearListModal.module.scss';
-import { AiOutlineDelete } from 'react-icons/ai';
-import { MdOutlineDeleteOutline } from 'react-icons/md';
 import { RiDeleteBin7Line } from 'react-icons/ri';
 
 const ClearListModal = ({ onClose }: { onClose: () => void }) => {
