@@ -27,6 +27,7 @@ const order: OrderParams[] = [
 
 const Order = () => {
   const dispatch = useAppDispatch();
+  const [initialQueryDone, setInitialQueryDone] = useState(false);
 
   const search = useSelector(searchSelector);
   const startIndex = useSelector(startIndexSelector);
@@ -34,8 +35,6 @@ const Order = () => {
   const langRestrict = useSelector(langRestrictValueSelector);
   const orderBy = useSelector(orderByParameterSelector);
   const orderName = useSelector(orderByNameSelector);
-
-  const [initialQueryDone, setInitialQueryDone] = useState(false);
 
   useEffect(() => {
     if (initialQueryDone) {

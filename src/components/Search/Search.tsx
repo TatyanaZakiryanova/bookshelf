@@ -10,20 +10,17 @@ import {
   filterValueSelector,
   langRestrictValueSelector,
   orderByParameterSelector,
-  searchSelector,
 } from '../../redux/searchSlice/selectors';
 
 const Search = () => {
   const dispatch = useAppDispatch();
 
   const [localSearch, setLocalSearch] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const search = useSelector(searchSelector);
   const filter = useSelector(filterValueSelector);
   const langRestrict = useSelector(langRestrictValueSelector);
   const orderBy = useSelector(orderByParameterSelector);
-
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLocalSearch(e.target.value);
@@ -62,7 +59,7 @@ const Search = () => {
             onChange={handleInputChange}
             onKeyUp={searchKey}
           />
-          {search && (
+          {localSearch && (
             <span className={styles.clear}>
               <FaDeleteLeft className={styles.clearicon} onClick={clearInput} />
             </span>
