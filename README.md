@@ -12,6 +12,7 @@ Link: https://bookshelfsearch.netlify.app/
 - Redux Toolkit (включая createAsyncThunk для асинхронных запросов)
 - SCSS (Sass)
 - Custom React Hooks
+- React Router
 - Google Books API
 
 ## Preview

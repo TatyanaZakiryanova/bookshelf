@@ -23,12 +23,24 @@ const booksSlice = createSlice({
         state.items = [];
       })
       .addCase(fetchBooks.fulfilled, (state, action) => {
+        const uniqueBooks: Book[] = action.payload.reduce(
+          (accumulator: Book[], currentBook: Book) => {
+            if (!accumulator.some((book) => book.id === currentBook.id)) {
+              accumulator.push(currentBook);
+            }
+            return accumulator;
+          },
+          [],
+        );
         state.status = Status.SUCCESS;
-        state.items = action.payload;
+        state.items = uniqueBooks;
       })
-      .addCase(fetchBooks.rejected, (state) => {
-        state.status = Status.ERROR;
-        state.items = [];
+      .addCase(fetchBooks.rejected, (state, action) => {
+        if (action.payload === 'NO_MORE_BOOKS') {
+          state.status = Status.NO_MORE_BOOKS;
+        } else {
+          state.status = Status.ERROR;
+        }
       });
   },
 });

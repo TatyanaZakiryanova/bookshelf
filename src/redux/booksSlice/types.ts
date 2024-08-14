@@ -5,6 +5,7 @@ export enum Status {
   IDLE = 'idle',
   LOADING = 'loading',
   SUCCESS = 'success',
+  NO_MORE_BOOKS = 'no_more_books',
   ERROR = 'error',
 }
 

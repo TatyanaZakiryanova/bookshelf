@@ -6,10 +6,13 @@ import styles from './Pagination.module.scss';
 import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { ImFirst } from 'react-icons/im';
 import { useEffect } from 'react';
+import { statusSelector } from '../../redux/booksSlice/selectors';
 
 const Pagination = () => {
   const dispatch = useAppDispatch();
   const startIndex = useSelector(startIndexSelector);
+  const status = useSelector(statusSelector);
+  const noMoreBooks = status === 'no_more_books';
 
   const currentPage = Math.floor(startIndex / 40) + 1;
 
@@ -30,7 +33,7 @@ const Pagination = () => {
         <button onClick={() => onClickPage(startIndex - 40)} disabled={startIndex === 0}>
           <BiSolidLeftArrow size={15} className={styles.arrow} />
         </button>
-        <button onClick={() => onClickPage(startIndex + 40)}>
+        <button onClick={() => onClickPage(startIndex + 40)} disabled={noMoreBooks}>
           <BiSolidRightArrow size={15} className={styles.arrow} />
         </button>
       </div>

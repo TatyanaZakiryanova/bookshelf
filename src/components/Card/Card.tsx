@@ -5,12 +5,15 @@ import { Book } from '../../pages/Main/types';
 import { MdOutlineFavorite } from 'react-icons/md';
 import useFavorites from '../../hooks/useFavorites';
 import { findAddedBook } from '../../redux/favSlice/selectors';
-import FilteredBooksNF from '../FilteredBooksNF/FilteredBooksNF';
+import { useSelector } from 'react-redux';
+import { statusSelector } from '../../redux/booksSlice/selectors';
+import BooksNM from '../BooksNM/BooksNM';
 
 const Card = ({ books }: { books: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
   const [bookItem, setBookItem] = useState<Book | null>(null);
   const { addToFavorites, removeFromFavorites } = useFavorites();
+  const status = useSelector(statusSelector);
 
   const memoizedThumbnails = useMemo(() => {
     if (books && books.length > 0) {
@@ -27,7 +30,9 @@ const Card = ({ books }: { books: Book[] }) => {
 
   return (
     <>
-      {books && books.length > 0 ? (
+      {status === 'no_more_books' ? (
+        <BooksNM />
+      ) : books && books.length > 0 ? (
         books.map((item: Book, index: number) => {
           let thumbnail = memoizedThumbnails[index];
           let amount = item.saleInfo?.listPrice?.amount;
@@ -55,9 +60,7 @@ const Card = ({ books }: { books: Book[] }) => {
             );
           }
         })
-      ) : (
-        <FilteredBooksNF />
-      )}
+      ) : null}
       {bookItem && show && <BookCard item={bookItem} onClose={() => setShow(false)} />}
     </>
   );

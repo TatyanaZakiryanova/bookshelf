@@ -1,14 +1,14 @@
 import { GiBookshelf } from 'react-icons/gi';
-import styles from './FilteredBooksNF.module.scss';
+import styles from './BooksNM.module.scss';
 
-const FilteredBooksNF = () => {
+const BooksNoMore = () => {
   return (
     <div className={styles.error}>
       <GiBookshelf size={130} />
       <br />
-      No books were found for this query.
+      No more books available for this query.
     </div>
   );
 };
 
-export default FilteredBooksNF;
+export default BooksNoMore;

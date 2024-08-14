@@ -7,7 +7,7 @@ import styles from './Main.module.scss';
 import Order from '../../components/Order/Order';
 import Filter from '../../components/Filter/Filter';
 import Pagination from '../../components/Pagination/Pagination';
-import BooksNotFound from '../../components/BooksNF/BooksNF';
+import BooksNF from '../../components/BooksNF/BooksNF';
 import Language from '../../components/Language/Language';
 import { useSelector } from 'react-redux';
 import { itemsSelector, statusSelector } from '../../redux/booksSlice/selectors';
@@ -28,7 +28,7 @@ const Main = (): JSX.Element => {
         {addedItems}
       </Link>
       {status === 'idle' ? null : status === 'error' ? (
-        <BooksNotFound />
+        <BooksNF />
       ) : (
         <>
           <div className={styles.top}>
