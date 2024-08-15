@@ -1,6 +1,6 @@
 import { ChangeEvent, useRef, KeyboardEvent, useState } from 'react';
 import { useAppDispatch } from '../../redux/store';
-import { setSearchValue, setStartIndex } from '../../redux/searchSlice/searchSlice';
+import { setSearchValue } from '../../redux/searchSlice/searchSlice';
 import { fetchBooks } from '../../redux/booksSlice/asyncActions';
 import { FaDeleteLeft } from 'react-icons/fa6';
 import { GrSearch } from 'react-icons/gr';
@@ -27,7 +27,6 @@ const Search = () => {
   };
 
   const handleSearchSubmit = async () => {
-    dispatch(setStartIndex(0));
     dispatch(setSearchValue(localSearch));
     await dispatch(
       fetchBooks({ search: localSearch, orderBy, filter, startIndex: 0, langRestrict }),
@@ -37,7 +36,6 @@ const Search = () => {
 
   const clearInput = () => {
     setLocalSearch('');
-    dispatch(setSearchValue(''));
     inputRef.current?.focus();
   };
 

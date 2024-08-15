@@ -32,18 +32,22 @@ const searchSlice = createSlice({
   reducers: {
     setSearchValue(state, action: PayloadAction<string>) {
       state.search = action.payload;
+      state.startIndex = 0;
     },
     setOrderParameter: (state, action: PayloadAction<OrderParams>) => {
       state.orderBy = action.payload;
+      state.startIndex = 0;
     },
     setFilterParameter: (state, action: PayloadAction<FilterParams>) => {
       state.filter = action.payload;
+      state.startIndex = 0;
     },
     setStartIndex: (state, action: PayloadAction<number>) => {
       state.startIndex = action.payload;
     },
     setLanguageValue: (state, action: PayloadAction<LangParams>) => {
       state.langRestrict = action.payload;
+      state.startIndex = 0;
     },
   },
 });
