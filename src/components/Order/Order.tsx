@@ -43,7 +43,7 @@ const Order = () => {
     setInitialQueryDone(true);
   }, [orderBy, filter, startIndex, langRestrict]);
 
-  const onClickOrder = async (obj: OrderParams) => {
+  const onClickOrder = (obj: OrderParams) => {
     dispatch(setOrderParameter(obj));
   };
 

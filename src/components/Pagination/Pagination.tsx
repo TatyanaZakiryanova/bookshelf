@@ -37,7 +37,9 @@ const Pagination = () => {
           <BiSolidRightArrow size={15} className={styles.arrow} />
         </button>
       </div>
-      <div className={styles.page}>{currentPage}</div>
+      <div className={styles.page}>
+        <span className={styles.number}>{currentPage}</span>
+      </div>
     </>
   );
 };
