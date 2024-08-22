@@ -12,11 +12,11 @@ const useFavorites = () => {
     let amount = item.saleInfo?.listPrice?.amount || '0';
     const book: FavItem = {
       id: item.id,
-      title: item.volumeInfo.title,
-      authors: item.volumeInfo.authors,
+      title: item.volumeInfo.title || 'Untitled',
+      authors: item.volumeInfo.authors || 'Unknown author',
       thumbnail: item.volumeInfo.imageLinks.thumbnail,
-      publisher: item.volumeInfo.publisher,
-      publishedDate: item.volumeInfo.publishedDate,
+      publisher: item.volumeInfo.publisher || 'Unknown publisher',
+      publishedDate: item.volumeInfo.publishedDate || 'Unknown published date',
       previewLink: item.volumeInfo.previewLink,
       amount: amount,
       count: 0,

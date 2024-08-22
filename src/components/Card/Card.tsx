@@ -16,11 +16,7 @@ const Card = ({ books }: { books: Book[] }) => {
   const status = useSelector(statusSelector);
 
   const memoizedThumbnails = useMemo(() => {
-    if (books && books.length > 0) {
-      return books.map((item) => item.volumeInfo.imageLinks?.smallThumbnail);
-    } else {
-      return [];
-    }
+    return books.map((item) => item.volumeInfo.imageLinks?.smallThumbnail);
   }, [books]);
 
   const handleBookClick = (book: Book) => {
@@ -35,15 +31,19 @@ const Card = ({ books }: { books: Book[] }) => {
       ) : books && books.length > 0 ? (
         books.map((item: Book, index: number) => {
           let thumbnail = memoizedThumbnails[index];
-          let amount = item.saleInfo?.listPrice?.amount;
-          let author = item.volumeInfo?.authors?.slice(0, 5).join(', ');
+          let amount = item.saleInfo?.listPrice?.amount || 'Free';
+          let author = item.volumeInfo?.authors?.slice(0, 5).join(', ') || 'Unknown author';
           const added = findAddedBook(item.id);
 
           if (thumbnail) {
             return (
               <div key={item.id}>
                 <div className={styles.card}>
-                  <img src={thumbnail} onClick={() => handleBookClick(item)} />{' '}
+                  <img
+                    src={thumbnail}
+                    onClick={() => handleBookClick(item)}
+                    alt={item.volumeInfo.title}
+                  />{' '}
                   <div className={styles.inform}>
                     <MdOutlineFavorite
                       className={added ? styles.added : styles.addtofav}
@@ -53,7 +53,7 @@ const Card = ({ books }: { books: Book[] }) => {
                     />
                     <h3 className={styles.title}>{item.volumeInfo.title}</h3>
                     <h4 className={styles.author}>{author}</h4>
-                    <h4 className={styles.amount}>{amount || 'Free'}</h4>
+                    <h4 className={styles.amount}>{amount}</h4>
                   </div>
                 </div>
               </div>

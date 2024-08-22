@@ -10,7 +10,12 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const addedBook = findAddedBook(item.id);
   const addedValue = addedBook ? `In favorites: ${addedBook.count}` : 'Add to favorites';
 
-  let thumbnail = item.volumeInfo.imageLinks?.smallThumbnail;
+  const thumbnail = item.volumeInfo.imageLinks?.smallThumbnail;
+  const title = item.volumeInfo.title || 'No title available';
+  const authors = item.volumeInfo.authors?.join(', ') || 'Unknown author';
+  const publisher = item.volumeInfo.publisher || 'Unknown publisher';
+  const publishedDate = item.volumeInfo.publishedDate || 'Unknown date';
+  const description = item.volumeInfo.description || 'No description available.';
 
   return (
     <>
@@ -20,14 +25,14 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
             X
           </button>
           <div className={styles.inform}>
-            <img src={thumbnail} />
+            <img src={thumbnail} alt={title} />
             <div className={styles.info}>
-              <h1>{item.volumeInfo.title}</h1>
-              <h3>{item.volumeInfo.authors}</h3>
+              <h1>{title}</h1>
+              <h3>{authors}</h3>
               <h4>
-                {item.volumeInfo.publisher} <span>{item.volumeInfo.publishedDate}</span>
+                {publisher} <span>{publishedDate}</span>
               </h4>
-              <a href={item.volumeInfo.previewLink} target="_blank">
+              <a href={item.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
                 <button className={styles.page}>Go to book page</button>
               </a>
               <br />
@@ -38,7 +43,7 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
               <br />
             </div>
           </div>
-          <h4>{item.volumeInfo.description}</h4>
+          <h4>{description}</h4>
         </div>
       </div>
     </>
