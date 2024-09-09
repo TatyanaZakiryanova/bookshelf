@@ -17,7 +17,7 @@ Link: https://bookshelfsearch.netlify.app/
 
 ## Preview
 
-<img src='./src/assets/images/bookshelfPreview.png' alt="preview">
+<img src='./src/assets/images/bookshelfpreview.PNG' alt="preview">
 
 ## Features
 
