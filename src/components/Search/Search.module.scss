@@ -28,7 +28,7 @@
         align-items: center;
         transition: $transition;
         &:hover {
-            color: white;
+            background-color: rgb(255, 255, 255, 0.9);
         }
         @media screen and (max-width: 430px) {
             width: 50px;
