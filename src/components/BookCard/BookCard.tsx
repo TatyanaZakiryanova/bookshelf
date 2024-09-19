@@ -6,6 +6,7 @@ import styles from './BookCard.module.scss';
 import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { SlArrowLeft } from 'react-icons/sl';
+import PreviewIframe from '../PreviewIframe/PreviewIframe';
 
 const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const { addToFavorites } = useFavorites();
@@ -36,13 +37,7 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
             </button>
           )}
           {showPreview ? (
-            <iframe
-              src={viewerUrl}
-              width="100%"
-              height="600px"
-              allowFullScreen
-              title="Book Preview"
-            ></iframe>
+            <PreviewIframe viewerUrl={viewerUrl} />
           ) : (
             <div className={styles.inform}>
               <img src={thumbnail} alt={title} />
