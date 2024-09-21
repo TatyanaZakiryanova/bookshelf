@@ -1,4 +1,4 @@
-import { MdFavorite, MdPreview } from 'react-icons/md';
+import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 import { Book } from '../../pages/Main/types';
 import useFavorites from '../../hooks/useFavorites';
 import { findAddedBook } from '../../redux/favSlice/selectors';
@@ -7,6 +7,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { SlArrowLeft } from 'react-icons/sl';
 import PreviewIframe from '../PreviewIframe/PreviewIframe';
+import { AiOutlineEye } from 'react-icons/ai';
 
 const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const { addToFavorites } = useFavorites();
@@ -49,7 +50,7 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
                 </h4>
                 <div className={styles.buttons}>
                   <button onClick={() => setShowPreview(true)} className={styles.page}>
-                    <MdPreview size={20} />
+                    <AiOutlineEye size={20} />
                     Preview
                   </button>
                   <a href={item.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
@@ -61,7 +62,7 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
                 </div>
                 <br />
                 <button onClick={() => addToFavorites(item)} className={styles.added}>
-                  <MdFavorite />
+                  {addedBook ? <MdFavorite /> : <MdFavoriteBorder />}
                   {addedValue}
                 </button>
                 <br />
