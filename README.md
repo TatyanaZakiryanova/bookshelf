@@ -18,7 +18,7 @@ Link: https://bookshelfsearch.netlify.app/
 
 ## Preview
 
-<img src='./src/assets/images/bookshelfpreview.PNG' alt="preview">
+<img src='./src/assets/images/bookshelf-preview-1.png' alt="preview">
 
 ## Features
 
@@ -36,6 +36,7 @@ Link: https://bookshelfsearch.netlify.app/
 - Удаление книг из списка избранного
 - Подсчёт стоимости книг, добавленных в список избранного
 - Кастомный хук для управления списком избранного (добавление/удаление)
+- Уникальный пользовательский интерфейс, ориентированный на удобство взаимодействия
 
 ## Purpose & Outcome
 
