@@ -1,13 +1,10 @@
-import { MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 import { Book } from '../../pages/Main/types';
 import useFavorites from '../../hooks/useFavorites';
 import { findAddedBook } from '../../redux/favSlice/selectors';
 import styles from './BookCard.module.scss';
-import { FcGoogle } from 'react-icons/fc';
 import { useState } from 'react';
 import { SlArrowLeft } from 'react-icons/sl';
 import PreviewIframe from '../PreviewIframe/PreviewIframe';
-import { AiOutlineEye } from 'react-icons/ai';
 
 const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const { addToFavorites } = useFavorites();
@@ -50,19 +47,17 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
                 </h4>
                 <div className={styles.buttons}>
                   <button onClick={() => setShowPreview(true)} className={styles.page}>
-                    <AiOutlineEye size={20} />
                     Preview
                   </button>
                   <a href={item.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-                    <button className={styles.page}>
-                      <FcGoogle className={styles.icon} />
-                      Book page
-                    </button>
+                    <button className={styles.page}>Book page</button>
                   </a>
                 </div>
                 <br />
-                <button onClick={() => addToFavorites(item)} className={styles.added}>
-                  {addedBook ? <MdFavorite /> : <MdFavoriteBorder />}
+                <button
+                  onClick={() => addToFavorites(item)}
+                  className={addedBook ? styles.added : styles.add}
+                >
                   {addedValue}
                 </button>
                 <br />

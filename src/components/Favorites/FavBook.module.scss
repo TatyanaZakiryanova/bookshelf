@@ -6,10 +6,12 @@
     margin: 10px;
     background-color: $opacity;
     width: 250px;
+    border-radius: 8px;
     img {
         margin: 5px 0;
         height: 180px;
         width: 130px;
+        border-radius: 8px;
     }
     button {
         @include button;

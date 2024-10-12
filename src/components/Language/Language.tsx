@@ -68,7 +68,7 @@ const Language = () => {
     <>
       <div className={styles.language}>
         <span className={styles.title}>
-          <MdLanguage size={20} />
+          <MdLanguage size={18} />
           {langRestrict.name}
         </span>
         <div className={styles.list}>

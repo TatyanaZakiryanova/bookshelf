@@ -4,7 +4,7 @@
 Сервис для поиска и просмотра электронных книг, интегрированный с Google Books API. Сервис разработан для помощи пользователям в поиске литературы по ключевым словам и авторам.
 <br />
 
-Link: https://bookshelfsearch.netlify.app/
+[Deploy](https://bookshelfsearch.netlify.app/)
 
 ## Technologies Used
 
@@ -18,7 +18,7 @@ Link: https://bookshelfsearch.netlify.app/
 
 ## Preview
 
-<img src='./src/assets/images/bookshelf-preview-1.png' alt="preview">
+<img src='./src/assets/images/bookshelfpreview.png' alt="preview">
 
 ## Features
 

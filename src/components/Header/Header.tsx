@@ -1,9 +1,9 @@
-import { FaBook } from 'react-icons/fa';
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { favItemsSelector } from '../../redux/favSlice/selectors';
+import { GiBookCover } from 'react-icons/gi';
 
 const Header = () => {
   const items = useSelector(favItemsSelector);
@@ -22,9 +22,7 @@ const Header = () => {
     <>
       <div className={styles.header}>
         <Link to="/">
-          <div className={styles.icon}>
-            <FaBook className={styles.logo} size={60} />
-          </div>
+          <GiBookCover size={70} className={styles.logo} />
         </Link>
         <div className={styles.title}>
           <h1>BOOKSHELF</h1>

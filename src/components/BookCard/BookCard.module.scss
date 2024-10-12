@@ -11,6 +11,7 @@
         padding: 20px;
         box-sizing: border-box;
         overflow: auto;
+        border-radius: 8px;
         .close {
             @include button;
             font-size: 13px;
@@ -35,6 +36,9 @@
         .inform {
           display: flex;
           justify-content: space-evenly;
+          img {
+            border-radius: 8px;
+          }
         .info {
             margin-bottom: $bottom;
             .buttons {
@@ -56,7 +60,7 @@
                     }
                 }
             }
-            .added {
+            .add, .added {
                 @include button;
                 display: flex;
                 align-items: center;
@@ -64,10 +68,17 @@
                 width: 225px;
                 height: 40px;
                 margin-top: 5px;
+                transition: background-color 0.3s ease;
                 &:hover {
                     background-color: white;
                 }
-            }        
+            }               
+            .added {
+                background-color: $maincolor;
+                &:hover {
+                  background-color: lighten($maincolor, 10%);
+                }
+            }
          }
         img {
             width: 150px;

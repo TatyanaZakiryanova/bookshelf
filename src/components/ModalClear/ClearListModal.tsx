@@ -1,7 +1,6 @@
 import { useAppDispatch } from '../../redux/store';
 import { clearList } from '../../redux/favSlice/favSlice';
 import styles from './ClearListModal.module.scss';
-import { RiDeleteBin7Line } from 'react-icons/ri';
 
 const ClearListModal = ({ onClose }: { onClose: () => void }) => {
   const dispatch = useAppDispatch();
@@ -19,7 +18,6 @@ const ClearListModal = ({ onClose }: { onClose: () => void }) => {
             X
           </button>
           <div className={styles.top}>
-            <RiDeleteBin7Line size={40} />
             <p>Are you sure you want to clear the list?</p>
           </div>
           <div className={styles.buttons}>

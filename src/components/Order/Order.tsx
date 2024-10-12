@@ -13,6 +13,7 @@ import {
   searchSelector,
   startIndexSelector,
 } from '../../redux/searchSlice/selectors';
+import { MdKeyboardArrowDown } from 'react-icons/md';
 
 const order: OrderParams[] = [
   {
@@ -50,7 +51,9 @@ const Order = () => {
   return (
     <>
       <div className={styles.popup}>
-        Order: <span>{orderName}</span>
+        <div className={styles.order}>
+          {orderName} <MdKeyboardArrowDown size={15} />
+        </div>
         <div className={styles.list}>
           <ul>
             {order.map((obj, i) => (

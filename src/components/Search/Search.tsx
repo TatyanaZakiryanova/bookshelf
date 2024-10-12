@@ -3,7 +3,6 @@ import { useAppDispatch } from '../../redux/store';
 import { setSearchValue } from '../../redux/searchSlice/searchSlice';
 import { fetchBooks } from '../../redux/booksSlice/asyncActions';
 import { FaDeleteLeft } from 'react-icons/fa6';
-import { GrSearch } from 'react-icons/gr';
 import styles from './Search.module.scss';
 import { useSelector } from 'react-redux';
 import {
@@ -62,8 +61,8 @@ const Search = () => {
               <FaDeleteLeft className={styles.clearicon} onClick={clearInput} />
             </span>
           )}
-          <button onClick={handleSearchSubmit}>
-            <GrSearch className={styles.searchbutton} size={20} /> Search
+          <button onClick={handleSearchSubmit} className={styles.searchbutton}>
+            Search
           </button>
         </div>
       </div>

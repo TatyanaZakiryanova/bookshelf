@@ -1,50 +1,12 @@
-@import '../../styles/components/button.scss';
-@import '../../styles/variables.scss';
+@import '../../styles/components/popup.scss';
 
-.filter {
-    .active {
-        background-color: $maincolor;
-        color: white;
-    }
-    ul {
+.popup {
+    @include popup;
+    .order {
         display: flex;
-        @media screen and (max-width: 430px) {
-           position: absolute;
-           flex-direction: column;
-           left: 0;
-           top: 390px;
-        }
-        li {
-            list-style-type: none;
-            button {
-                @include button;
-                position: relative;
-                top: 20px;
-                font-size: 1.1rem;
-                margin: 0 0 3px 10px;
-                padding: 5px;
-                transition: $transition;
-                &:hover {
-                    background-color: $maincolor;
-                }
-                @media screen and (max-width: 1024px) {
-                    font-size: 13px;
-                }
-                @media screen and (max-width: 430px) {
-                    margin: 0;
-                    font-size: 1rem;
-                    width: 60px;
-                    margin-bottom: 3px;
-                }
-                @media screen and (max-width: 390px) {
-                    width: 55px;
-                    font-size: 12px;
-                }
-                @media screen and (max-width: 360px) {
-                    width: 50px;
-                    font-size: 12px;
-                } 
-            }
-            }
-        }
+        align-items: center;
     }
+    @media screen and (max-width: 820px) {
+        font-size: 13px;
+     }
+}

@@ -2,7 +2,7 @@
 @import '../../styles/variables.scss';
 
 .search {
-    margin-top: 30px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +12,7 @@
        padding: 0 8px;
        margin: 0 8px;
        border: none;
+       border-radius: 8px;
        &:focus {
         outline: none;
        }
@@ -22,7 +23,7 @@
     button {
         @include button;
         height: 50px;
-        padding: 0.5rem;
+        padding: 20px;
         display: flex;
         justify-content:center;
         align-items: center;

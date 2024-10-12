@@ -12,7 +12,6 @@ const FavBook: React.FC<FavItem> = ({
   amount,
   publisher,
   publishedDate,
-  previewLink,
   count,
 }) => {
   const dispatch = useAppDispatch();
@@ -41,11 +40,7 @@ const FavBook: React.FC<FavItem> = ({
         <p className={styles.amount}>Price: {amount}</p>
         <p>Publisher: {publisher}</p>
         <p>{publishedDate}</p>
-        <p className={styles.previewLink}>
-          <a href={previewLink} target="_blank" className={styles.bookpage}>
-            ➥ Book page
-          </a>
-        </p>
+        <p className={styles.previewLink}></p>
         <p>Number: {count}</p>
         <div>
           <button onClick={plusItem}>+</button>

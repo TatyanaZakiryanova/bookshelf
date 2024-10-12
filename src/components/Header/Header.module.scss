@@ -9,11 +9,12 @@
     background-size: cover;
     flex-wrap: wrap;
     .logo {
-        color: rgb(158, 128, 111)
+        color: rgb(198, 190, 185);
     }
     .title {
         margin: 50px;
         background-color: $opacity;
         min-width: 250px;
+        border-radius: 8px;
     }
 }

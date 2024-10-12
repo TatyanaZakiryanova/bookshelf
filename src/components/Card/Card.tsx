@@ -43,14 +43,14 @@ const Card = ({ books }: { books: Book[] }) => {
                     src={thumbnail}
                     onClick={() => handleBookClick(item)}
                     alt={item.volumeInfo.title}
-                  />{' '}
+                  />
+                  <MdOutlineFavorite
+                    className={added ? styles.added : styles.addtofav}
+                    onClick={
+                      added ? () => removeFromFavorites(item.id) : () => addToFavorites(item)
+                    }
+                  />
                   <div className={styles.inform}>
-                    <MdOutlineFavorite
-                      className={added ? styles.added : styles.addtofav}
-                      onClick={
-                        added ? () => removeFromFavorites(item.id) : () => addToFavorites(item)
-                      }
-                    />
                     <h3 className={styles.title}>{item.volumeInfo.title}</h3>
                     <h4 className={styles.author}>{author}</h4>
                     <h4 className={styles.amount}>{amount}</h4>
