@@ -6,8 +6,10 @@
     @include modal;
     .inner {
         background-color: rgb(216, 199, 188);
-        width: 800px;
-        height: 600px;
+        width: 90%;
+        max-width: 800px;
+        height: auto;
+        max-height: 80vh;
         padding: 20px;
         box-sizing: border-box;
         overflow: auto;
@@ -36,6 +38,11 @@
         .inform {
           display: flex;
           justify-content: space-evenly;
+          h1 {
+            @media screen and (max-width: 430px) {
+                font-size: 20px;
+            }
+          }
           img {
             border-radius: 8px;
           }
@@ -43,6 +50,9 @@
             margin-bottom: $bottom;
             .buttons {
                 display: flex;
+                @media screen and (max-width: 430px) {
+                    flex-direction: column;
+                }
                 .page {
                     @include button;
                     display: flex;
@@ -71,6 +81,10 @@
                 transition: background-color 0.3s ease;
                 &:hover {
                     background-color: white;
+                }
+                @media screen and (max-width: 430px) {
+                    width: 110px;
+                    font-size: 15px;
                 }
             }               
             .added {
