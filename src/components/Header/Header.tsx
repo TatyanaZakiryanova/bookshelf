@@ -1,23 +1,8 @@
 import styles from './Header.module.scss';
 import { Link } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { favItemsSelector } from '../../redux/favSlice/selectors';
 import { GiBookCover } from 'react-icons/gi';
 
 const Header = () => {
-  const items = useSelector(favItemsSelector);
-
-  const isMounted = useRef(false);
-
-  useEffect(() => {
-    if (isMounted.current) {
-      const json = JSON.stringify(items);
-      localStorage.setItem('favorites', json);
-    }
-    isMounted.current = true;
-  }, [items]);
-
   return (
     <>
       <div className={styles.header}>

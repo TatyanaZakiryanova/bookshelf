@@ -16,7 +16,8 @@ import { favItemsSelector } from '../../redux/favSlice/selectors';
 const Main = (): JSX.Element => {
   const items = useSelector(itemsSelector);
   const status = useSelector(statusSelector);
-  const addedItems = useSelector(favItemsSelector).length;
+  const addedItems = useSelector(favItemsSelector);
+  const itemsLength = addedItems ? addedItems.length : 0;
 
   const skeleton = [...new Array(10)].map((_, index) => <Skeleton key={index} />);
 
@@ -25,7 +26,7 @@ const Main = (): JSX.Element => {
       <Search />
       <Link to="favorites" className={styles.favorites}>
         <MdFavorite className={styles.icon} />
-        {addedItems}
+        {itemsLength}
       </Link>
       {status === 'idle' ? null : status === 'error' ? (
         <BooksNF />
