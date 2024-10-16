@@ -9,7 +9,7 @@ const useFavorites = () => {
   const dispatch = useAppDispatch();
 
   const addToFavorites: AddToFavoritesFunction = (item: Book) => {
-    let amount = item.saleInfo?.listPrice?.amount || '0';
+    const amount = item.saleInfo?.listPrice?.amount || '0';
     const book: FavItem = {
       id: item.id,
       title: item.volumeInfo.title || 'Untitled',

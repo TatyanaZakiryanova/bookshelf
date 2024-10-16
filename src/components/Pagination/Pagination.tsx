@@ -12,7 +12,6 @@ const Pagination = () => {
   const dispatch = useAppDispatch();
   const startIndex = useSelector(startIndexSelector);
   const status = useSelector(statusSelector);
-  const noMoreBooks = status === 'no_more_books';
 
   const currentPage = Math.floor(startIndex / 40) + 1;
 
@@ -33,7 +32,7 @@ const Pagination = () => {
         <button onClick={() => onClickPage(startIndex - 40)} disabled={startIndex === 0}>
           <BiSolidLeftArrow size={15} className={styles.arrow} />
         </button>
-        <button onClick={() => onClickPage(startIndex + 40)} disabled={noMoreBooks}>
+        <button onClick={() => onClickPage(startIndex + 40)} disabled={status === 'no_more_books'}>
           <BiSolidRightArrow size={15} className={styles.arrow} />
         </button>
       </div>

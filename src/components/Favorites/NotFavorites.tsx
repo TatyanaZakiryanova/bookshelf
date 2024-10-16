@@ -4,16 +4,12 @@ import { Link } from 'react-router-dom';
 
 const NotFavorites = () => {
   return (
-    <div>
-      <div className={styles.notfav}>
-        <GiBookCover className={styles.icon} />
-        <br />
-        You haven't added books to your favorites yet.
-        <br />
-        <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <button className={styles.back}>Home</button>
-        </Link>
-      </div>
+    <div className={styles.notfav}>
+      <GiBookCover className={styles.icon} />
+      <h3>You haven't added books to your favorites yet.</h3>
+      <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+        <button className={styles.back}>Home</button>
+      </Link>
     </div>
   );
 };

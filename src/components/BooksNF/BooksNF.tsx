@@ -4,8 +4,8 @@ const BooksNotFound = () => {
   return (
     <>
       <div className={styles.error}>
-        Books not found
-        <p className={styles.bottom}>Please try again later</p>
+        <h2>Books not found</h2>
+        <p>Please try again later</p>
       </div>
     </>
   );

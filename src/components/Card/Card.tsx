@@ -30,9 +30,9 @@ const Card = ({ books }: { books: Book[] }) => {
         <BooksNM />
       ) : books && books.length > 0 ? (
         books.map((item: Book, index: number) => {
-          let thumbnail = memoizedThumbnails[index];
-          let amount = item.saleInfo?.listPrice?.amount || 'Free';
-          let author = item.volumeInfo?.authors?.slice(0, 5).join(', ') || 'Unknown author';
+          const thumbnail = memoizedThumbnails[index];
+          const amount = item.saleInfo?.listPrice?.amount || 'Free';
+          const author = item.volumeInfo?.authors?.slice(0, 5).join(', ') || 'Unknown author';
           const added = findAddedBook(item.id);
 
           if (thumbnail) {

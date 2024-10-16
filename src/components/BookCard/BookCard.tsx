@@ -24,8 +24,8 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
 
   return (
     <>
-      <div className={styles.overlay}>
-        <div className={styles.inner}>
+      <div className={styles.overlay} onClick={onClose}>
+        <div className={styles.inner} onClick={(e) => e.stopPropagation()}>
           <button className={styles.close} onClick={onClose}>
             X
           </button>
@@ -53,14 +53,12 @@ const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
                     <button className={styles.page}>Book page</button>
                   </a>
                 </div>
-                <br />
                 <button
                   onClick={() => addToFavorites(item)}
                   className={addedBook ? styles.added : styles.add}
                 >
                   {addedValue}
                 </button>
-                <br />
               </div>
             </div>
           )}
