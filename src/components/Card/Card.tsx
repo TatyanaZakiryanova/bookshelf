@@ -4,16 +4,18 @@ import styles from './Card.module.scss';
 import { Book } from '../../pages/Main/types';
 import { MdOutlineFavorite } from 'react-icons/md';
 import useFavorites from '../../hooks/useFavorites';
-import { findAddedBook } from '../../redux/favSlice/selectors';
 import { useSelector } from 'react-redux';
 import { statusSelector } from '../../redux/booksSlice/selectors';
 import BooksNM from '../BooksNM/BooksNM';
+import { Status } from '../../redux/booksSlice/types';
+import { useFindAddedBook } from '../../hooks/useFindAddedBook';
 
 const Card = ({ books }: { books: Book[] }) => {
   const [show, setShow] = useState<boolean>(false);
   const [bookItem, setBookItem] = useState<Book | null>(null);
   const { addToFavorites, removeFromFavorites } = useFavorites();
   const status = useSelector(statusSelector);
+  const addedBooks = books.map((item) => useFindAddedBook(item.id));
 
   const memoizedThumbnails = useMemo(() => {
     return books.map((item) => item.volumeInfo.imageLinks?.smallThumbnail);
@@ -26,14 +28,14 @@ const Card = ({ books }: { books: Book[] }) => {
 
   return (
     <>
-      {status === 'no_more_books' ? (
+      {status === Status.NO_MORE_BOOKS ? (
         <BooksNM />
       ) : books && books.length > 0 ? (
         books.map((item: Book, index: number) => {
           const thumbnail = memoizedThumbnails[index];
+          const added = addedBooks[index];
           const amount = item.saleInfo?.listPrice?.amount || 'Free';
           const author = item.volumeInfo?.authors?.slice(0, 5).join(', ') || 'Unknown author';
-          const added = findAddedBook(item.id);
 
           if (thumbnail) {
             return (

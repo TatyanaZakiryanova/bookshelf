@@ -1,16 +1,16 @@
 import { Book } from '../../pages/Main/types';
 import useFavorites from '../../hooks/useFavorites';
-import { findAddedBook } from '../../redux/favSlice/selectors';
 import styles from './BookCard.module.scss';
 import { useState } from 'react';
 import { SlArrowLeft } from 'react-icons/sl';
 import PreviewIframe from '../PreviewIframe/PreviewIframe';
+import { useFindAddedBook } from '../../hooks/useFindAddedBook';
 
 const BookCard = ({ item, onClose }: { item: Book; onClose: () => void }) => {
   const { addToFavorites } = useFavorites();
   const [showPreview, setShowPreview] = useState<boolean>(false);
 
-  const addedBook = findAddedBook(item.id);
+  const addedBook = useFindAddedBook(item.id);
   const addedValue = addedBook ? `In favorites: ${addedBook.count}` : 'Add to favorites';
 
   const thumbnail = item.volumeInfo.imageLinks?.smallThumbnail;

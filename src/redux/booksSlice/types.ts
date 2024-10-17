@@ -21,3 +21,7 @@ export type SearchParams = {
   startIndex: number;
   langRestrict: LangParams['value'];
 };
+
+export interface ApiResponse {
+  items: Book[];
+}

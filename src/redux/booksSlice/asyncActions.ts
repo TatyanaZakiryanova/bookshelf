@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Book } from '../../pages/Main/types';
-import axios from 'axios';
-import { SearchParams } from './types';
+import axios, { AxiosResponse } from 'axios';
+import { ApiResponse, SearchParams } from './types';
 
 export const fetchBooks = createAsyncThunk<Book[], SearchParams>(
   'books/fetchBooks',
@@ -10,7 +10,7 @@ export const fetchBooks = createAsyncThunk<Book[], SearchParams>(
     const apiKey = import.meta.env.VITE_GOOGLE_BOOKS_API_KEY;
 
     try {
-      const response = await axios.get(
+      const response: AxiosResponse<ApiResponse> = await axios.get(
         `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${apiKey}&orderBy=${orderBy}&filter=${filter}&startIndex=${startIndex}&maxResults=40&langRestrict=${langRestrict}&projection=lite`,
       );
 

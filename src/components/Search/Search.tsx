@@ -38,9 +38,9 @@ const Search = () => {
     inputRef.current?.focus();
   };
 
-  const searchKey = (e: KeyboardEvent) => {
+  const searchKey = async (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      handleSearchSubmit();
+      await handleSearchSubmit();
     }
   };
 

@@ -7,6 +7,7 @@ import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
 import { ImFirst } from 'react-icons/im';
 import { useEffect } from 'react';
 import { statusSelector } from '../../redux/booksSlice/selectors';
+import { Status } from '../../redux/booksSlice/types';
 
 const Pagination = () => {
   const dispatch = useAppDispatch();
@@ -32,7 +33,10 @@ const Pagination = () => {
         <button onClick={() => onClickPage(startIndex - 40)} disabled={startIndex === 0}>
           <BiSolidLeftArrow size={15} className={styles.arrow} />
         </button>
-        <button onClick={() => onClickPage(startIndex + 40)} disabled={status === 'no_more_books'}>
+        <button
+          onClick={() => onClickPage(startIndex + 40)}
+          disabled={status === Status.NO_MORE_BOOKS}
+        >
           <BiSolidRightArrow size={15} className={styles.arrow} />
         </button>
       </div>

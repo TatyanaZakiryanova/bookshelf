@@ -12,6 +12,7 @@ import Language from '../../components/Language/Language';
 import { useSelector } from 'react-redux';
 import { itemsSelector, statusSelector } from '../../redux/booksSlice/selectors';
 import { favItemsSelector } from '../../redux/favSlice/selectors';
+import { Status } from '../../redux/booksSlice/types';
 
 const Main = (): JSX.Element => {
   const items = useSelector(itemsSelector);
@@ -19,7 +20,7 @@ const Main = (): JSX.Element => {
   const addedItems = useSelector(favItemsSelector);
   const itemsLength = addedItems ? addedItems.length : 0;
 
-  const skeleton = [...new Array(10)].map((_, index) => <Skeleton key={index} />);
+  const skeleton = Array.from({ length: 10 }, (_, index) => <Skeleton key={index} />);
 
   return (
     <>
@@ -28,7 +29,7 @@ const Main = (): JSX.Element => {
         <MdFavorite className={styles.icon} />
         {itemsLength}
       </Link>
-      {status === 'idle' ? null : status === 'error' ? (
+      {status === Status.IDLE ? null : status === Status.ERROR ? (
         <BooksNF />
       ) : (
         <>
@@ -38,7 +39,7 @@ const Main = (): JSX.Element => {
             <Filter />
           </div>
           <div className={styles.container}>
-            {status === 'loading' ? skeleton : <Card books={items} />}
+            {status === Status.LOADING ? skeleton : <Card books={items} />}
           </div>
           <div>
             <Pagination />

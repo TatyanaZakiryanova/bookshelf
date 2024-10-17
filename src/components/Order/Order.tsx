@@ -38,11 +38,18 @@ const Order = () => {
   const orderName = useSelector(orderByNameSelector);
 
   useEffect(() => {
-    if (initialQueryDone) {
-      dispatch(fetchBooks({ search, orderBy, filter, startIndex, langRestrict }));
-    }
-    setInitialQueryDone(true);
-  }, [orderBy, filter, startIndex, langRestrict]);
+    const fetchData = async () => {
+      if (initialQueryDone) {
+        try {
+          await dispatch(fetchBooks({ search, orderBy, filter, startIndex, langRestrict }));
+        } catch (error) {
+          console.error('Error fetching books:', error);
+        }
+      }
+      setInitialQueryDone(true);
+    };
+    fetchData();
+  }, [dispatch, orderBy, filter, startIndex, langRestrict]);
 
   const onClickOrder = (obj: OrderParams) => {
     dispatch(setOrderParameter(obj));
