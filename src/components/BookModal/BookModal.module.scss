@@ -1,0 +1,17 @@
+.customModal {
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  max-height: 90vh;
+}
+
+.back {
+  font-size: 13px;
+  width: 35px;
+  height: 35px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  &:hover {
+    background-color: white;
+  }
+}
