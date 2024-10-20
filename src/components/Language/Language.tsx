@@ -1,10 +1,10 @@
-import { MdLanguage } from 'react-icons/md';
+import { useSelector } from 'react-redux';
+
 import { setLanguageValue } from '../../redux/searchSlice/searchSlice';
+import { langRestrictSelector } from '../../redux/searchSlice/selectors';
 import { LangEnum, LangParams } from '../../redux/searchSlice/types';
 import { useAppDispatch } from '../../redux/store';
-import styles from './Language.module.scss';
-import { useSelector } from 'react-redux';
-import { langRestrictSelector } from '../../redux/searchSlice/selectors';
+import Dropdown from '../UI/Dropdown/Dropdown';
 
 const language: LangParams[] = [
   {
@@ -65,27 +65,12 @@ const Language = () => {
     dispatch(setLanguageValue(obj));
   };
   return (
-    <>
-      <div className={styles.language}>
-        <span className={styles.title}>
-          <MdLanguage size={18} />
-          {langRestrict.name}
-        </span>
-        <div className={styles.list}>
-          <ul>
-            {language.map((obj, i) => (
-              <li
-                key={i}
-                onClick={() => onClickLanguage(obj)}
-                className={langRestrict.value === obj.value ? styles.active : ''}
-              >
-                {obj.name}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </>
+    <Dropdown
+      options={language}
+      currentOption={langRestrict}
+      handleOption={onClickLanguage}
+      label={langRestrict.name}
+    />
   );
 };
 
