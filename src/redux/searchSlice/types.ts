@@ -38,7 +38,7 @@ export type FilterParams = {
 
 export type OrderParams = {
   name: 'Relevance' | 'Newest';
-  parameter: OrderEnum;
+  value: OrderEnum;
 };
 
 export interface ResultsParams {

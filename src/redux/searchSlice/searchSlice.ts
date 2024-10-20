@@ -1,4 +1,5 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
 import {
   FilterEnum,
   FilterParams,
@@ -13,7 +14,7 @@ const initialState: ResultsParams = {
   search: '',
   orderBy: {
     name: 'Relevance',
-    parameter: OrderEnum.RELEVANCE,
+    value: OrderEnum.RELEVANCE,
   },
   filter: {
     name: 'All books',

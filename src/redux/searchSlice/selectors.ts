@@ -6,5 +6,6 @@ export const filterSelector = (state: RootState) => state.search.filter;
 export const filterValueSelector = (state: RootState) => state.search.filter.value;
 export const langRestrictSelector = (state: RootState) => state.search.langRestrict;
 export const langRestrictValueSelector = (state: RootState) => state.search.langRestrict.value;
+export const orderBySelector = (state: RootState) => state.search.orderBy;
 export const orderByNameSelector = (state: RootState) => state.search.orderBy.name;
-export const orderByParameterSelector = (state: RootState) => state.search.orderBy.parameter;
+export const orderByParameterSelector = (state: RootState) => state.search.orderBy.value;
