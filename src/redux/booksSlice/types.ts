@@ -16,7 +16,7 @@ export interface BooksState {
 
 export type SearchParams = {
   search: string;
-  orderBy: OrderParams['parameter'];
+  orderBy: OrderParams['value'];
   filter: FilterParams['value'];
   startIndex: number;
   langRestrict: LangParams['value'];
