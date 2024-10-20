@@ -11,6 +11,7 @@ import {
 } from '../../redux/searchSlice/selectors';
 import { useAppDispatch } from '../../redux/store';
 import Button from '../UI/Button/Button';
+import Input from '../UI/Input/Input';
 import styles from './Search.module.scss';
 
 const Search = () => {
@@ -44,7 +45,7 @@ const Search = () => {
     inputRef.current?.focus();
   };
 
-  const searchKey = async (e: KeyboardEvent) => {
+  const searchKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleSearchSubmit();
     }
@@ -52,9 +53,8 @@ const Search = () => {
 
   return (
     <div className={styles.search}>
-      <input
+      <Input
         ref={inputRef}
-        type="text"
         placeholder="Enter the book title..."
         value={localSearch}
         onChange={handleInputChange}
