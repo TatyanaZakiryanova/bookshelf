@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { addItem, minusNumber, removeItem } from '../../redux/favSlice/favSlice';
 import { FavItem } from '../../redux/favSlice/types';
 import { useAppDispatch } from '../../redux/store';
@@ -18,7 +16,7 @@ interface IFavBookProps {
   count: number;
 }
 
-const FavBook: React.FC<IFavBookProps> = ({
+const FavBook = ({
   id,
   thumbnail,
   title,
@@ -27,7 +25,7 @@ const FavBook: React.FC<IFavBookProps> = ({
   publisher,
   publishedDate,
   count,
-}) => {
+}: IFavBookProps) => {
   const dispatch = useAppDispatch();
 
   const plusItem = () => {

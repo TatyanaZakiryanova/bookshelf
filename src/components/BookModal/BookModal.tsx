@@ -16,7 +16,7 @@ interface IBookModalProps {
   onClose: () => void;
 }
 
-const BookModal: React.FC<IBookModalProps> = ({ item, onClose }) => {
+const BookModal = ({ item, onClose }: IBookModalProps) => {
   const { addToFavorites } = useFavorites();
   const [showPreview, setShowPreview] = useState<boolean>(false);
   const favorites = useSelector(favItemsSelector);

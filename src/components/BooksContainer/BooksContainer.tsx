@@ -14,7 +14,7 @@ interface IBooksContainer {
   books: Book[];
 }
 
-const BooksContainer: React.FC<IBooksContainer> = ({ books }) => {
+const BooksContainer = ({ books }: IBooksContainer) => {
   const [show, setShow] = useState<boolean>(false);
   const [bookItem, setBookItem] = useState<Book | null>(null);
   const { addToFavorites, removeFromFavorites } = useFavorites();

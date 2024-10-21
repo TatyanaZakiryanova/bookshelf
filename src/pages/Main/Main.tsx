@@ -15,7 +15,7 @@ import { favItemsSelector } from '../../redux/favSlice/selectors';
 import styles from './Main.module.scss';
 import Skeleton from './Skeleton';
 
-const Main = (): JSX.Element => {
+const Main = () => {
   const items = useSelector(itemsSelector);
   const status = useSelector(statusSelector);
   const addedItems = useSelector(favItemsSelector);

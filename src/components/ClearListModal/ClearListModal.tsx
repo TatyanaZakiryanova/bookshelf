@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { clearList } from '../../redux/favSlice/favSlice';
 import { useAppDispatch } from '../../redux/store';
 import Button from '../UI/Button/Button';
@@ -11,7 +9,7 @@ interface IClearListModal {
   onClose: () => void;
 }
 
-const ClearListModal: React.FC<IClearListModal> = ({ isOpen, onClose }) => {
+const ClearListModal = ({ isOpen, onClose }: IClearListModal) => {
   const dispatch = useAppDispatch();
 
   const handleClearList = () => {

@@ -13,7 +13,7 @@ interface IBookCardProps {
   onFavoriteClick: () => void;
 }
 
-const BookCard: React.FC<IBookCardProps> = ({
+const BookCard = ({
   item,
   thumbnail,
   author,
@@ -21,7 +21,7 @@ const BookCard: React.FC<IBookCardProps> = ({
   added,
   onBookClick,
   onFavoriteClick,
-}) => (
+}: IBookCardProps) => (
   <div className={styles.card}>
     <img src={thumbnail} onClick={() => onBookClick(item)} alt={item.volumeInfo.title} />
     <MdOutlineFavorite

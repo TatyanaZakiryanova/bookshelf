@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Book } from '../../pages/Main/types';
 import Button from '../UI/Button/Button';
 import styles from './BookInfo.module.scss';
@@ -17,7 +15,7 @@ interface IBookInfoProps {
   showPreview: () => void;
 }
 
-const BookInfo: React.FC<IBookInfoProps> = ({
+const BookInfo = ({
   title,
   authors,
   publisher,
@@ -28,7 +26,7 @@ const BookInfo: React.FC<IBookInfoProps> = ({
   addedValue,
   addToFavorites,
   showPreview,
-}) => {
+}: IBookInfoProps) => {
   return (
     <>
       <div className={styles.inform}>

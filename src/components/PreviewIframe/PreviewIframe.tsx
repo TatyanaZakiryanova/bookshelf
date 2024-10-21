@@ -2,7 +2,11 @@ import { useState } from 'react';
 
 import Spinner from '../UI/Spinner/Spinner';
 
-const PreviewIframe = ({ viewerUrl }: { viewerUrl: string }) => {
+interface IPreviewIframe {
+  viewerUrl: string;
+}
+
+const PreviewIframe = ({ viewerUrl }: IPreviewIframe) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const handleIframeLoad = () => {
