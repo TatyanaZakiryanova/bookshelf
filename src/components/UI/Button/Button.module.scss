@@ -1,15 +1,22 @@
 .button {
   color: black;
   border: none;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgb(183, 169, 160);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   &:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgb(147, 131, 120);
   }
   &:disabled {
     pointer-events: none;
     background-color: rgba(255, 255, 255, 0.3);
+  }
+  &:focus {
+    box-shadow: 0 0 0 2px rgb(190, 169, 156);
+  }
+  &:active {
+    border: none;
   }
 }

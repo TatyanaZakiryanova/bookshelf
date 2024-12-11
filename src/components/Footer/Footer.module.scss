@@ -14,7 +14,7 @@
     align-items: center;
     transition: $transition;
     &:hover {
-      color: white;
+      color: $maincolor;
     }
   }
   .bottom {
