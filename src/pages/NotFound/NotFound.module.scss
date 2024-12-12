@@ -7,11 +7,9 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 1.5rem;
   .back {
-    padding: 0.5rem;
+    padding: 10px;
     margin-top: 30px;
     transition: $transition;
-    font-size: 20px;
   }
 }

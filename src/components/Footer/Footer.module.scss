@@ -7,17 +7,16 @@
   align-items: center;
   text-align: center;
   gap: 10px;
+  .title {
+    font-size: 18px;
+  }
   a {
     text-decoration: none;
     color: black;
     display: flex;
     align-items: center;
-    transition: $transition;
-    &:hover {
-      color: $maincolor;
-    }
   }
   .bottom {
-    font-size: 13px;
+    font-size: 10px;
   }
 }

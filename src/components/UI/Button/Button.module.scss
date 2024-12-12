@@ -1,13 +1,14 @@
+@import '../../../styles/variables.scss';
+
 .button {
   color: black;
   border: none;
-  background-color: rgb(183, 169, 160);
+  background-color: $maincolor;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: rgb(147, 131, 120);
   }
   &:disabled {
     pointer-events: none;

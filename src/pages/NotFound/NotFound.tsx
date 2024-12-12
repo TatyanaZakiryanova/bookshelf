@@ -1,4 +1,3 @@
-import { SlArrowLeft } from 'react-icons/sl';
 import { VscError } from 'react-icons/vsc';
 import { Link } from 'react-router-dom';
 
@@ -11,9 +10,7 @@ const NotFound = () => {
       <VscError size={40} />
       Data not found
       <Link to="">
-        <Button className={styles.back}>
-          <SlArrowLeft size={16} /> Home
-        </Button>
+        <Button className={styles.back}>Home</Button>
       </Link>
     </div>
   );

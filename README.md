@@ -6,7 +6,7 @@
 
 [Deploy](https://bookshelfsearch.netlify.app/)
 
-<img src='./src/assets/images/preview.png' alt="preview">
+<img src='./src/assets/images/bookPreview.png' alt="preview">
 
 ## Technologies Used
 

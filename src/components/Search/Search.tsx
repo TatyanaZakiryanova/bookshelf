@@ -1,4 +1,5 @@
 import { ChangeEvent, KeyboardEvent, useRef, useState } from 'react';
+import { CiSearch } from 'react-icons/ci';
 import { FaDeleteLeft } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 
@@ -66,7 +67,7 @@ const Search = () => {
         </span>
       )}
       <Button onClick={handleSearchSubmit} className={styles.searchbutton}>
-        Search
+        <CiSearch size={20} /> Search
       </Button>
     </div>
   );
