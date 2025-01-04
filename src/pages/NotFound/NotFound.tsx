@@ -7,7 +7,7 @@ import styles from './NotFound.module.scss';
 const NotFound = () => {
   return (
     <div className={styles.error}>
-      <VscError size={40} />
+      <VscError size={40} className={styles.icon} />
       Data not found
       <Link to="">
         <Button className={styles.back}>Home</Button>

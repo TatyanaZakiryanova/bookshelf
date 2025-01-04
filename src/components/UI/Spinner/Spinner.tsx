@@ -6,7 +6,6 @@ const Spinner = () => {
   return (
     <div className={styles.loader}>
       <BiLoaderAlt className={styles.spinner} />
-      <p>Loading...</p>
     </div>
   );
 };

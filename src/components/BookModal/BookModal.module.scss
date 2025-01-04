@@ -11,4 +11,8 @@
   height: 35px;
   margin-left: 5px;
   margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(60, 60, 60, 0.1);
+  &:hover {
+    background-color: rgb(163, 145, 133);
+  }
 }

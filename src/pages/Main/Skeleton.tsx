@@ -6,7 +6,7 @@ const Skeleton = () => (
     width={345}
     height={440}
     viewBox="0 0 272 385"
-    backgroundColor="rgba(255, 255, 255, 0.5)"
+    backgroundColor="rgba(216, 216, 216, 0.5)"
     foregroundColor="white"
   >
     <rect x="10" y="4" rx="8" ry="8" width="101" height="145" />

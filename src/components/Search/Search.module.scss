@@ -5,6 +5,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 430px) {
+    flex-direction: column;
+    gap: 10px;
+  }
   input {
     width: 500px;
     height: 50px;
@@ -12,11 +16,13 @@
     margin: 0 8px;
     border: none;
     border-radius: 8px;
+    box-shadow: $shadow;
+    border: 1px solid rgba(200, 200, 200, 0.5);
     &:focus {
       outline: none;
     }
     @media screen and (max-width: 430px) {
-      width: 250px;
+      width: 90%;
     }
   }
   button {
@@ -25,27 +31,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgb(50, 50, 50);
     transition: $transition;
     font-size: 15px;
+    background-color: $maincolor;
     @media screen and (max-width: 430px) {
-      width: 50px;
-      font-size: 13px;
-    }
-  }
-  .clear {
-    position: relative;
-    text-align: center;
-    right: 45px;
-    bottom: 13px;
-    .clearicon {
-      position: absolute;
-      font-size: 25px;
-      opacity: 0.2;
-      cursor: pointer;
-      &:hover {
-        opacity: 0.8;
-        color: $maincolor;
-      }
+      width: 90%;
     }
   }
 }

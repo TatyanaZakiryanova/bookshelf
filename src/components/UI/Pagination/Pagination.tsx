@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { BiSolidLeftArrow, BiSolidRightArrow } from 'react-icons/bi';
-import { ImFirst } from 'react-icons/im';
+import { RiArrowLeftDoubleLine, RiArrowLeftSLine, RiArrowRightSLine } from 'react-icons/ri';
 import { useSelector } from 'react-redux';
 
 import { statusSelector } from '../../../redux/booksSlice/selectors';
@@ -30,16 +29,16 @@ const Pagination = () => {
     <>
       <div className={styles.pagination}>
         <Button onClick={() => onClickPage(0)} disabled={startIndex === 0}>
-          <ImFirst size={20} className={styles.arrow} />
+          <RiArrowLeftDoubleLine size={15} className={styles.arrow} />
         </Button>
         <Button onClick={() => onClickPage(startIndex - 40)} disabled={startIndex === 0}>
-          <BiSolidLeftArrow size={15} className={styles.arrow} />
+          <RiArrowLeftSLine size={15} className={styles.arrow} />
         </Button>
         <Button
           onClick={() => onClickPage(startIndex + 40)}
           disabled={status === Status.NO_MORE_BOOKS}
         >
-          <BiSolidRightArrow size={15} className={styles.arrow} />
+          <RiArrowRightSLine size={15} className={styles.arrow} />
         </Button>
       </div>
       <div className={styles.page}>

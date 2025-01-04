@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .overlay {
   min-height: 100vh;
   width: 100%;
@@ -13,7 +15,7 @@
     scaleIn 0.4s ease;
   z-index: 2;
   .modal {
-    background-color: rgb(216, 199, 188);
+    background-color: rgb(245, 245, 245);
     padding: 20px;
     box-sizing: border-box;
     overflow: auto;
@@ -23,6 +25,10 @@
       width: 35px;
       height: 35px;
       margin-bottom: 10px;
+      box-shadow: $shadow;
+      &:hover {
+        background-color: $maincolor;
+      }
     }
   }
 }

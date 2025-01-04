@@ -1,6 +1,5 @@
 import { ChangeEvent, KeyboardEvent, useRef, useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
-import { FaDeleteLeft } from 'react-icons/fa6';
 import { useSelector } from 'react-redux';
 
 import { fetchBooks } from '../../redux/booksSlice/asyncActions';
@@ -41,11 +40,6 @@ const Search = () => {
     }
   };
 
-  const clearInput = () => {
-    setLocalSearch('');
-    inputRef.current?.focus();
-  };
-
   const searchKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
       handleSearchSubmit();
@@ -61,12 +55,7 @@ const Search = () => {
         onChange={handleInputChange}
         onKeyDown={searchKey}
       />
-      {localSearch && (
-        <span className={styles.clear}>
-          <FaDeleteLeft className={styles.clearicon} onClick={clearInput} />
-        </span>
-      )}
-      <Button onClick={handleSearchSubmit} className={styles.searchbutton}>
+      <Button onClick={handleSearchSubmit} className={styles.searchbutton} disabled={!localSearch}>
         <CiSearch size={20} /> Search
       </Button>
     </div>

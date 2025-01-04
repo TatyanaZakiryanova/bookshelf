@@ -12,28 +12,29 @@
     -webkit-transform: scale(1.1);
   }
   img {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     height: 180px;
     width: 130px;
     cursor: pointer;
     border-radius: 8px;
   }
   .addtofav {
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     padding: 3px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(216, 216, 216);
     &:hover {
-      color: white;
+      color: $maincolor;
+      transform: translateY(-2px);
     }
   }
   .added {
-    font-size: 1.5rem;
+    font-size: 2rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     padding: 3px;
-    color: white;
+    color: $maincolor;
   }
   .inform {
     .author {
