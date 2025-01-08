@@ -55,7 +55,7 @@ const Search = () => {
         onChange={handleInputChange}
         onKeyDown={searchKey}
       />
-      <Button onClick={handleSearchSubmit} className={styles.searchbutton} disabled={!localSearch}>
+      <Button onClick={handleSearchSubmit} className={styles.searchButton} disabled={!localSearch}>
         <CiSearch size={20} /> Search
       </Button>
     </div>

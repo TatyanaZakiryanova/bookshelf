@@ -25,7 +25,7 @@ const BookCard = ({
   <div className={styles.card}>
     <img src={thumbnail} onClick={() => onBookClick(item)} alt={item.volumeInfo.title} />
     <MdOutlineFavorite
-      className={added ? styles.added : styles.addtofav}
+      className={added ? styles.favoriteAdded : styles.addToFavorite}
       onClick={onFavoriteClick}
     />
     <div className={styles.inform}>

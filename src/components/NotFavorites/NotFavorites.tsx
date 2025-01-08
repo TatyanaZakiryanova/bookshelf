@@ -6,11 +6,11 @@ import styles from './NotFavorites.module.scss';
 
 const NotFavorites = () => {
   return (
-    <div className={styles.notfav}>
+    <div className={styles.notFavorites}>
       <GiBookCover className={styles.icon} />
       <p>You haven&apos;t added books to your favorites yet.</p>
       <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <Button className={styles.back}>Home</Button>
+        <Button className={styles.backButton}>Home</Button>
       </Link>
     </div>
   );

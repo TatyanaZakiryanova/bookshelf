@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .card {
-  margin-bottom: $bottom;
+  margin-bottom: 10px;
   text-align: center;
   transition: $transition;
   display: flex;
@@ -9,7 +9,6 @@
   align-items: center;
   &:hover {
     transform: scale(1.1);
-    -webkit-transform: scale(1.1);
   }
   img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
@@ -18,23 +17,20 @@
     cursor: pointer;
     border-radius: 8px;
   }
-  .addtofav {
-    font-size: 2rem;
+  .addToFavorite,
+  .favoriteAdded {
+    font-size: 32px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     padding: 3px;
-    color: rgba(216, 216, 216);
+    color: $fav-icon;
     &:hover {
-      color: $maincolor;
+      color: $main-color;
       transform: translateY(-2px);
     }
-  }
-  .added {
-    font-size: 2rem;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    padding: 3px;
-    color: $maincolor;
+    &.favoriteAdded {
+      color: $main-color;
+    }
   }
   .inform {
     .author {

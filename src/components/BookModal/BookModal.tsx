@@ -37,7 +37,7 @@ const BookModal = ({ item, onClose }: IBookModalProps) => {
     <Modal isOpen={!!item} onClose={onClose} modalClass={styles.customModal}>
       {showPreview ? (
         <>
-          <Button onClick={() => setShowPreview(false)} className={styles.back}>
+          <Button onClick={() => setShowPreview(false)} className={styles.backButton}>
             <SlArrowLeft size={10} />
           </Button>
           <PreviewIframe viewerUrl={viewerUrl} />

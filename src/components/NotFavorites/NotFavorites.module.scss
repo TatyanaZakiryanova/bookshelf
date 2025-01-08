@@ -1,13 +1,13 @@
 @import '../../styles/variables.scss';
 
-.notfav {
-  padding: 3rem;
+.notFavorites {
+  padding: 50px;
   text-align: center;
   .icon {
     font-size: 20rem;
     color: rgba(200, 200, 200, 0.5);
   }
-  .back {
+  .backButton {
     margin-top: 30px;
     padding: 10px;
   }

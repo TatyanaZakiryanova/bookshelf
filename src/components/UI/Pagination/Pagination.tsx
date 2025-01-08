@@ -29,16 +29,16 @@ const Pagination = () => {
     <>
       <div className={styles.pagination}>
         <Button onClick={() => onClickPage(0)} disabled={startIndex === 0}>
-          <RiArrowLeftDoubleLine size={15} className={styles.arrow} />
+          <RiArrowLeftDoubleLine size={15} className={styles.pageArrow} />
         </Button>
         <Button onClick={() => onClickPage(startIndex - 40)} disabled={startIndex === 0}>
-          <RiArrowLeftSLine size={15} className={styles.arrow} />
+          <RiArrowLeftSLine size={15} className={styles.pageArrow} />
         </Button>
         <Button
           onClick={() => onClickPage(startIndex + 40)}
           disabled={status === Status.NO_MORE_BOOKS}
         >
-          <RiArrowRightSLine size={15} className={styles.arrow} />
+          <RiArrowRightSLine size={15} className={styles.pageArrow} />
         </Button>
       </div>
       <div className={styles.page}>

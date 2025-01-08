@@ -10,7 +10,7 @@ const NotFound = () => {
       <VscError size={40} className={styles.icon} />
       Data not found
       <Link to="">
-        <Button className={styles.back}>Home</Button>
+        <Button className={styles.backButton}>Home</Button>
       </Link>
     </div>
   );

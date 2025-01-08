@@ -33,11 +33,11 @@
   border-radius: 8px;
 }
 
-.bottom {
+.bottomBlock {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .back {
+  .backButton {
     padding: 10px;
     margin: 0 0 50px 60px;
     font-size: 13px;
@@ -46,7 +46,7 @@
     }
   }
 
-  .clear {
+  .clearButton {
     display: flex;
     align-items: center;
     margin: 0 50px 50px 0;

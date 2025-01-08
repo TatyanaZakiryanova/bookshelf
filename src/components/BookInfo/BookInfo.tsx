@@ -29,25 +29,27 @@ const BookInfo = ({
 }: IBookInfoProps) => {
   return (
     <>
-      <div className={styles.inform}>
+      <div className={styles.bookInform}>
         <img src={thumbnail} alt={title} />
-        <div className={styles.info}>
-          <h1>{title}</h1>
+        <div className={styles.inform}>
+          <h1 className={styles.title}>{title}</h1>
           <h3>{authors}</h3>
           <h4>
             {publisher} <span>{publishedDate}</span>
           </h4>
-          <div className={styles.buttons}>
-            <Button onClick={showPreview} className={styles.page}>
+          <div className={styles.pageButtons}>
+            <Button onClick={showPreview} className={styles.pageButton}>
               Preview
             </Button>
             <a href={item.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-              <Button className={styles.page}>Book page</Button>
+              <Button className={styles.pageButton}>Book page</Button>
             </a>
           </div>
           <Button
             onClick={() => addToFavorites(item)}
-            className={addedValue.includes('In favorites') ? styles.added : styles.add}
+            className={
+              addedValue.includes('In favorites') ? styles.favoriteAdded : styles.addToFavorite
+            }
           >
             {addedValue}
           </Button>

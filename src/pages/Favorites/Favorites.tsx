@@ -35,13 +35,13 @@ const Favorites = () => {
         ))}
       </div>
       <div className={styles.total}>Added books worth: {total}</div>
-      <div className={styles.bottom}>
-        <Button className={styles.back}>
+      <div className={styles.bottomBlock}>
+        <Button className={styles.backButton}>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             Home
           </Link>
         </Button>
-        <Button onClick={handleModalClick} className={styles.clear}>
+        <Button onClick={handleModalClick} className={styles.clearButton}>
           Clear list
         </Button>
         {showModal && <ClearListModal isOpen={showModal} onClose={() => setShowModal(false)} />}
