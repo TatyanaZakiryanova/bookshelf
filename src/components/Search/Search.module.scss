@@ -38,6 +38,9 @@
     background-color: $main-color;
     transition: $transition;
     border: none;
+    &:hover {
+      background-color: $main-color;
+    }
     @media screen and (max-width: 430px) {
       width: 90%;
     }
