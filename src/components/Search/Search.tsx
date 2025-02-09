@@ -50,13 +50,13 @@ const Search = () => {
     <div className={styles.search}>
       <Input
         ref={inputRef}
-        placeholder="Enter the book title..."
+        placeholder="Введите название книги..."
         value={localSearch}
         onChange={handleInputChange}
         onKeyDown={searchKey}
       />
       <Button onClick={handleSearchSubmit} className={styles.searchButton} disabled={!localSearch}>
-        <CiSearch size={20} /> Search
+        <CiSearch size={20} /> Поиск
       </Button>
     </div>
   );

@@ -53,7 +53,7 @@ const FavBook = ({
         <p>Publisher: {publisher}</p>
         <p>{publishedDate}</p>
         <p className={styles.previewLink}></p>
-        <p>Number: {count}</p>
+        <p>Количество: {count}</p>
         <div>
           <Button onClick={plusItem}>+</Button>
           <Button onClick={minusItem} disabled={count === 1}>

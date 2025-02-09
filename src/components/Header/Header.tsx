@@ -11,7 +11,7 @@ const Header = () => {
       </Link>
       <div className={styles.title}>
         <h1>BOOKSHELF</h1>
-        <h4>e-books search service</h4>
+        <h4>сервис поиска электронных книг</h4>
       </div>
     </div>
   );

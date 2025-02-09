@@ -39,10 +39,10 @@ const BookInfo = ({
           </h4>
           <div className={styles.pageButtons}>
             <Button onClick={showPreview} className={styles.pageButton}>
-              Preview
+              Превью
             </Button>
             <a href={item.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-              <Button className={styles.pageButton}>Book page</Button>
+              <Button className={styles.pageButton}>Сайт</Button>
             </a>
           </div>
           <Button

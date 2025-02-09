@@ -8,9 +8,9 @@ const NotFavorites = () => {
   return (
     <div className={styles.notFavorites}>
       <GiBookCover className={styles.icon} />
-      <p>You haven&apos;t added books to your favorites yet.</p>
+      <p>Вы ещё не добавляли книги в избранное.</p>
       <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-        <Button className={styles.backButton}>Home</Button>
+        <Button className={styles.backButton}>На главную</Button>
       </Link>
     </div>
   );

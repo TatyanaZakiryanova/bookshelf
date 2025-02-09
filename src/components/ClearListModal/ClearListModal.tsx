@@ -20,11 +20,11 @@ const ClearListModal = ({ isOpen, onClose }: IClearListModal) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} modalClass={styles.customModal}>
       <div className={styles.top}>
-        <p>Are you sure you want to clear the list?</p>
+        <p>Вы уверены, что хотите очистить список?</p>
       </div>
       <div className={styles.buttons}>
-        <Button onClick={onClose}>Cancel</Button>
-        <Button onClick={handleClearList}>Confirm</Button>
+        <Button onClick={handleClearList}>Да</Button>
+        <Button onClick={onClose}>Отмена</Button>
       </div>
     </Modal>
   );
