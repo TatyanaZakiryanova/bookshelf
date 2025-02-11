@@ -28,11 +28,11 @@ const BookCard = ({
       className={added ? styles.favoriteAdded : styles.addToFavorite}
       onClick={onFavoriteClick}
     />
-    <div className={styles.inform}>
-      <h3 className={styles.title}>{item.volumeInfo.title}</h3>
-      <h4 className={styles.author}>{author}</h4>
-      <h4 className={styles.amount}>{amount}</h4>
-    </div>
+    <ul className={styles.inform}>
+      <li className={styles.title}>{item.volumeInfo.title}</li>
+      <li className={styles.author}>{author}</li>
+      <li className={styles.amount}>{amount}</li>
+    </ul>
   </div>
 );
 

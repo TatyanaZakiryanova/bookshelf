@@ -33,10 +33,10 @@ const BookInfo = ({
         <img src={thumbnail} alt={title} />
         <div className={styles.inform}>
           <h1 className={styles.title}>{title}</h1>
-          <h3>{authors}</h3>
-          <h4>
-            {publisher} <span>{publishedDate}</span>
-          </h4>
+          <p>{authors}</p>
+          <p>
+            {publisher} {publishedDate}
+          </p>
           <div className={styles.pageButtons}>
             <Button onClick={showPreview} className={styles.pageButton}>
               Превью
@@ -55,7 +55,7 @@ const BookInfo = ({
           </Button>
         </div>
       </div>
-      <h4>{description}</h4>
+      <p>{description}</p>
     </>
   );
 };

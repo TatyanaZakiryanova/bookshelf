@@ -47,20 +47,20 @@ const FavBook = ({
       </div>
       <img src={thumbnail} />
       <p className={styles.title}>{title}</p>
-      <div className={styles.inform}>
-        <p>Authors: {authors}</p>
-        <p className={styles.amount}>Price: {amount}</p>
-        <p>Publisher: {publisher}</p>
-        <p>{publishedDate}</p>
-        <p className={styles.previewLink}></p>
-        <p>Количество: {count}</p>
+      <ul className={styles.inform}>
+        <li>Авторы: {authors}</li>
+        <li className={styles.amount}>Цена: {amount}</li>
+        <li>Издательство: {publisher}</li>
+        <li>{publishedDate}</li>
+        <li className={styles.previewLink}></li>
+        <li>Количество: {count}</li>
         <div>
           <Button onClick={plusItem}>+</Button>
           <Button onClick={minusItem} disabled={count === 1}>
             -
           </Button>
         </div>
-      </div>
+      </ul>
     </div>
   );
 };
