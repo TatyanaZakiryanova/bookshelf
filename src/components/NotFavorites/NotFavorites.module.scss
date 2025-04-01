@@ -3,12 +3,14 @@
 .notFavorites {
   padding: 50px;
   text-align: center;
-  .icon {
-    font-size: 20rem;
-    color: rgba(200, 200, 200, 0.5);
-  }
-  .backButton {
-    margin-top: 30px;
-    padding: 10px;
-  }
+}
+
+.icon {
+  font-size: 20rem;
+  color: #c8c8c880;
+}
+
+.backButton {
+  margin-top: 30px;
+  padding: 10px;
 }

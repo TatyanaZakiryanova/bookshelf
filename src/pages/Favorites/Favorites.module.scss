@@ -7,13 +7,15 @@
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
-  .icon {
-    display: flex;
-    align-items: center;
-  }
+
   p {
     font-size: 10px;
   }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
 }
 
 .items {
@@ -25,7 +27,7 @@
 .total {
   padding: 10px;
   margin: 20px 0 20px 60px;
-  background-color: white;
+  background-color: #ffffff;
   box-shadow: $shadow;
   width: 250px;
   text-align: center;
@@ -37,20 +39,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  .backButton {
-    padding: 10px;
-    margin: 0 0 50px 60px;
-    font-size: 13px;
-    a {
-      transition: $transition;
-    }
-  }
+}
 
-  .clearButton {
-    display: flex;
-    align-items: center;
-    margin: 0 50px 50px 0;
-    padding: 10px;
-    font-size: 13px;
+.backButton {
+  padding: 10px;
+  margin: 0 0 50px 60px;
+  font-size: 13px;
+
+  a {
+    transition: $transition;
   }
+}
+
+.clearButton {
+  display: flex;
+  align-items: center;
+  margin: 0 50px 50px 0;
+  padding: 10px;
+  font-size: 13px;
 }

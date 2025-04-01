@@ -1,22 +1,25 @@
 @import '../../../styles/variables.scss';
 
 .button {
-  color: black;
+  color: #000000;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
-  border: 1px solid rgba(200, 200, 200, 0.5);
+  border: 1px solid #c8c8c880;
   box-shadow: $shadow;
-  background-color: rgb(245, 245, 245);
+  background-color: #f5f5f5;
+
   &:hover {
     transform: translateY(-2px);
-    background-color: rgb(220, 220, 220);
+    background-color: #dcdcdc;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   }
+
   &:disabled {
     pointer-events: none;
-    background-color: rgb(216, 216, 216);
+    background-color: #d8d8d8;
   }
+
   &:active {
     transform: translateY(1px);
   }

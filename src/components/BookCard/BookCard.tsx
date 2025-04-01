@@ -28,7 +28,7 @@ const BookCard = ({
       className={added ? styles.favoriteAdded : styles.addToFavorite}
       onClick={onFavoriteClick}
     />
-    <ul className={styles.inform}>
+    <ul>
       <li className={styles.title}>{item.volumeInfo.title}</li>
       <li className={styles.author}>{author}</li>
       <li className={styles.amount}>{amount}</li>

@@ -7,40 +7,47 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
+
   @media screen and (max-width: 430px) {
     flex-direction: column;
     width: 100%;
   }
+
   input {
     width: 500px;
     height: 50px;
     padding: 0 8px;
     margin: 0 8px;
-    border: 1px solid rgba(200, 200, 200, 0.5);
+    border: 1px solid #c8c8c880;
     border-radius: 8px;
     box-shadow: $shadow;
+
     &:focus {
       outline: none;
     }
+
     @media screen and (max-width: 430px) {
       width: 90%;
       font-size: 14px;
     }
   }
+
   button {
     height: 50px;
     padding: 0 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(50, 50, 50);
+    color: #323232;
     font-size: 15px;
     background-color: $main-color;
     transition: $transition;
     border: none;
+
     &:hover {
       background-color: $main-color;
     }
+
     @media screen and (max-width: 430px) {
       width: 90%;
     }

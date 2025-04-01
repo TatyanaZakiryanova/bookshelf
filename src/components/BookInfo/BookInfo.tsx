@@ -48,7 +48,7 @@ const BookInfo = ({
           <Button
             onClick={() => addToFavorites(item)}
             className={
-              addedValue.includes('In favorites') ? styles.favoriteAdded : styles.addToFavorite
+              addedValue.includes('В избранном') ? styles.favoriteAdded : styles.addToFavorite
             }
           >
             {addedValue}

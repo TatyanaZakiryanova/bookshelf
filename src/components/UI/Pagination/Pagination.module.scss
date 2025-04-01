@@ -12,23 +12,25 @@
     justify-content: center;
     align-items: center;
     transition: $transition;
-    .pageArrow {
-      color: black;
-    }
   }
+}
+
+.pageArrow {
+  color: black;
 }
 
 .page {
   display: flex;
   justify-content: center;
   margin: 0 0 30px 0;
-  .number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 25px;
-    width: 25px;
-    border-radius: 8px;
-    box-shadow: $shadow;
-  }
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px;
+  border-radius: 8px;
+  box-shadow: $shadow;
 }

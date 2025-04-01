@@ -7,14 +7,17 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 30px;
-  .top {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  .buttons {
-    display: flex;
-    justify-content: space-between;
-  }
+}
+
+.top {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+
   button {
     width: 80px;
     padding: 8px;

@@ -16,7 +16,7 @@
   gap: 30px;
   padding: 20px;
   justify-content: center;
-  background-color: rgb(245, 245, 245);
+  background-color: #f5f5f5;
   box-shadow: $shadow;
   border-radius: 8px;
 }
@@ -29,10 +29,12 @@
   color: $main-color;
   font-size: 25px;
   transition: $transition;
+
   &:hover {
     transform: scale(1.2);
   }
-  .icon {
-    font-size: 35px;
-  }
+}
+
+.icon {
+  font-size: 35px;
 }

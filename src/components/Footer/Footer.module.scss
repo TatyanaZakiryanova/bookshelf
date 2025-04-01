@@ -8,17 +8,20 @@
   text-align: center;
   border-radius: 8px;
   gap: 10px;
-  .title {
-    font-size: 18px;
-    padding: 5px;
-  }
+}
+
+.title {
+  font-size: 18px;
+  padding: 5px;
+
   a {
     text-decoration: none;
-    color: black;
+    color: #000000;
     display: flex;
     align-items: center;
   }
-  .subtitle {
-    font-size: 10px;
-  }
+}
+
+.subtitle {
+  font-size: 10px;
 }
