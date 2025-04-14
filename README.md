@@ -78,6 +78,12 @@ in the project directory enter:
 npm install
 ```
 
+create .env file in the root directory and specify:
+
+```
+VITE_GOOGLE_BOOKS_API_KEY=your_api_key
+```
+
 and then run in dev mode:
 
 ```js
