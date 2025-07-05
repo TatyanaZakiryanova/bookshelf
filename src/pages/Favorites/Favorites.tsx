@@ -26,23 +26,23 @@ const Favorites = () => {
   return (
     <>
       <div className={styles.title}>
-        <div className={styles.icon}>Избранное</div>
-        <p>Книг в списке избранного: {items.length}</p>
+        <div className={styles.icon}>Favorites</div>
+        <p>Books in the favorites list: {items.length}</p>
       </div>
       <div className={styles.items}>
         {items.map((item: FavItem) => (
           <FavBook key={item.id} {...item} />
         ))}
       </div>
-      <div className={styles.total}>Стоимость: {total}</div>
+      <div className={styles.total}>Total: {total}</div>
       <div className={styles.bottomBlock}>
         <Button className={styles.backButton}>
           <Link to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-            На главную
+            Home
           </Link>
         </Button>
         <Button onClick={handleModalClick} className={styles.clearButton}>
-          Очистить список
+          Clear list
         </Button>
         {showModal && <ClearListModal isOpen={showModal} onClose={() => setShowModal(false)} />}
       </div>

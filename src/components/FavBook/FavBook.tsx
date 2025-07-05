@@ -48,12 +48,12 @@ const FavBook = ({
       <img src={thumbnail} />
       <p className={styles.title}>{title}</p>
       <ul className={styles.inform}>
-        <li>Авторы: {authors}</li>
-        <li className={styles.amount}>Цена: {amount}</li>
-        <li>Издательство: {publisher}</li>
+        <li>Authors: {authors}</li>
+        <li className={styles.amount}>Amount: {amount}</li>
+        <li>Publisher: {publisher}</li>
         <li>{publishedDate}</li>
         <li className={styles.previewLink}></li>
-        <li>Количество: {count}</li>
+        <li>Count: {count}</li>
         <div>
           <Button onClick={plusItem}>+</Button>
           <Button onClick={minusItem} disabled={count === 1}>

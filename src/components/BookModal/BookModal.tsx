@@ -22,7 +22,7 @@ const BookModal = ({ item, onClose }: IBookModalProps) => {
   const favorites = useSelector(favItemsSelector);
 
   const addedBook = favorites.find((favitem) => favitem.id === item.id);
-  const addedValue = addedBook ? `В избранном: ${addedBook.count}` : 'Добавить в избранное';
+  const addedValue = addedBook ? `In favorites: ${addedBook.count}` : 'Add to favorites';
 
   const thumbnail = item.volumeInfo.imageLinks?.smallThumbnail;
   const title = item.volumeInfo.title || 'No title available';

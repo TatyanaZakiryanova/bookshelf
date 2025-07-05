@@ -8,9 +8,9 @@ const NotFound = () => {
   return (
     <div className={styles.error}>
       <VscError size={40} className={styles.icon} />
-      Страница не найдена
+      Page not found
       <Link to="">
-        <Button className={styles.backButton}>На главную</Button>
+        <Button className={styles.backButton}>Home</Button>
       </Link>
     </div>
   );

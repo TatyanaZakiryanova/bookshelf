@@ -2,15 +2,15 @@
 
 E-books search and viewing app integrated with [Google Books API](https://developers.google.com/books).
 
-[README на русском](./README.ru.md)
+🌎 [README на русском](./README.ru.md)
 
-## Deployment
+## 🌐 Deployment
 
-[Deploy](https://bookshelfsearch.netlify.app/)
+[Deployment](https://bookshelfsearch.netlify.app/)
 
-<img src='./src/assets/images/bookshelf_preview.png' alt="preview">
+<img src='./src/assets/images/preview.png' alt="preview">
 
-## Technologies
+## 🛠️ Technologies
 
 - **TypeScript**
 - **React**
@@ -22,7 +22,7 @@ E-books search and viewing app integrated with [Google Books API](https://develo
 - **ESLint, Prettier**
 - **Netlify**
 
-## Features
+## 💻 Features
 
 - **Search for books** by title, author, or keywords
 - **Sort results** by language, relevance, price, or text availability
@@ -36,42 +36,63 @@ E-books search and viewing app integrated with [Google Books API](https://develo
 
 ## More details
 
-### Routing
+### 🧭 Routing
 
 - Home page with search results
 - "Favorites" page
 - "Not Found" page
 
-### State Management
+### 📦 State Management
 
 - **Redux slices** for managing app state
 - **createAsyncThunk** for API requests
 - **redux-persist** to persist app state and favorites list
 
-### Loading & Error Handling
+### ⌛ Loading & Error Handling
 
 - **Skeleton loader** for books while data is loading
 - **Spinner** for favorites and book preview loading states
 - Message when no books are found
 - Message when there are no more books to display
 
-### Performance Optimizations
+### 📈 Performance Optimizations
 
 - **Lazy loading** of pages
 - **useMemo** for memoizing book thumbnails
 
-### Styling and Responsiveness
+### 🖼️ Styling and Responsiveness
 
 - Responsive layout down to 360px screen width (SCSS Modules)
 - Responsive modal windows
 
-### Error Handling in API
+### 🔧 Error Handling in API
 
 - **Duplicate books returned by the API**: filtered out in the reducer by book ID
 
 - **Missing items field in API response when books run out**: additional **NO_MORE_BOOKS status** introduced to handle this scenario gracefully
 
-## How to start project
+## 📁 Architecture
+
+```bash
+public/
+src/
+├── assets/
+├── components/
+├── hooks/
+├── layouts/
+├── pages/
+├── redux/
+├── styles/
+├── utils/
+```
+
+## 🚀 How to start project
+
+clone the repository:
+
+```bash
+git clone
+```
 
 in the project directory enter:
 

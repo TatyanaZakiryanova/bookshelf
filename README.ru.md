@@ -2,13 +2,13 @@
 
 Приложение для поиска и просмотра электронных книг, интегрированное с [Google Books API](https://developers.google.com/books).
 
-## Deployment
+## 🌐 Deployment
 
-[Deploy](https://bookshelfsearch.netlify.app/)
+[Deployment](https://bookshelfsearch.netlify.app/)
 
-<img src='./src/assets/images/bookshelf_preview.png' alt="preview">
+<img src='./src/assets/images/preview.png' alt="preview">
 
-## Technologies
+## 🛠️ Technologies
 
 - Typescript
 - React
@@ -20,7 +20,7 @@
 - ESLint, Prettier
 - Netlify
 
-## Features
+## 💻 Features
 
 - Поиск книг по названию, автору или ключевым словам
 - Сортировка результатов по языку, релевантности, цене, полноте текста
@@ -34,42 +34,63 @@
 
 ## More details
 
-### Routing
+### 🧭 Routing
 
 - Главная страница с результатами поиска
 - Страница "Favorites"
 - Страница "Not found"
 
-### State Management
+### 📦 State Management
 
 - slices для организации состояний
 - createAsyncThunk для запросов к API
 - redux-persist для сохранения состояния и списка избранного
 
-### Loading & Error Handling
+### ⌛ Loading & Error Handling
 
 - Скелетон при загрузке книг
 - Спиннер при загрузке списка избранного и предпросмотра книги
 - Сообщение, если книги не найдены
 - Сообщение, если книги по запросу закончились
 
-### Performance Optimizations
+### 📈 Performance Optimizations
 
 - Lazy Loading страниц
 - useMemo для мемоизации обложек (thumbnails) книг
 
-### Styling and Responsiveness
+### 🖼️ Styling and Responsiveness
 
 - Адаптивная вёрстка до 360px ширины экрана (SCSS-модули)
 - Адаптив для модальных окон
 
-### Error Handling in API
+### 🔧 Error Handling in API
 
 - **API возвращает дубликаты книг**. Реализована фильтрация книг с одинаковым id на уровне редьюсера.
 
 - **API исключает массив items из ответа, если книги заканчиваются**. Добавлен дополнительный статус 'NO_MORE_BOOKS' для обработки этого случая.
 
-## How to start project
+## 📁 Architecture
+
+```bash
+public/
+src/
+├── assets/
+├── components/
+├── hooks/
+├── layouts/
+├── pages/
+├── redux/
+├── styles/
+├── utils/
+```
+
+## 🚀 How to start project
+
+clone the repository:
+
+```bash
+git clone
+```
 
 in the project directory enter:
 

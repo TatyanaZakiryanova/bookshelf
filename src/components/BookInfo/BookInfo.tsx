@@ -39,16 +39,16 @@ const BookInfo = ({
           </p>
           <div className={styles.pageButtons}>
             <Button onClick={showPreview} className={styles.pageButton}>
-              Превью
+              Preview
             </Button>
             <a href={item.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer">
-              <Button className={styles.pageButton}>Сайт</Button>
+              <Button className={styles.pageButton}>Site</Button>
             </a>
           </div>
           <Button
             onClick={() => addToFavorites(item)}
             className={
-              addedValue.includes('В избранном') ? styles.favoriteAdded : styles.addToFavorite
+              addedValue.includes('In favorites') ? styles.favoriteAdded : styles.addToFavorite
             }
           >
             {addedValue}

@@ -6,7 +6,7 @@ const BooksNoMore = () => {
   return (
     <div className={styles.error}>
       <GiBookshelf size={130} className={styles.icon} />
-      <p>По этому запросу больше нет доступных книг.</p>
+      <p>No more books available for this request</p>
     </div>
   );
 };
