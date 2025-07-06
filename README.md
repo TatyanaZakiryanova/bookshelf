@@ -1,8 +1,8 @@
 # Bookshelf
 
-E-books search and viewing app integrated with [Google Books API](https://developers.google.com/books).
+E-books search and viewing app integrated with [Google Books API](https://developers.google.com/books), built with React, Redux and TypeScript.
 
-🌎 [README на русском](./README.ru.md)
+[README на русском](./README.ru.md)
 
 ## 🌐 Deployment
 
@@ -36,36 +36,36 @@ E-books search and viewing app integrated with [Google Books API](https://develo
 
 ## More details
 
-### 🧭 Routing
+### Routing
 
 - Home page with search results
 - "Favorites" page
 - "Not Found" page
 
-### 📦 State Management
+### State management
 
 - **Redux slices** for managing app state
 - **createAsyncThunk** for API requests
 - **redux-persist** to persist app state and favorites list
 
-### ⌛ Loading & Error Handling
+### Loading & error handling
 
 - **Skeleton loader** for books while data is loading
 - **Spinner** for favorites and book preview loading states
 - Message when no books are found
 - Message when there are no more books to display
 
-### 📈 Performance Optimizations
+### Performance optimizations
 
 - **Lazy loading** of pages
 - **useMemo** for memoizing book thumbnails
 
-### 🖼️ Styling and Responsiveness
+### Styling and responsiveness
 
 - Responsive layout down to 360px screen width (SCSS Modules)
 - Responsive modal windows
 
-### 🔧 Error Handling in API
+### Error handling in API
 
 - **Duplicate books returned by the API**: filtered out in the reducer by book ID
 
@@ -86,7 +86,7 @@ src/
 ├── utils/
 ```
 
-## 🚀 How to start project
+## 🪄 How to start project
 
 clone the repository:
 
