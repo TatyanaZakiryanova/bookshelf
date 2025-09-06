@@ -10,7 +10,7 @@ const Favorites = lazy(() => import('./pages/Favorites/Favorites'));
 
 const App = (): JSX.Element => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/bookshelf">
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="" element={<Main />} />
