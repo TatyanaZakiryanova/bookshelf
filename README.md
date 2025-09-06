@@ -6,7 +6,7 @@ E-books search and viewing app integrated with [Google Books API](https://develo
 
 ## 🌐 Deployment
 
-[Deployment](https://bookshelfsearch.netlify.app/)
+[Deployment](https://tatyanazakiryanova.github.io/bookshelf/)
 
 <img src='./src/assets/images/preview.png' alt="preview">
 
@@ -20,7 +20,7 @@ E-books search and viewing app integrated with [Google Books API](https://develo
 - **React-router-dom**
 - **Vite**
 - **ESLint, Prettier**
-- **Netlify**
+- **Github Pages**
 
 ## 💻 Features
 

@@ -4,7 +4,7 @@
 
 ## 🌐 Deployment
 
-[Deployment](https://bookshelfsearch.netlify.app/)
+[Deployment](https://tatyanazakiryanova.github.io/bookshelf/)
 
 <img src='./src/assets/images/preview.png' alt="preview">
 
@@ -18,7 +18,7 @@
 - **React-router-dom**
 - **Vite**
 - **ESLint, Prettier**
-- **Netlify**
+- **Github Pages**
 
 ## 💻 Features
 
